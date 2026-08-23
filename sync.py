@@ -47,6 +47,7 @@ import re
 import shutil
 import sys
 import tempfile
+import time
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
@@ -90,6 +91,11 @@ BODY_FALLBACK_STRIP = ("header", "footer")
 SIDEBAR_SELECTOR = 'nav[aria-label="Docs navigation"]'
 
 SITEMAP_NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+# Transient-failure budget per URL. 3 attempts with linear backoff covers the
+# read timeouts CI runners see without masking a genuinely unreachable site.
+FETCH_ATTEMPTS = 3
+FETCH_BACKOFF = 2.0
 
 
 # --------------------------------------------------------------------------- #
@@ -385,7 +391,26 @@ def discover_urls(client: httpx.Client) -> list[str]:
 
 def fetch(client: httpx.Client, url: str, etag: str | None, force: bool) -> Fetched:
     headers = {} if force or not etag else {"If-None-Match": etag}
-    resp = client.get(url, headers=headers)
+
+    # Transient transport failures (read timeouts especially) are routine from CI
+    # runners and would otherwise abort a whole run through pool.map. Retried with
+    # linear backoff, then raised -- exhausting the budget is a real failure, not
+    # something to swallow and mirror a partial corpus over.
+    for attempt in range(1, FETCH_ATTEMPTS + 1):
+        try:
+            resp = client.get(url, headers=headers)
+            break
+        except httpx.TransportError as exc:
+            if attempt == FETCH_ATTEMPTS:
+                raise RuntimeError(
+                    f"{url}: {type(exc).__name__} after {FETCH_ATTEMPTS} attempts"
+                ) from exc
+            print(
+                f"warning: {url}: {type(exc).__name__}, retry {attempt}/{FETCH_ATTEMPTS - 1}",
+                file=sys.stderr,
+            )
+            time.sleep(FETCH_BACKOFF * attempt)
+
     if resp.status_code not in (200, 304):
         raise RuntimeError(f"HTTP {resp.status_code} for {url}")
     final = canonical_url(str(resp.url))
