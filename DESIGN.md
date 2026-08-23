@@ -148,18 +148,6 @@ the unclosed-fence scan caught it. Verification: 44 files scanned, none ends ins
 unclosed fence; 0 bare `###`; 0 `index.md#` links; filtered/full runs alternate with zero
 churn.
 
-## Why not CocoIndex
-
-Considered and rejected. CocoIndex's incrementality pays off when expensive per-item work
-(embeddings, LLM extraction) runs over thousands of documents and you want lineage-tracked
-memoization. Here the corpus is 43 pages, the transform is ~5 ms of HTML parsing, and the
-output is Markdown files on disk. Its required Postgres state store would be operationally
-heavier than the artifact it produces, in exchange for replacing roughly fifteen lines of
-`sha256(content) == stored_hash`.
-
-That calculus flips if this corpus ever gets embedded into a vector store, or if per-page
-processing becomes an LLM call. Not at this scale.
-
 ## Politeness
 
 `straion.com/robots.txt` is `Disallow:` (empty — everything permitted). Requests carry a
