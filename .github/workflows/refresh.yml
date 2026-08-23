@@ -1,0 +1,41 @@
+name: Refresh mirror
+
+# Rebuilds the corpus and commits when straion.com has changed. This is what keeps
+# the cached copy current, so `verify` stays green without anyone touching the repo.
+on:
+  schedule:
+    - cron: "17 6 * * *"   # daily, off the hour to avoid the scheduler stampede
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      # --locked so a dependency release can never silently change the output.
+      - name: Rebuild corpus
+        run: uv run --locked ./sync.py
+
+      - name: Commit if the site changed
+        run: |
+          if git diff --quiet -- pages llms.txt llms-full.txt; then
+            echo "no upstream changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pages llms.txt llms-full.txt manifest.json sync-log.jsonl
+          git commit -m "Refresh mirror from straion.com"
+          git push

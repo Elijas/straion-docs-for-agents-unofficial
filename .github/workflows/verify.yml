@@ -1,0 +1,32 @@
+name: Verify mirror
+
+# Fails when the committed corpus does not match a fresh build of the live site.
+# That covers two distinct problems: someone hand-edited a generated file, or
+# straion.com changed and the daily refresh has not landed yet. Either way the fix
+# is the same one command, so they do not need separate signals.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      # Builds cold into a scratch directory and diffs. Writes nothing to the repo,
+      # so this is safe to run on pull requests from forks.
+      - name: Check corpus against the live site
+        run: uv run --locked ./sync.py --check
+
+      - name: Explain a failure
+        if: failure()
+        run: |
+          echo "::notice::The committed corpus differs from a fresh build."
+          echo "::notice::Fix: run './sync.py' locally and commit, or trigger the Refresh workflow."
