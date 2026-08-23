@@ -63,6 +63,9 @@ inline ([PEP 723](https://peps.python.org/pep-0723/)) and pinned in `sync.py.loc
 uv run --locked ./sync.py    # refresh with exact locked dependencies
 ```
 
+See [DESIGN.md](DESIGN.md) for why the mirror is built this way, what was measured,
+and the audit findings behind the current behaviour.
+
 **Rebuilds are deterministic.** Two independent cold builds are byte-identical to each
 other and to the incrementally-maintained corpus. There is no path dependence: no sequence
 of partial, filtered, or interrupted runs produces output differing from

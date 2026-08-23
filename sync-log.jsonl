@@ -45,3 +45,5 @@
 {"ts": "2026-08-23T14:21:46+00:00", "event": "CREATED", "path": "pages/sustainability.md"}
 {"ts": "2026-08-23T14:22:07+00:00", "event": "CREATED", "path": "pages/docs/scim.md"}
 {"ts": "2026-08-23T14:23:40+00:00", "event": "CREATED", "path": "pages/docs/scim.md"}
+{"ts": "2026-08-23T14:30:45+00:00", "event": "UPDATED", "path": "llms-full.txt"}
+{"ts": "2026-08-23T14:30:45+00:00", "event": "UPDATED", "path": "llms.txt"}
