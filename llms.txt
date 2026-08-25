@@ -83,5 +83,8 @@ Listed in reading order, grouped as on the site.
 ## Security
 - [Enterprise-Ready.Secure by Design.](https://straion.com/security): Straion enforces your engineering standards without touching your source code. See the exact data flow, what the CLI sends, EU hosting, and our compliance status.
 
+## Solutions
+- [Agents move fast. Safety-critical code cannot.Straion is how you get both.](https://straion.com/solutions/embedded-software): Straion gives every developer's AI agent the MISRA rules that apply to the task before it writes, and records the reason and approver behind every deviation. Works with Claude Code, Copilot and Cursor.
+
 ## Sustainability
 - [Straion 💚 🌍](https://straion.com/sustainability): Straion’s sustainability commitment: remote-first collaboration, efficient cloud infrastructure, and inclusive team practices.

@@ -11,7 +11,7 @@ well, where they break down at team scale, and what Straion adds on top.
 
 [Start Free](https://straion.app/auth/signup)   [See Straion import your AGENTS.md →](#import)
 
-■ Short answer
+Short answer
 
 ## Import them once, then delete them.
 
@@ -52,7 +52,7 @@ nothing.
 
 ---
 
-■ Comparison
+Comparison 
 
 ## AGENTS.md vs. Straion: Side by Side
 
@@ -78,7 +78,7 @@ nothing.
 - One tool-agnostic layer for Claude Code, Cursor, and Copilot
 - Full visibility into which rules fired and where standards drift
 
-■ Bring your own rules
+Bring your own rules 
 
 ## From an AGENTS.md line to a managed rule
 
@@ -123,7 +123,7 @@ governance for Claude Code, Cursor, GitHub Copilot, and beyond. Import what you 
 wrote, then retire the files. Straion becomes the single source of truth your team manages
 from one place.
 
-■ What you gain
+What you gain 
 
 ## Four things a markdown file can't give you
 
@@ -143,7 +143,7 @@ Write a standard once and every developer, every repo, and every AI session pull
 
 Your AGENTS.md, CLAUDE.md, and .cursorrules import directly into Straion. The work you've already done becomes the foundation, now versioned and centrally managed.
 
-■ Related comparison
+Related comparison
 
 ### Also weighing Straion vs custom skills?
 
@@ -152,7 +152,7 @@ them.
 
 [Straion vs Skills →](straion-vs-skills.md)
 
-■ The research
+The research
 
 ## This isn't just our opinion
 
