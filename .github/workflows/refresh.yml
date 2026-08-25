@@ -150,23 +150,31 @@ jobs:
           RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           LOG="${RUNNER_TEMP}/sync.log"
 
+          # Name the step that actually broke. Without this the issue shows only the
+          # sync log, which reads as "everything was fine" when the sync succeeded and
+          # it was the push or the merge that failed.
+          FAILED_STEP="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/jobs" \
+                           --jq '[.jobs[].steps[] | select(.conclusion == "failure") | .name] | first // "unknown"')"
+
           gh label create "${FAILURE_LABEL}" --color B60205 \
             --description "Automated mirror refresh is failing" --force
 
           {
             echo "The scheduled mirror refresh failed."
             echo
+            echo "* Failed at step: **${FAILED_STEP}**"
             echo "* Run: ${RUN_URL}"
             echo "* Trigger: \`${GITHUB_EVENT_NAME}\`"
             echo "* Commit: \`${GITHUB_SHA}\`"
             echo
-            echo "Last output from \`sync.py\`:"
+            echo "Output of the \`Rebuild corpus\` step (which may itself have succeeded --"
+            echo "check the failing step named above before reading anything into this):"
             echo
             echo '```'
             if [ -s "${LOG}" ]; then
               tail -n 40 "${LOG}"
             else
-              echo "(no sync output captured -- the job failed before or outside the sync step;"
+              echo "(nothing captured -- the job failed before the sync step ran;"
               echo " see the run log linked above)"
             fi
             echo '```'
@@ -187,6 +195,24 @@ jobs:
               --label "${FAILURE_LABEL}" \
               --body-file "${RUNNER_TEMP}/issue-body.md"
           fi
+
+      # A failed run must not leave its working branch behind: on a daily cron, a
+      # breakage that persists would otherwise litter one branch per day. Only
+      # branches that never reached a PR are removed -- if a PR exists, deleting its
+      # head would close it and throw away the diff someone needs to look at.
+      - name: Remove the working branch if it never reached a PR
+        if: failure()
+        run: |
+          BRANCH="refresh/${GITHUB_RUN_ID}"
+          if ! git ls-remote --exit-code --heads origin "${BRANCH}" >/dev/null 2>&1; then
+            exit 0
+          fi
+          if [ -n "$(gh pr list --head "${BRANCH}" --state all --limit 1 --json number --jq '.[0].number // empty')" ]; then
+            echo "::notice::${BRANCH} has a PR; leaving it in place."
+            exit 0
+          fi
+          git push origin --delete "${BRANCH}"
+          echo "::notice::Deleted unmerged working branch ${BRANCH}"
 
       # Closing the loop matters as much as opening it: an issue that outlives the
       # breakage trains everyone to ignore the next one.
