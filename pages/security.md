@@ -13,7 +13,7 @@ rules. Your codebase. Your control.
 
 [Start Free](https://straion.app/auth/signup)
 
-■ The commitments
+The commitments
 
 ## Secure by design
 
@@ -31,7 +31,7 @@ Your rules, your task context, and your usage data are never used to train model
 
 ---
 
-■ How Straion works
+How Straion works 
 
 ## Where your data goes, and where it does not
 
@@ -69,7 +69,7 @@ through pull requests, so CODEOWNERS and branch protection apply.
 
 ✓ Rule definitions only, and they stay yours
 
-■ A real request, start to finish
+A real request, start to finish
 
 what the CLI sends, and what comes back
 
@@ -120,7 +120,7 @@ Found 14 matching rule(s) across 2 collection(s):
 That is the whole exchange. A task description goes out, a list of rule statements comes
 back. The files are named, never opened.
 
-■ For your security team
+For your security team 
 
 ## The payload, field by field
 
@@ -161,7 +161,7 @@ with the request. Straion never opens a file to add code itself, and full files 
 never transmitted. Run the CLI with verbose output to inspect every call before it
 leaves the machine.
 
-■ The short list
+The short list
 
 ## What Straion does not do
 
@@ -173,7 +173,7 @@ Never uses your data to train AI models
 
 Never sells or monetizes usage data
 
-■ Compliance
+Compliance 
 
 ## Where we stand today, and what is next
 

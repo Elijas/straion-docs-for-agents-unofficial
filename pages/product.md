@@ -8,8 +8,8 @@ Product Overview
 
 # The governance layer for AI coding.
 
-**Straion is the AI coding governance platform** that keeps AI coding agents
-aligned with your engineering standards, at every step from first prompt to merge.
+**Straion is the AI coding governance platform** that keeps AI coding agents aligned
+with your engineering standards, at every step from first prompt to merge.
 
 Built for lead engineers, platform teams, engineering managers, and any team already using
 Claude Code, Cursor, or GitHub Copilot.
@@ -18,7 +18,7 @@ Claude Code, Cursor, or GitHub Copilot.
 
 Works with
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6a85597a97a15700076a9c5e)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6a85597a97a15700076a9c5e)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6a85597a97a15700076a9c5e)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6a8da20a9a458300086d2212)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6a8da20a9a458300086d2212)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6a8da20a9a458300086d2212)
 
 straion governance check
 
@@ -32,8 +32,8 @@ The problem
 ## AI agents drift. Standards break. Rework adds up.
 
 AI coding tools generate code fast but they don't know your architecture decisions, security
-requirements, or compliance obligations. The result is inconsistent code, failed reviews, and
-avoidable production risk.
+requirements, or compliance obligations. The result is inconsistent code, failed reviews,
+and avoidable production risk.
 
 56%
 
@@ -55,7 +55,7 @@ Non-functional requirements are easy to overlook at scale
 
 ---
 
-■ The Promise
+The Promise 
 
 ## What changes when you add Straion
 
@@ -98,7 +98,7 @@ When something is wrong, engineers (and agents) get specific guidance: which rul
 
 [See how it works](how-it-works.md)
 
-■ In practice
+In practice 
 
 ## Where the governance layer earns its place
 
@@ -128,7 +128,7 @@ Your standards are new. Your codebase isn't. Point Straion at an existing repo a
 
 Rule Hub + post-code analysis
 
-■ Who it's for
+Who it's for 
 
 ## Built for teams already using AI coding tools
 
@@ -173,16 +173,11 @@ Boundaries
 
 ## What Straion is not
 
-- Not just a CLAUDE.md or a generic best-practices skill.  
-  A shared prompt file or an engineering checklist has no memory of your decisions, no team-level scoping, and no enforcement. Straion turns your actual standards into structured, queryable rules that agents check at every step, not a one-time hint that gets ignored or overwritten.
-- Not a Copilot replacement.  
-  Straion works alongside Claude Code, Cursor, and GitHub Copilot. It doesn't generate code, it governs how your AI tools use your standards.
-- Not a generic document store.  
-  Straion doesn't replace your wiki or your ADRs. It turns selected standards into machine-readable rules that AI agents can act on.
-- Not a static linter.  
-  Linters check syntax and patterns after the fact. Straion validates intent and approach before code is written.
-- Not a one-size-fits-all ruleset.  
-  Rules are scoped to teams, repositories, stacks, and task types. A frontend team and a backend team get different rules for the same codebase.
+- A shared prompt file or an engineering checklist has no memory of your decisions, no team-level scoping, and no enforcement. Straion turns your actual standards into structured, queryable rules that agents check at every step, not a one-time hint that gets ignored or overwritten.
+- Straion works alongside Claude Code, Cursor, and GitHub Copilot. It doesn't generate code, it governs how your AI tools use your standards.
+- Straion doesn't replace your wiki or your ADRs. It turns selected standards into machine-readable rules that AI agents can act on.
+- Linters check syntax and patterns after the fact. Straion validates intent and approach before code is written.
+- Rules are scoped to teams, repositories, stacks, and task types. A frontend team and a backend team get different rules for the same codebase.
 
 ## Get started in under 5 minutes, stay on track as you scale
 

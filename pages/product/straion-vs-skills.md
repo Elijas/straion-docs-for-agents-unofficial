@@ -6,12 +6,12 @@ description: "Already using custom skills in Claude Code or Cursor? Here's what 
 
 # "I already have custom skills. What does Straion add?"
 
-A fair question. Custom skills work, up to a point. Here's an honest look at what
-skills do well, where they break down at team scale, and what Straion adds on top.
+A fair question. Custom skills work, up to a point. Here's an honest look at what skills do
+well, where they break down at team scale, and what Straion adds on top.
 
 [Start Free](https://straion.app/auth/signup)
 
-■ Short answer
+Short answer
 
 ## Yes, and you should keep them.
 
@@ -45,13 +45,13 @@ it there.
 
 ### Validation happens in code review, not before.
 
-Custom skills carry your rules into context. They can't check whether the AI's
-proposed plan actually follows them before execution starts. Straion catches violations
-at the plan stage, when fixing them costs nothing.
+Custom skills carry your rules into context. They can't check whether the AI's proposed
+plan actually follows them before execution starts. Straion catches violations at the
+plan stage, when fixing them costs nothing.
 
 ---
 
-■ Comparison
+Comparison 
 
 ## Skills vs. Straion: Side by Side
 
@@ -77,7 +77,7 @@ at the plan stage, when fixing them costs nothing.
 - Full visibility: which rules fired, which sessions drifted
 - Imports your existing CLAUDE.md, AGENTS.md, and skill files
 
-■ What you gain
+What you gain 
 
 ## Four things skills can't give you
 
@@ -97,7 +97,7 @@ Define your standards once. Every developer, every repo, every AI session pulls 
 
 Your CLAUDE.md, AGENTS.md, and custom skill files import directly into Straion. The work you've already done becomes the foundation, Straion makes it smarter and centrally managed.
 
-■ Related comparison
+Related comparison
 
 ### Also comparing Straion vs AGENTS.md?
 

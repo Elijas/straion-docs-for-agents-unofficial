@@ -25,14 +25,14 @@ SCIM pairs naturally with [SAML SSO](sso.md): SCIM creates and deactivates the a
 
 You must be an **organization admin**. Open **Identity & provisioning** from the organization menu and scroll to **SCIM provisioning**. Give the connection a name, pick your provider — **Okta**, **Entra ID**, **OneLogin**, **JumpCloud**, or **Generic SCIM v2.0** for any other SCIM 2.0-compliant IdP — and click **Create SCIM Connection**.
 
-![The SCIM provisioning form with the connection type dropdown open, listing Entra ID, OneLogin, Okta, JumpCloud, and Generic SCIM v2.0](https://straion.com/.netlify/images?url=_astro%2F01-connection-types.sjWhLOyO.jpg&w=3832&h=2544&dpl=6a85597a97a15700076a9c5e)
+![The SCIM provisioning form with the connection type dropdown open, listing Entra ID, OneLogin, Okta, JumpCloud, and Generic SCIM v2.0](https://straion.com/.netlify/images?url=_astro%2F01-connection-types.sjWhLOyO.jpg&w=3832&h=2544&dpl=6a8da20a9a458300086d2212)
 
 The connection reveals the two values your IdP needs:
 
 - **SCIM Endpoint** — the base URL your IdP pushes provisioning requests to
 - **SCIM Secret** — the bearer token that authenticates those requests. Treat it like a password; use the copy button to grab it.
 
-![The created SCIM connection showing the SCIM endpoint URL and the masked SCIM secret with reveal and copy buttons](https://straion.com/.netlify/images?url=_astro%2F02-endpoint-and-secret.Csvi6YC2.jpg&w=3832&h=2544&dpl=6a85597a97a15700076a9c5e)
+![The created SCIM connection showing the SCIM endpoint URL and the masked SCIM secret with reveal and copy buttons](https://straion.com/.netlify/images?url=_astro%2F02-endpoint-and-secret.Csvi6YC2.jpg&w=3832&h=2544&dpl=6a8da20a9a458300086d2212)
 
 > Deleting the connection invalidates the secret immediately. To rotate it, delete the connection, create a new one, and update your IdP with the new values.
 

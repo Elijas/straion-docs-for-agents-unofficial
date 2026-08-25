@@ -20,7 +20,7 @@ the governance lifecycle
 3. Validate the plan before any code
 4. Re-check the code after it's written
 
-■ The Flow
+The Flow 
 
 ## Step by step, from standard to shipped
 
@@ -57,13 +57,13 @@ customize this workflow or plug it into their existing process.
    Before any code is written, the agent proposes a plan. Straion checks it against the retrieved rules. If the plan violates a rule (missing an auth check, skipping the repository pattern, bypassing a required abstraction) it's rejected and adjusted before a single line is written. Correcting intent costs one prompt; correcting code costs a review cycle. Every flag includes the rule that triggered it, where the problem is, and what to do: not "this may have a security issue" but "Route /api/users/export is missing auth.Require(), add it before handler registration."
  4. ### Code changes are checked
 
-   After code is written, Straion analyzes the changes again. This catches issues that are
-   hard to spot at the plan stage: a missing pagination boundary, a response that leaks
-   PII, a query pattern that won't scale.
+   After code is written, Straion analyzes the changes again. This catches issues that
+   are hard to spot at the plan stage: a missing pagination boundary, a response that
+   leaks PII, a query pattern that won't scale.
 
 ---
 
-■ In practice
+In practice 
 
 ## What this looks like in the terminal
 
@@ -74,7 +74,8 @@ rule definition in Straion
 
 {
 
-"statement": "MUST NOT enable compiler-specific language extensions.",
+"statement":
+"MUST NOT enable compiler-specific language extensions.",
 
 "meta": {
 
@@ -110,7 +111,7 @@ temperature events via interrupt rather than polling"
 
 ---
 
-■ Getting Started
+Getting Started 
 
 ## How Straion Works
 

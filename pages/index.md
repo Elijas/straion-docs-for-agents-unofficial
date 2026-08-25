@@ -11,39 +11,50 @@ Your team adopted AI coding assistants.
 Straion gives every developer's AI agent your architecture rules, security policies, and
 coding standards automatically - before the first line is written.
 
-Built for lead developers at teams of 100+ who've already rolled out agents and need them to actually follow org standards. Live in 5 minutes.
-
-Works with
-
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6a85597a97a15700076a9c5e) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6a85597a97a15700076a9c5e) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6a85597a97a15700076a9c5e)
-
 [Get Started Free
 →](https://straion.app/auth/signup)  [Book a Demo](#cta)
 
-New Product update
+Audit trail
 
-## You shouldn't be finding rule violations in code review.
+## You shouldn't be finding violations in code review.
 
-Your agent can't finish its turn while a rule is unresolved. It fixes the violation, or you
-approve the exception.
+Your agent can't finish its turn while a rule is unresolved. It fixes the violation, or a
+named reviewer approves the deviation.
 
-Waiting for you
+Waiting for approval
+ src/net/frame_pool.c:118
 
-Accept this violation?   
-Backend conventions: MUST NOT throw GraphQLError from service classes.
+Rule
+:   MUST NOT call malloc, calloc, realloc or free outside startup.
 
-Reason: "legacy invite path, tracked in JIRA-412"
+Tags
+:   misra-c-2012 · rule-21.3 · required · deviable
 
-Approve it and the decision goes on the record: the rule, the reason, who said yes. Six
-months later you can still answer why.
+Agent's reason
+:   "The vendor BSP allocates its ring buffer once during init and never frees it. I
+    cannot reach that code. Requesting a deviation."
 
-[Read the announcement](blog/rule-violations-code-review.md)
+Approve it and the decision is on the record: the rule, the reason, the file, who said yes,
+and when. Your next audit gets an answer instead of a shrug.
 
-   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6a85597a97a15700076a9c5e)
+[Read how to catch violations before review](blog/rule-violations-code-review.md)
+
+   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6a8da20a9a458300086d2212)
 
 ---
 
-■ Problem
+For safety-critical code software
+
+## Building embedded software?
+
+Most teams keep agents out of embedded code. One generated violation turns into a finding you
+defend at audit. So does one deviation nobody wrote down. Straion gives your agent the MISRA rules
+that apply to the task before it writes, and every deviation goes on the record with its
+reason and approver.
+
+[Straion for embedded software](solutions/embedded-software.md)
+
+Problem 
 
 ## This isn't a you problem. It's an everyone problem.
 
@@ -65,7 +76,7 @@ Straion is what these developers were asking for.
 
 ---
 
-■ Getting Started
+Getting Started 
 
 ## How Straion Works
 
@@ -85,7 +96,7 @@ Your rules live in your own Git, reviewed like code. Here's the race plan.
 
    Straion validates the AI's task plan against your rules. Catch violations before tokens are wasted.
 
-■ Objection
+Objection
 
 ## "We already have standards in CLAUDE.md files"
 
@@ -103,29 +114,30 @@ compacted the context. How's that going?
 The problem was never that your rules sit in Git. It's that the same markdown is
 duplicated across dozens of repos, where the copies drift and contradict each other.
 Straion keeps one source of truth for your entire engineering organization. You can store
-it in your own Git infrastructure, on a dedicated branch, reviewed like any other code. The files stay
-yours: leave Straion and you keep every rule.
+it in your own Git infrastructure, on a dedicated branch, reviewed like any other code.
+The files stay yours: leave Straion and you keep every rule.
 
 02
 
 ### You can't manage what you can't see.
 
-Do you know which rules got used last week? Which agent session went
-off track? Straion gives you visibility and control at the team level, not just
-per-file, per-developer chaos.
+Do you know which rules got used last week? Which agent session went off track? Straion
+gives you visibility and control at the team level, not just per-file, per-developer
+chaos.
 
 03
 
 ### Standards drift the moment you stop watching.
 
 Scattered markdown files get stale, forked, contradicted. Straion keeps your rules live
-and enforced, versioned in your own Git infrastructure, whether you have 50 developers or 5,000.
+and enforced, versioned in your own Git infrastructure, whether you have 50 developers or
+5,000.
 
 [Straion vs AGENTS.md →](product/straion-vs-agents-md.md) [Straion vs custom skills →](product/straion-vs-skills.md)
 
 ---
 
-■ comparison
+comparison 
 
 ## Stop Managing Rules in Scattered Files
 
@@ -151,7 +163,7 @@ and enforced, versioned in your own Git infrastructure, whether you have 50 deve
 - AI follows your standards from the first prompt
 - Ship enterprise-ready code at actual 10x speed
 
-■ Features
+Features 
 
 ## Built for Teams Serious About AI
 
@@ -167,17 +179,17 @@ The right rules for every task. Straion automatically determines which rules app
 
 Catch mistakes before they cost tokens. Validate your AI's proposed approach against your rules before it starts coding. Stop violations at the plan stage, not in code review.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6a85597a97a15700076a9c5e) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6a85597a97a15700076a9c5e) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6a85597a97a15700076a9c5e)
-
 ### Integrates with Your Tools
 
 Claude Code, GitHub Copilot & Cursor ready. Install the Straion CLI globally and add the skill. Integrates with your existing AI coding workflow in minutes.
 
-+ self-hosted
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6a8da20a9a458300086d2212)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6a8da20a9a458300086d2212)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6a8da20a9a458300086d2212)
 
 ### Rules Live in Your Git
 
 Rules are plain files on a dedicated branch in your own repo, synced by your CI on every merge. Every change is a pull request, so CODEOWNERS and branch protection govern rules exactly as they govern code.
+
++ self-hosted
 
 ### Nobody Has to Memorize all the rules
 
@@ -185,7 +197,7 @@ Straion hands your agent the rules that apply to the task and checks every chang
 
 ---
 
-■ Demo
+Demo 
 
 ## See Straion in action
 
@@ -206,11 +218,11 @@ with your team.
 
 ---
 
-■ Partners
+Partners 
 
 ## Shaping the future with our pilot partners
 
-[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6a85597a97a15700076a9c5e)](https://www.dynatrace.com/)
+[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6a8da20a9a458300086d2212)](https://www.dynatrace.com/)
 
 Ready to join?
 
@@ -221,12 +233,12 @@ platform, faster, cleaner, and more cost-efficiently.
 
 ---
 
-■ Funding
+Funding 
 
 ## Supported & funded by
 
-[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6a85597a97a15700076a9c5e)](https://marathon.vc/)
+[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6a8da20a9a458300086d2212)](https://marathon.vc/)
 
-[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6a85597a97a15700076a9c5e)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6a85597a97a15700076a9c5e) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6a85597a97a15700076a9c5e)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6a85597a97a15700076a9c5e)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6a85597a97a15700076a9c5e)](https://daytona.io/startups?utm_source=straion.com)
+[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6a8da20a9a458300086d2212)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6a8da20a9a458300086d2212) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6a8da20a9a458300086d2212)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6a8da20a9a458300086d2212)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6a8da20a9a458300086d2212)](https://daytona.io/startups?utm_source=straion.com)
 
 ---

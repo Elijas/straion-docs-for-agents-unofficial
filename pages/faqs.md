@@ -4,13 +4,13 @@ source: https://straion.com/faqs
 description: "Answers to the most common questions about Straion, setup, security, and AI coding guidance."
 ---
 
-![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6a85597a97a15700076a9c5e)
+![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6a8da20a9a458300086d2212)
 
 ---
 
  
 
-■ FAQs
+FAQs
 
 # Frequently Asked Questions
 
