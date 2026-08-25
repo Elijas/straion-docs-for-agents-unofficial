@@ -12,7 +12,7 @@
     "https://straion.com/about-us": {
       "description": "We've seen this movie before. Straion keeps AI coding agents aligned with real engineering standards.",
       "etag": "\"707763eb628c124b61c7edace8e84e04-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/about-us.md",
       "sha256": "c208ffe78d40240928fd66a5492275bf5c7dc4ea679548919152986dd4ed35a4",
@@ -21,7 +21,7 @@
     "https://straion.com/blog": {
       "description": "Insights on AI-assisted development, coding standards at scale, and building software that stays on track. Lessons, deep dives, and perspectives.",
       "etag": "\"6d979e18490e7b8e78f88cf6be593683-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog.md",
       "sha256": "56bf7b771d9a37adb8186d46c36c05fd1c877dee29def0f94b9f369e39d30c67",
@@ -30,7 +30,7 @@
     "https://straion.com/blog/1m-tokens-wont-save-your-engineering-standards": {
       "description": "Sourcegraph data from 1,281 agent runs confirms the research: more context degrades AI coding performance. Why less context wins, and what it means for tools.",
       "etag": "\"e4a815d08fb52392ad219b3506dc7317-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog/1m-tokens-wont-save-your-engineering-standards.md",
       "sha256": "1b3216db423efe6ebff5486c11f7b1bcd09939be1484bd7185d1a167ca5d05db",
@@ -39,7 +39,7 @@
     "https://straion.com/blog/90-percent-rule-adherence-straion-coding-agents": {
       "description": "When Claude Code runs with Straion, rule adherence climbs into the 90%+ range. See how the automated context layer keeps AI code on your standards.",
       "etag": "\"88d31f691ba68ce53cbe875e323ecff1-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog/90-percent-rule-adherence-straion-coding-agents.md",
       "sha256": "406ee03beac976f1e28104db11a1ca4af04bb164ad2357b6bbcbe43c933a759d",
@@ -48,7 +48,7 @@
     "https://straion.com/blog/build-vs-buy-ai-coding-governance": {
       "description": "Building your own AI coding governance layer sounds like a config project. It isn't. Here is what it actually takes, and when buying is the smarter call.",
       "etag": "\"4eb799d5f1561426d0cb065808b0680d-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog/build-vs-buy-ai-coding-governance.md",
       "sha256": "c4027412a1c5a695d548b57d265ad29971c21a7648f56b0b71312ff63be12c9f",
@@ -57,7 +57,7 @@
     "https://straion.com/blog/delete-your-claude-md-science-says-so": {
       "description": "ETH Zurich research: LLM-generated AGENTS.md and CLAUDE.md files cut resolve rates and raise cost. The fix is delivering only the rules that matter, per task.",
       "etag": "\"56c05bcc6f7d41c83f69805cbc9fad1c-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog/delete-your-claude-md-science-says-so.md",
       "sha256": "63885d655852d7a9d4162f15bc2a1cbf47fa6e259d4f6d706f24918f9fef3f58",
@@ -66,7 +66,7 @@
     "https://straion.com/blog/developers-asked-anthropic-to-build-this": {
       "description": "A developer filed GitHub issue #14467 on claude-code describing exactly the problem Straion solves. We built it. Here is the full story.",
       "etag": "\"41c2cc999295070a22f8884167748f80-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog/developers-asked-anthropic-to-build-this.md",
       "sha256": "7d95ff3b775b2eb6da8a9c7fe992a78d1e7a46d5807b428a5605b14f35e39512",
@@ -75,7 +75,7 @@
     "https://straion.com/blog/rule-violations-code-review": {
       "description": "Straion turns every rule that applies to a change into a decision the agent has to resolve before the work is done, and every exception into one you approve.",
       "etag": "\"18767c7c00295cb9c98cd311bd6d63ff-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog/rule-violations-code-review.md",
       "sha256": "204a4e9feddc629c003a271a03433289df9d5de9d819d525dce23b09fab95190",
@@ -84,7 +84,7 @@
     "https://straion.com/blog/straion-rules-now-live-in-git": {
       "description": "Straion rules can now be managed in Git: versioning, pull request reviews, and full history. Available on the enterprise plan and in the free trial.",
       "etag": "\"2b016e0961da179ef097c8eb9b5861a8-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog/straion-rules-now-live-in-git.md",
       "sha256": "46e737a4cd5b6aaf333193246be1dd7ee7c7a4233084f391a0efb34901a759d8",
@@ -93,7 +93,7 @@
     "https://straion.com/blog/we-raised-1-1m-to-fix-ai-coding-drift": {
       "description": "Straion announces its \u20ac1.1M seed round led by Marathon VC and outlines why autonomous engineering needs a rules layer to prevent AI coding drift.",
       "etag": "\"e34c4382125f092890280f98d17142af-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/blog/we-raised-1-1m-to-fix-ai-coding-drift.md",
       "sha256": "6acc5d0d029f2ab6d314d71cd2d2df456ce7d2aaf5354036d6dc07f5f6d008aa",
@@ -102,7 +102,7 @@
     "https://straion.com/career": {
       "description": "Explore career opportunities at Straion. We offer remote positions in the EU within our team.",
       "etag": "\"372642649cd268ea93dd752383c6f2a2-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/career.md",
       "sha256": "713c4b7dd1350d68deaae9d3d5a0f1deb6dba32e9a03cf548675d20a23cc90b6",
@@ -111,7 +111,7 @@
     "https://straion.com/career/founding-ai-ml-engineer": {
       "description": "Join our founding team as technical lead for ML. You'll own the architecture behind Straion's AI: the systems that read software specs, requirements, an...",
       "etag": "\"fe18ce3ed4561d398edc328c00fb8989-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/career/founding-ai-ml-engineer.md",
       "sha256": "a386add93c675eabfbe6ec75bdd7feee34fe9fb384ef02bc71b9026d01cd24cd",
@@ -120,7 +120,7 @@
     "https://straion.com/career/senior-ai-ml-engineer": {
       "description": "Join our team to build and shape the revolution to supercharge AI assisted coding that transform how enterprise teams validate, implement and ship softw...",
       "etag": "\"6f5975a45762fffb01dbbf8921f46482-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/career/senior-ai-ml-engineer.md",
       "sha256": "e0c4e8961572f8089468aa833d04b13eb3bbeeed3fd605f41a32281f0712eb57",
@@ -129,7 +129,7 @@
     "https://straion.com/docs/best-practices": {
       "description": "How to write clear, well-formed rules that AI coding agents can interpret correctly",
       "etag": "\"e569c9ca08d43e081e73fa852f4fcf00-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/best-practices.md",
       "sha256": "07cf515192459af4453d225b21f15af425b1dfa790f2a870a709b6892ed1015d",
@@ -138,7 +138,7 @@
     "https://straion.com/docs/cli-api-reference": {
       "description": "Reference for every Straion CLI command: login, logout, setup, and import-rules, with the options and flags each command accepts.",
       "etag": "\"fe66625fbf6e1887824ec84e60ab1f08-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/cli-api-reference.md",
       "sha256": "8d46af76f022d66606ee36cde436fcc6d4b6ba2feee22445028322f423a9ce58",
@@ -147,7 +147,7 @@
     "https://straion.com/docs/connect-repository": {
       "description": "Store your rules as code in your own git repository and keep them in sync with Straion.",
       "etag": "\"3c08651b9ea0abbac9fc1c3b9a9a911c-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/connect-repository.md",
       "sha256": "78e62f704c206a7eb2a4622ef052bca4926ca0ea0032aea3f5748082051ac53e",
@@ -156,7 +156,7 @@
     "https://straion.com/docs/core-concepts": {
       "description": "What rules are and how Straion uses them to keep AI coding agents aligned with your standards",
       "etag": "\"2d7373bd32029a6dd41966c6574cfa51-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/core-concepts.md",
       "sha256": "5ec34dbe12841bc3b65bae0e8d5af4e85e2ceba1ed41653ae0dc0be38f005952",
@@ -165,7 +165,7 @@
     "https://straion.com/docs/develop-with-rules": {
       "description": "Use the developing-with-rules workflow to have Straion select relevant rules, validate your plan, generate constrained code, and check the output before you commit.",
       "etag": "\"14e90230eabc893b1185ec797435af74-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/develop-with-rules.md",
       "sha256": "1c12ac8669cf0e47d68e429b85efccac42f16a029b2a163b82b262c01ce17b03",
@@ -174,7 +174,7 @@
     "https://straion.com/docs/example-prompts": {
       "description": "Copy-paste prompts for common Straion workflows: build a feature end-to-end, plan an implementation, validate a spec, and validate code.",
       "etag": "\"90fc841654c8552dbc10931272cf5c07-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/example-prompts.md",
       "sha256": "bf5a248bfc2ec7b048f68434c96c7ddc31939770c5e0e8f066aeddb7925df7a3",
@@ -183,7 +183,7 @@
     "https://straion.com/docs/getting-started": {
       "description": "A step by step guide to set up Straion: import your rules, install the CLI, and connect your first AI coding agent in under five minutes.",
       "etag": "\"3657cb37a23940252cad999c77a14a29-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/getting-started.md",
       "sha256": "78afd183dde6d0a44d46ec5aac6768823a26b502ab75855ae5bd726ac367263f",
@@ -192,7 +192,7 @@
     "https://straion.com/docs/import-rules": {
       "description": "How Straion turns your existing standards and repository instruction files into structured, validated rule collections",
       "etag": "\"0455502dc17ef7537a1abe4bf69dcae6-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/import-rules.md",
       "sha256": "3e0276e1208c928a23cd13d4c178e6d34ede7cc7a6a500a038dec5336023cd28",
@@ -201,7 +201,7 @@
     "https://straion.com/docs/invite-users": {
       "description": "How to invite team members to your Straion organization: add email addresses, manage pending invites, and assign member roles.",
       "etag": "\"4769d2bc890545f9b0715be5d5f187de-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/invite-users.md",
       "sha256": "23757969f3a8173b72a828b2720a9c00118225055bc6356758bcb8b9f171d880",
@@ -210,7 +210,7 @@
     "https://straion.com/docs/prerequisites": {
       "description": "What you need before you start using Straion: a workspace, a supported AI coding agent (Claude Code, Cursor, or Copilot), and access to your team's rules.",
       "etag": "\"e66a2be72ff78e970a7a904f6d3d2e8a-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/prerequisites.md",
       "sha256": "4c8a31c887cbc784cd0d30cf21857ffb651d2f5beaccac32d2291e5256665dff",
@@ -219,7 +219,7 @@
     "https://straion.com/docs/rule-file-format": {
       "description": "The on-disk layout and file format for rules stored in a connected git repository.",
       "etag": "\"001844bc5673d3d1b0319ea0f1e95fc5-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/rule-file-format.md",
       "sha256": "f4c8f9452c9db36e48fbe20e9e04f976f57a9dbb5d2041693bcfa2a29493d491",
@@ -228,7 +228,7 @@
     "https://straion.com/docs/scim": {
       "description": "Automatically create, update, and deactivate Straion users from your identity provider with SCIM 2.0: setup guides for Okta, Microsoft Entra ID, OneLogin, and other providers.",
       "etag": "\"2d3fa14b5d65c2313926b2e25856816e-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/scim.md",
       "sha256": "fb99762df5d4a5201502ea38efb88305b94cef7eca21838468e85da76d1715c8",
@@ -237,7 +237,7 @@
     "https://straion.com/docs/sso": {
       "description": "Connect Straion to your identity provider with SAML SSO: step-by-step setup guides for Okta, Microsoft Entra ID, OneLogin, and any SAML 2.0 provider.",
       "etag": "\"58811ef545859640d187c9dc0773dba6-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/sso.md",
       "sha256": "c893b839c86678c12a27c841914a89f13f5f64a66479e40b0a79ca71abc4470c",
@@ -246,7 +246,7 @@
     "https://straion.com/docs/troubleshooting": {
       "description": "Solutions to common Straion issues: agent setup checks, firewall and permission problems, skills that do not show up after setup, and SAML SSO and SCIM provisioning errors.",
       "etag": "\"e55719594bc1a19b0924a4abdad12485-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/troubleshooting.md",
       "sha256": "2f04a95d02ba37b06bd720380a3a5841c8c92b6f94a4a8adee28c23654413a20",
@@ -255,7 +255,7 @@
     "https://straion.com/docs/validate-code": {
       "description": "Validate a PR, diff, or AI-generated changes against your rules before merge",
       "etag": "\"69fe8abddebe4ba04a8337993e650fdd-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/validate-code.md",
       "sha256": "0304772694b677df8fdd48951eed0505d0ffe62513deed4a5daea9f1468b14ba",
@@ -264,7 +264,7 @@
     "https://straion.com/docs/validate-implementation-plan": {
       "description": "Catch rule violations in an implementation plan before any code is written",
       "etag": "\"cbeb99801f8d938113ab9f2c83c9ad78-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/validate-implementation-plan.md",
       "sha256": "e1673f5934dcf83cd06f386fcac47d3d4196adaa2910f9918ff48e81b169f24e",
@@ -273,7 +273,7 @@
     "https://straion.com/docs/validate-specs": {
       "description": "Check specs, RFCs, and design docs against your rules before implementation begins",
       "etag": "\"a2914a1d31e8fc3f0935dcd6ecf120f1-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/docs/validate-specs.md",
       "sha256": "dbeecb178b4fa9fe260e69f928d8c851210c28f514be38e4440740d87d6a26fd",
@@ -282,7 +282,7 @@
     "https://straion.com/faqs": {
       "description": "Answers to the most common questions about Straion, setup, security, and AI coding guidance.",
       "etag": "\"890f78f0499d7eb494e994f8dcde63d3-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/faqs.md",
       "sha256": "224970ad71b45439aa1f50aa274ce33d1d7217f9b81309594bd27892d12561b3",
@@ -291,7 +291,7 @@
     "https://straion.com/how-it-works": {
       "description": "Straion selects rules by context, team, project, stack, and change type, then validates every AI task plan and PR against them. See the full mechanics.",
       "etag": "\"8ef418ff4a4c06a5ccd5037732c0e305-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/how-it-works.md",
       "sha256": "f57c13fc23fac5a2fcdd0607cea3b3a823e14f832ff5f2b106b2268037013881",
@@ -300,7 +300,7 @@
     "https://straion.com/press": {
       "description": "Press kit, media assets, and Straion press release in German and English.",
       "etag": "\"288343845116fe771eb92b922af077be-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/press.md",
       "sha256": "5dbfe519a6ce18bec26225401ff774b1d898eaa6d3039fa3840ce00c9bc0c35d",
@@ -309,7 +309,7 @@
     "https://straion.com/pricing": {
       "description": "Straion pricing: start free, then scale with team and enterprise options for AI coding rule management and validation.",
       "etag": "\"e96a8eb43581bf30b3a683a1c2952978-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/pricing.md",
       "sha256": "045f50d8680bdd08bd84237af1846687495a7a3fdd4d3b46c1d9523daadb4eb6",
@@ -318,7 +318,7 @@
     "https://straion.com/product": {
       "description": "Straion is the governance layer for AI coding. It keeps Claude Code, Cursor, and Copilot aligned with your rules and standards, from first prompt to merge.",
       "etag": "\"b03d7b14e771339f37ce99cdf2dc92ac-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/product.md",
       "sha256": "885112c34423959f6b22915958386a758ed3567ff8eaa994628f1345cc741969",
@@ -327,7 +327,7 @@
     "https://straion.com/product/ai-coding-guidance": {
       "description": "Guide Claude Code, Cursor, and Copilot with company-specific rules so AI-generated code follows your architecture, security, and quality standards.",
       "etag": "\"bb44ad36027b7e88b2703d21da6d8895-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/product/ai-coding-guidance.md",
       "sha256": "d445249e6c9a7cb9ecf5a74a818299a6c9a9d66e29d367cf83066a51f08bb160",
@@ -336,7 +336,7 @@
     "https://straion.com/product/code-review": {
       "description": "Automate pull request validation against non-functional requirements. Straion reduces manual review time and keeps code aligned with company standards.",
       "etag": "\"86cdf1f6e4fab216a1df7f62fd809bcf-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/product/code-review.md",
       "sha256": "da02d8d74159db227dfefb4aa2fdf48f7dc23a8e26498839a7f29e908de3ea61",
@@ -345,7 +345,7 @@
     "https://straion.com/product/feedback-on-requirements": {
       "description": "Capture and manage your organization's requirements, and ensure your software specifications and code stay aligned every step of the way.",
       "etag": "\"69479de4aa680fe14d259f5c6858bd91-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/product/feedback-on-requirements.md",
       "sha256": "c27df2164dafe2f3f5b1ab05eab82398d52f6d6c7fab37ebb62f0db3635dc66a",
@@ -354,7 +354,7 @@
     "https://straion.com/product/straion-vs-agents-md": {
       "description": "Already using AGENTS.md across your repos? See what Straion adds: a real before/after import, plus why the file breaks down at team scale.",
       "etag": "\"6fdb27ee305bc392977128703450d01f-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/product/straion-vs-agents-md.md",
       "sha256": "47952ed99a3a2a14dcdfd93523211e988ef07976847684d890ffa8748c16dcff",
@@ -363,7 +363,7 @@
     "https://straion.com/product/straion-vs-skills": {
       "description": "Already using custom skills in Claude Code or Cursor? Here's what Straion adds, and why the maintenance problem only grows at team scale.",
       "etag": "\"2d9b9a8549a1326721fce6cabb075fe2-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/product/straion-vs-skills.md",
       "sha256": "5d8607cfcb53a72e2db4a0722798ad4b0c30dcc148f32a7805a5ce8ee3e41351",
@@ -372,7 +372,7 @@
     "https://straion.com/security": {
       "description": "Straion enforces your engineering standards without touching your source code. See the exact data flow, what the CLI sends, EU hosting, and our compliance status.",
       "etag": "\"bbbe22f1d24938e08c6486b5102716e3-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/security.md",
       "sha256": "06b5a086f56e8750cbedbb0d68bb7f38101b1795c3097930a6bbdce4071e59b5",
@@ -381,7 +381,7 @@
     "https://straion.com/solutions/embedded-software": {
       "description": "Straion gives every developer's AI agent the MISRA rules that apply to the task before it writes, and records the reason and approver behind every deviation. Works with Claude Code, Copilot and Cursor.",
       "etag": "\"7fc49b4f96ceccd4522e0d9e2e0268df-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/solutions/embedded-software.md",
       "sha256": "e74f5f9ee4ab0408bdc55458873c81eb8ee614f24e876cf2835ecd0a6b3cd8f9",
@@ -390,14 +390,14 @@
     "https://straion.com/sustainability": {
       "description": "Straion\u2019s sustainability commitment: remote-first collaboration, efficient cloud infrastructure, and inclusive team practices.",
       "etag": "\"e56b2b89664459cb7b500d8f00dce4ce-ssl-df\"",
-      "fetched_at": "2026-08-25T20:42:12+00:00",
+      "fetched_at": "2026-08-25T20:43:35+00:00",
       "last_modified": null,
       "path": "pages/sustainability.md",
       "sha256": "1aa0e480d91dc2db4a76b4ba5e4250b26ccc1ea9979e265b2df9a2be58d14279",
       "title": "Straion \ud83d\udc9a \ud83c\udf0d"
     }
   },
-  "generated_at": "2026-08-25T20:42:12+00:00",
+  "generated_at": "2026-08-25T20:43:35+00:00",
   "nav": [
     {
       "pages": [
