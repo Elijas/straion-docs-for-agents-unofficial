@@ -90,9 +90,9 @@ that changes nothing appends nothing.
 Two workflows, doing deliberately different jobs:
 
 - **`refresh.yml`** (daily at 06:17 UTC, or manual) rebuilds the corpus. If the live site
-  has changed it opens a pull request and auto-merges it, so every update to the cache has
-  a reviewable diff and a trail back to the run that produced it. A run that changes
-  nothing opens nothing.
+  has changed it opens a pull request and merges it, so every update to the cache has a
+  reviewable diff and a trail back to the run that produced it. A run that changes nothing
+  opens nothing.
 - **`verify.yml`** (every push and PR) runs `./sync.py --check`. It fails if the committed
   corpus does not match a fresh build — catching both hand-edited cache files and upstream
   changes that the daily refresh has not yet picked up.
