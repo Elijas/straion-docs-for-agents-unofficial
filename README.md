@@ -101,6 +101,15 @@ Two workflows, doing deliberately different jobs:
 something, not because anything here is wrong. The daily refresh is what keeps that
 window small; re-running it green is a one-command fix.
 
+**The refresh PR is an audit trail, not a gate**, and it is worth knowing why before
+trying to make it one. GitHub deliberately does not trigger workflows from events caused
+by `GITHUB_TOKEN`, so `verify` never runs on a PR the refresh opens. Adding `verify` as a
+required status check on `main` would therefore not gate those PRs — it would strand them,
+waiting forever on a check that never starts. Gating them for real needs the refresh to
+push under a PAT or a GitHub App, which is a credential this repo deliberately does not
+have. What the PR buys today is a reviewable diff and a link back to the run that produced
+it, which is what direct commits to `main` were missing.
+
 **A failing refresh is loud.** If the sync breaks — the site restructures, Cloudflare
 starts refusing the runner, a dependency stops resolving — the workflow opens an issue
 labelled [`sync-failure`](../../issues?q=label%3Async-failure) with the error output, and

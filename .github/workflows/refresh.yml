@@ -129,12 +129,22 @@ jobs:
             --title "Refresh mirror from straion.com" \
             --body-file "${RUNNER_TEMP}/pr-body.md"
 
-          # --auto is the requested path. `main` currently has no required status
-          # checks, so it resolves immediately rather than waiting on CI. If the repo
-          # setting is ever turned back off, --auto errors; merge directly instead of
-          # leaving the PR dangling, and say so rather than exiting 0 quietly.
+          # Try auto-merge first, then merge directly. Today the direct path is the one
+          # that runs: `main` has no branch protection, and GitHub refuses to enable
+          # auto-merge when there is nothing to wait for --
+          #
+          #   GraphQL: Pull request Protected branch rules not configured for this
+          #   branch (enablePullRequestAutoMerge)
+          #
+          # so this is not a misconfiguration to go hunting for. --auto is kept first
+          # because it starts working by itself the day a required check is added.
+          #
+          # Read the caveat in the README before adding one: `verify` does not run on
+          # these PRs (GitHub does not trigger workflows from GITHUB_TOKEN events), so
+          # making it required would leave every refresh PR waiting on a check that
+          # never starts.
           if ! gh pr merge "${BRANCH}" --auto --squash --delete-branch; then
-            echo "::warning::Auto-merge unavailable (repo setting off?); merging directly."
+            echo "::notice::Auto-merge not applicable (no branch protection on main); merging directly."
             gh pr merge "${BRANCH}" --squash --delete-branch
           fi
         env:
