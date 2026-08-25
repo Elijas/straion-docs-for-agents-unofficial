@@ -1,8 +1,11 @@
 # straion-docs-for-agents (unofficial)
 
+[![Refresh mirror](https://github.com/Elijas/straion-docs-for-agents-unofficial/actions/workflows/refresh.yml/badge.svg)](https://github.com/Elijas/straion-docs-for-agents-unofficial/actions/workflows/refresh.yml)
+[![Verify mirror](https://github.com/Elijas/straion-docs-for-agents-unofficial/actions/workflows/verify.yml/badge.svg)](https://github.com/Elijas/straion-docs-for-agents-unofficial/actions/workflows/verify.yml)
+
 Machine-readable mirror of [straion.com](https://straion.com) — all 43 pages, including
 the full `/docs` set — as Markdown, plus a single-file corpus for pasting into a model's
-context.
+context. **Auto-synced daily via GitHub Actions.**
 
 **Unofficial.** Not affiliated with or endorsed by Straion. Content belongs to Straion;
 this repository only reformats what is already published. Canonical source is always
@@ -86,8 +89,10 @@ that changes nothing appends nothing.
 
 Two workflows, doing deliberately different jobs:
 
-- **`refresh.yml`** (daily, or manual) rebuilds and commits when the live site has changed.
-  This is what keeps the cache current.
+- **`refresh.yml`** (daily at 06:17 UTC, or manual) rebuilds the corpus. If the live site
+  has changed it opens a pull request and auto-merges it, so every update to the cache has
+  a reviewable diff and a trail back to the run that produced it. A run that changes
+  nothing opens nothing.
 - **`verify.yml`** (every push and PR) runs `./sync.py --check`. It fails if the committed
   corpus does not match a fresh build — catching both hand-edited cache files and upstream
   changes that the daily refresh has not yet picked up.
@@ -95,6 +100,19 @@ Two workflows, doing deliberately different jobs:
 `verify` compares against the live site, so it can go red because Straion published
 something, not because anything here is wrong. The daily refresh is what keeps that
 window small; re-running it green is a one-command fix.
+
+**A failing refresh is loud.** If the sync breaks — the site restructures, Cloudflare
+starts refusing the runner, a dependency stops resolving — the workflow opens an issue
+labelled [`sync-failure`](../../issues?q=label%3Async-failure) with the error output, and
+comments on that same issue on subsequent failures rather than filing duplicates. The next
+successful refresh closes it. The mirror itself is never left half-written: a failed run
+commits nothing, so `main` stays readable and merely goes stale.
+
+**Testing the refresh without waiting for Straion.** Running the workflow manually with
+`force_change: true` drops one page (`pages/docs/example-prompts.md`) after syncing, purely
+so the run has a real change to carry through the PR path. The next refresh notices the
+page is missing, re-fetches it, and restores it byte-for-byte — the two PRs net out to
+nothing.
 
 ## Scope
 

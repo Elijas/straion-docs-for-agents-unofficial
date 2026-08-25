@@ -1,18 +1,46 @@
 name: Refresh mirror
 
-# Rebuilds the corpus and commits when straion.com has changed. This is what keeps
-# the cached copy current, so `verify` stays green without anyone touching the repo.
+# Rebuilds the corpus and lands changes through a pull request when straion.com has
+# moved. This is what keeps the cached copy current, so `verify` stays green without
+# anyone touching the repo.
+#
+# Three behaviours worth knowing about:
+#
+#   * A run that changes nothing does nothing -- no branch, no PR, no commit.
+#   * A run that FAILS opens (or comments on) a tracking issue, so breakage is loud
+#     instead of a red tick nobody is watching. A later green run closes it again.
+#   * `force_change` exercises the whole PR + automerge path on demand, without
+#     waiting for Straion to publish anything. See the step for how it round-trips.
 on:
   schedule:
     - cron: "17 6 * * *"   # daily, off the hour to avoid the scheduler stampede
   workflow_dispatch:
+    inputs:
+      force_change:
+        description: "Test mode: drop one mirrored page after syncing, so the PR path has a real diff to carry. The next refresh restores it byte-for-byte."
+        type: boolean
+        default: false
 
 permissions:
-  contents: write
+  contents: write        # commit the refreshed corpus, push the branch
+  pull-requests: write   # open the PR and enable automerge
+  issues: write          # raise the failure issue
 
 concurrency:
   group: refresh
   cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  # Watched paths. manifest.json and sync-log.jsonl are deliberately NOT here: their
+  # timestamps churn on every run, so including them would open an empty PR daily.
+  # They are still committed alongside a real change.
+  CORPUS_PATHS: pages llms.txt llms-full.txt
+  # The page force_change drops. Chosen because /docs/example-prompts is `unlisted:
+  # true` -- in the sitemap but absent from the site's own sidebar -- so it is the
+  # least-read page in the corpus.
+  FORCE_CHANGE_PAGE: pages/docs/example-prompts.md
+  FAILURE_LABEL: sync-failure
 
 jobs:
   refresh:
@@ -25,17 +53,151 @@ jobs:
           enable-cache: true
 
       # --locked so a dependency release can never silently change the output.
+      # The log is captured because it is the payload of the failure issue below;
+      # pipefail keeps `tee` from masking sync.py's exit code.
       - name: Rebuild corpus
-        run: uv run --locked ./sync.py
-
-      - name: Commit if the site changed
         run: |
-          if git diff --quiet -- pages llms.txt llms-full.txt; then
-            echo "no upstream changes"
-            exit 0
+          set -o pipefail
+          uv run --locked ./sync.py 2>&1 | tee "${RUNNER_TEMP}/sync.log"
+
+      # Deletes one mirrored page AFTER the sync, so the run has a genuine diff in a
+      # watched path and the PR + automerge path executes for real.
+      #
+      # Deleting rather than editing is deliberate: this mirror's contract is that
+      # pages reproduce Straion's text unmodified, so injecting a marker line would
+      # publish words Straion never wrote. A brief omission does not.
+      #
+      # It round-trips to a no-op without anyone intervening: sync.py compares each
+      # page on disk against manifest.json before trusting an ETag, so the next run
+      # sees the file missing, re-fetches it, and rewrites it byte-identically.
+      - name: Force a change (test mode)
+        if: inputs.force_change
+        run: |
+          if [ ! -f "${FORCE_CHANGE_PAGE}" ]; then
+            echo "::error::${FORCE_CHANGE_PAGE} is already absent -- force_change has nothing to drop."
+            echo "::error::Either an earlier test run has not been repaired yet, or the page left the sitemap."
+            exit 1
           fi
+          rm "${FORCE_CHANGE_PAGE}"
+          echo "::warning::Test mode: dropped ${FORCE_CHANGE_PAGE}. The next refresh restores it."
+
+      # `git status --porcelain` rather than `git diff`: diff reports tracked files
+      # only, so a page Straion has just published arrives untracked and a diff-based
+      # check would call it "no changes" and silently drop it.
+      - name: Detect drift
+        id: drift
+        run: |
+          if [ -z "$(git status --porcelain -- ${CORPUS_PATHS})" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "no upstream changes"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git status --short -- ${CORPUS_PATHS}
+          fi
+
+      - name: Open a pull request and merge it
+        if: steps.drift.outputs.changed == 'true'
+        run: |
+          BRANCH="refresh/${GITHUB_RUN_ID}"   # unique per run, so nothing is ever force-pushed
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add pages llms.txt llms-full.txt manifest.json sync-log.jsonl
+          git switch -c "${BRANCH}"
+          git add ${CORPUS_PATHS} manifest.json sync-log.jsonl
           git commit -m "Refresh mirror from straion.com"
-          git push
+          git push origin "${BRANCH}"
+
+          {
+            echo "Automated refresh from [straion.com](https://straion.com)."
+            echo
+            echo '```'
+            git diff --stat HEAD~1 -- ${CORPUS_PATHS} manifest.json sync-log.jsonl
+            echo '```'
+            echo
+            echo "Opened by \`refresh.yml\` run [\`${GITHUB_RUN_ID}\`](${RUN_URL})."
+            if [ "${FORCED}" = "true" ]; then
+              echo
+              echo "**Test mode.** This run dropped \`${FORCE_CHANGE_PAGE}\` on purpose to exercise"
+              echo "this path. The next refresh re-fetches the page and restores it byte-for-byte,"
+              echo "so the pair of PRs nets out to no change."
+            fi
+          } > "${RUNNER_TEMP}/pr-body.md"
+
+          gh pr create \
+            --base main --head "${BRANCH}" \
+            --title "Refresh mirror from straion.com" \
+            --body-file "${RUNNER_TEMP}/pr-body.md"
+
+          # --auto is the requested path. `main` currently has no required status
+          # checks, so it resolves immediately rather than waiting on CI. If the repo
+          # setting is ever turned back off, --auto errors; merge directly instead of
+          # leaving the PR dangling, and say so rather than exiting 0 quietly.
+          if ! gh pr merge "${BRANCH}" --auto --squash --delete-branch; then
+            echo "::warning::Auto-merge unavailable (repo setting off?); merging directly."
+            gh pr merge "${BRANCH}" --squash --delete-branch
+          fi
+        env:
+          FORCED: ${{ inputs.force_change }}
+
+      # A scheduled job that breaks is invisible: nobody watches a red tick on a repo
+      # they are not working in. One deduplicated issue is the loud signal. Note this
+      # step covers the WHOLE job, not just the sync -- a push or merge failure is
+      # just as silent.
+      - name: Report a failure as an issue
+        if: failure()
+        run: |
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          LOG="${RUNNER_TEMP}/sync.log"
+
+          gh label create "${FAILURE_LABEL}" --color B60205 \
+            --description "Automated mirror refresh is failing" --force
+
+          {
+            echo "The scheduled mirror refresh failed."
+            echo
+            echo "* Run: ${RUN_URL}"
+            echo "* Trigger: \`${GITHUB_EVENT_NAME}\`"
+            echo "* Commit: \`${GITHUB_SHA}\`"
+            echo
+            echo "Last output from \`sync.py\`:"
+            echo
+            echo '```'
+            if [ -s "${LOG}" ]; then
+              tail -n 40 "${LOG}"
+            else
+              echo "(no sync output captured -- the job failed before or outside the sync step;"
+              echo " see the run log linked above)"
+            fi
+            echo '```'
+            echo
+            echo "The mirror on \`main\` is unchanged and still readable; it is just going stale."
+            echo "This issue closes itself once a refresh succeeds."
+          } > "${RUNNER_TEMP}/issue-body.md"
+
+          EXISTING="$(gh issue list --label "${FAILURE_LABEL}" --state open \
+                        --limit 1 --json number --jq '.[0].number // empty')"
+
+          if [ -n "${EXISTING}" ]; then
+            gh issue comment "${EXISTING}" --body-file "${RUNNER_TEMP}/issue-body.md"
+            echo "::notice::Commented on existing failure issue #${EXISTING}"
+          else
+            gh issue create \
+              --title "Mirror refresh is failing" \
+              --label "${FAILURE_LABEL}" \
+              --body-file "${RUNNER_TEMP}/issue-body.md"
+          fi
+
+      # Closing the loop matters as much as opening it: an issue that outlives the
+      # breakage trains everyone to ignore the next one.
+      - name: Close the failure issue once green
+        if: success()
+        run: |
+          RUN_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          EXISTING="$(gh issue list --label "${FAILURE_LABEL}" --state open \
+                        --limit 1 --json number --jq '.[0].number // empty')"
+          if [ -n "${EXISTING}" ]; then
+            gh issue close "${EXISTING}" \
+              --comment "Refresh succeeded in ${RUN_URL} -- closing."
+            echo "::notice::Closed failure issue #${EXISTING}"
+          fi
