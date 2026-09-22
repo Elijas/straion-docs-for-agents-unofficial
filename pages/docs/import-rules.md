@@ -15,7 +15,7 @@ Importing rules is how you get your engineering standards into Straion. Straion 
 There are two ways to import:
 
 - **From the web app**: paste text or upload a file.
-- **From the CLI**: connect your repository with `straion source repo connect`. If you only want to import rules, you can instead run `/straion:import-rules` inside the repository.
+- **From the CLI**: connect your repository with `straion source repo connect`. If you only want to import rules, you can instead run `/straion-import-rules` inside the repository.
 
 ## Import from the web app
 
@@ -73,10 +73,10 @@ Before you select, switch that agent to a frontier model. You get the best rules
 Straion then launches the selected agent and runs the import skill for you:
 
 ```text
-/straion:import-rules --skip-precheck
+/straion-import-rules --skip-precheck
 ```
 
-The `--skip-precheck` flag is added automatically — the CLI already confirmed the repository has no rules in step 1, so the agent goes straight to discovering sources. Cursor has no CLI, so selecting it prints instructions to run `/straion:import-rules` from the Cursor chat yourself instead of launching automatically.
+The `--skip-precheck` flag is added automatically — the CLI already confirmed the repository has no rules in step 1, so the agent goes straight to discovering sources. Cursor has no CLI, so selecting it prints instructions to run `/straion-import-rules` from the Cursor chat yourself instead of launching automatically.
 
 #### 3. The agent discovers your rule sources
 
@@ -102,17 +102,17 @@ The agent converts each source into one or more **collections**, grouped by doma
 
 The agent validates every collection and uploads it with the `straion import-rules` command. When it finishes, it prints a summary of what was created:
 
-![The Straion CLI printing a &#x27;Created collections&#x27; summary table, listing each rule collection and the number of rules it contains](https://straion.com/.netlify/images?url=_astro%2F03-created-collections.ChjMU2b4.jpg&w=806&h=510&dpl=6a8da20a9a458300086d2212)
+![The Straion CLI printing a &#x27;Created collections&#x27; summary table, listing each rule collection and the number of rules it contains](https://straion.com/.netlify/images?url=_astro%2F03-created-collections.ChjMU2b4.jpg&w=806&h=510&dpl=6ab1822de609eb0008033e19)
 
 ## Review your imported rules
 
 Open the Straion **Rules** page to review what was imported.
 
-![The Straion Rules page listing imported collections such as Backend Tests, Playwright Patterns, Zod DTOs, and Node Definitions, each with a description and an &#x27;Extracted from&#x27; repository badge](https://straion.com/.netlify/images?url=_astro%2F04-rules-list.CQ8CKef2.jpg&w=1080&h=596&dpl=6a8da20a9a458300086d2212)
+![The Straion Rules page listing imported collections such as Backend Tests, Playwright Patterns, Zod DTOs, and Node Definitions, each with a description and an &#x27;Extracted from&#x27; repository badge](https://straion.com/.netlify/images?url=_astro%2F04-rules-list.CQ8CKef2.jpg&w=1080&h=596&dpl=6ab1822de609eb0008033e19)
 
-![A single collection opened in Straion, showing its rules numbered in order, each beginning with a strength word such as MUST or SHOULD](https://straion.com/.netlify/images?url=_astro%2F05-collection-rules.D0p0r1Ur.jpg&w=1080&h=596&dpl=6a8da20a9a458300086d2212)
+![A single collection opened in Straion, showing its rules numbered in order, each beginning with a strength word such as MUST or SHOULD](https://straion.com/.netlify/images?url=_astro%2F05-collection-rules.D0p0r1Ur.jpg&w=1080&h=596&dpl=6ab1822de609eb0008033e19)
 
-Imported rules are immediately available to the Straion workflows — they are matched against your specs, plans, and code whenever you [develop with rules](develop-with-rules.md) or [validate code](validate-code.md).
+Imported rules are immediately available to the Straion workflows — they are matched against your specs, plans, and code whenever you [implement with rules](implement-with-rules.md) or [validate code](validate-code.md).
 
 ## Migrating skills and `AGENTS.md` to Straion
 
@@ -141,7 +141,7 @@ To avoid accidental duplicates, running `straion` only offers to import when the
 To refresh your rules after your standards change, invoke the import skill directly from your agent:
 
 ```text
-/straion:import-rules
+/straion-import-rules
 ```
 
 Without `--skip-precheck`, the skill first runs a precheck. If it finds existing collections for the repository, it asks whether to re-import:

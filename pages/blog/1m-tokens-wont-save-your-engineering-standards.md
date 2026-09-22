@@ -346,7 +346,7 @@ Sourcegraph. (2026). *CodeScaleBench: Testing coding agents on large codebases a
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6a8da20a9a458300086d2212) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
 
 Written by Lukas Holzer
 

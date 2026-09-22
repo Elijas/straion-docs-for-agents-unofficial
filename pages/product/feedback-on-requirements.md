@@ -4,7 +4,7 @@ source: https://straion.com/product/feedback-on-requirements
 description: "Capture and manage your organization's requirements, and ensure your software specifications and code stay aligned every step of the way."
 ---
 
-![An image of a female in a business context.](https://straion.com/.netlify/images?url=_astro%2Fwoman-2.CYrnn16P.png&fm=png&w=433&h=600&dpl=6a8da20a9a458300086d2212) 
+![An image of a female in a business context.](https://straion.com/.netlify/images?url=_astro%2Fwoman-2.CYrnn16P.png&fm=png&w=433&h=600&dpl=6ab1822de609eb0008033e19) 
 
 # Transform vague ideas into actionable requirements
 

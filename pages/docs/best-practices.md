@@ -5,7 +5,7 @@ description: "How to write clear, well-formed rules that AI coding agents can in
 section: "Rules"
 order: 7
 prev: rule-file-format.md
-next: develop-with-rules.md
+next: implement-with-rules.md
 ---
 
 # Best practices

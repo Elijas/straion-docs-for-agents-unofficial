@@ -42,7 +42,34 @@ Double-check your user token or generate a new one in the [User Settings](http:/
 
 ### Agent setup finished, but skills are not available
 
-Try upgrading your agent if you have ran `straion` and performed the agent setup or ran `straion setup`, but the skills are not available inside your agent.
+First, upgrade your agent to a supported version (see the table above) and run `straion setup` again.
+
+If the skills are still missing in Claude Code, check for a name collision. Straion installs its skills into `~/.claude/skills`, the directory Claude Code scans for user-level skills:
+
+```text
+~/.claude/skills/
+├── straion-import-rules
+├── straion-check-compliance
+└── straion-implement
+```
+
+Setup skips any name that is already taken, so an unrelated skill called `straion-implement` silently blocks ours. Rename or remove the conflicting directory and run `straion setup` again.
+
+A skill in your repository shadows a user-level skill of the same name. If `.claude/skills/` in the project defines one of the names above, the project copy wins. Rename it, or remove it if it was a leftover.
+
+### The agent lists a skill twice, or under an old name
+
+Straion skills used to live inside the plugin directory, where Claude Code loaded them under a `straion:` prefix. They now live in `~/.claude/skills` and carry a `straion-` prefix in the name itself:
+
+| Old | New |
+| --- | --- |
+| `/straion:import-rules` | `/straion-import-rules` |
+| `/validating-rules` | `/straion-check-compliance` |
+| `/developing-with-rules` | `/straion-implement` |
+
+Run `straion setup` to pick up the new set. Setup also deletes the copies an earlier install left inside the plugin, which is what caused the duplicates. The plugin itself stays: it still provides Straion’s hooks.
+
+Start a fresh agent session afterwards, since skills are loaded at session start.
 
 ## SAML SSO
 
