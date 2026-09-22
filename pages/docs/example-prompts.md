@@ -13,14 +13,14 @@ Before you start, make sure you’ve completed the Straion setup — see [Gettin
 
 ## Build a feature end-to-end
 
-See [Develop with rules](develop-with-rules.md) for details.
+See [Implement with rules](implement-with-rules.md) for details.
 
 ```text
-/developing-with-rules I want to add a password reset flow using email verification
+/straion-implement I want to add a password reset flow using email verification
 ```
 
 ```text
-/developing-with-rules Here's my spec, validate and implement it: [paste spec]
+/straion-implement Here's my spec, validate and implement it: [paste spec]
 ```
 
 ```text
@@ -29,10 +29,10 @@ Implement and validate the following task using Straion: [task description]
 
 ## Plan an implementation
 
-See [Develop with rules](develop-with-rules.md) for details.
+See [Implement with rules](implement-with-rules.md) for details.
 
 ```text
-/developing-with-rules Break down this spec into tasks, don't implement yet: [paste spec]
+/straion-implement Break down this spec into tasks, don't implement yet: [paste spec]
 ```
 
 ## Validate a spec or implementation plan
@@ -40,7 +40,7 @@ See [Develop with rules](develop-with-rules.md) for details.
 See [Validate specs](validate-specs.md) and [Validate implementation plans](validate-implementation-plan.md) for details.
 
 ```text
-/validating-rules Does this spec meet our rules? [paste spec]
+/straion-check-compliance Does this spec meet our rules? [paste spec]
 ```
 
 ```text
@@ -56,7 +56,7 @@ Validate the implementation plan against my rules using Straion
 See [Validate code](validate-code.md) for details.
 
 ```text
-/validating-rules Check the changes in PR #42 against our rules
+/straion-check-compliance Check the changes in PR #42 against our rules
 ```
 
 ```text

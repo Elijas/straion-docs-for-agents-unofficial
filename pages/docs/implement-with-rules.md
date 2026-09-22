@@ -1,16 +1,16 @@
 ---
-title: "Developing with rules"
-source: https://straion.com/docs/develop-with-rules
-description: "Use the developing-with-rules workflow to have Straion select relevant rules, validate your plan, generate constrained code, and check the output before you commit."
+title: "Implement with rules"
+source: https://straion.com/docs/implement-with-rules
+description: "Use the straion-implement workflow to have Straion select relevant rules, validate your plan, generate constrained code, and check the output before you commit."
 section: "Using Straion"
 order: 8
 prev: best-practices.md
 next: validate-specs.md
 ---
 
-# Developing with rules
+# Implement with rules
 
-The `/developing-with-rules` workflow guides AI-assisted development from the start. Straion selects the rules most relevant to your task, validates your existing spec or plan against those rules, builds an implementation plan constrained by those rules, generates code under those constraints, and then validates the output before you commit.
+The `/straion-implement` workflow guides AI-assisted development from the start. Straion selects the rules most relevant to your task, validates your existing spec or plan against those rules, builds an implementation plan constrained by those rules, generates code under those constraints, and then validates the output before you commit.
 
 The result: compliant code, without manual cross-referencing of your team’s standards.
 
@@ -24,7 +24,7 @@ The result: compliant code, without manual cross-referencing of your team’s st
 Trigger the skill directly:
 
 ```text
-/developing-with-rules I want to add a password reset flow using email verification
+/straion-implement I want to add a password reset flow using email verification
 ```
 
 If you prefer not to use the slash command, you can phrase the request naturally and Claude will invoke the Straion skill automatically:
@@ -45,7 +45,7 @@ Straion queries your rules and matches rules to the task context, the feature de
 
 ### 2. Spec or task validation
 
-If you provide a spec or existing task definition, Straion validates it against the matched rules before planning begins. This catches gaps or conflicts at the cheapest possible stage — before any code is written. See [Validate specs](validate-specs.md) for details on how this works.
+If you provide a spec or existing task definition, Straion validates it against the matched rules before planning begins. This catches gaps or conflicts at the cheapest possible stage, before any code is written. See [Validate specs](validate-specs.md) for details on how this works.
 
 ### 3. Implementation planning
 
@@ -64,17 +64,17 @@ After code is generated, Straion validates the output against the same matched r
 ### From a feature description
 
 ```text
-/developing-with-rules Implement issue #123
+/straion-implement Implement issue #123
 ```
 
 ### From an existing spec
 
 ```text
-/developing-with-rules Here's my spec, validate and implement it: [paste spec]
+/straion-implement Here's my spec, validate and implement it: [paste spec]
 ```
 
 ### Break down into tasks without implementing yet
 
 ```text
-/developing-with-rules Break down this spec into tasks, don't implement yet: [paste spec]
+/straion-implement Break down this spec into tasks, don't implement yet: [paste spec]
 ```

@@ -18,20 +18,20 @@ Code validation runs your rules against actual implementation: a pull request di
 
 ### Where it fits in the workflow
 
-Code validation is the last checkpoint before a change ships. It runs after implementation (whether by a human or AI) and before the change is merged. When used as part of [Develop with rules](develop-with-rules.md), code is validated automatically as the final step. You can also trigger it manually on any PR or diff.
+Code validation is the last checkpoint before a change ships. It runs after implementation (whether by a human or AI) and before the change is merged. When used as part of [Implement with rules](implement-with-rules.md), code is validated automatically as the final step. You can also trigger it manually on any PR or diff.
 
 ## How to trigger
 
 Validate a PR by number:
 
 ```text
-/validating-rules Check the changes in PR #42 against our rules
+/straion-check-compliance Check the changes in PR #42 against our rules
 ```
 
 Validate current uncommitted changes:
 
 ```text
-/validating-rules Validate the code changes using Straion
+/straion-check-compliance Validate the code changes using Straion
 ```
 
 Natural language alternatives:

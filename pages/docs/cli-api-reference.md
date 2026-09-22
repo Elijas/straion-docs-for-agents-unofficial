@@ -72,7 +72,7 @@ straion setup
 
 ## `straion import-rules`
 
-Extract rules from the current repository’s instruction files and upload them as structured collections. This command is normally invoked for you by the `/straion:import-rules` agent skill rather than run by hand. Requires a git repository with an `origin` remote.
+Extract rules from the current repository’s instruction files and upload them as structured collections. This command is normally invoked for you by the `/straion-import-rules` agent skill rather than run by hand. Requires a git repository with an `origin` remote.
 
 ```plaintext
 straion import-rules [options]

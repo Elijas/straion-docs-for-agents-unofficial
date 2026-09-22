@@ -23,7 +23,7 @@ Catching a rule violation in a plan is far cheaper than catching it in code. Whe
 Trigger the skill directly:
 
 ```text
-/validating-rules Validate the implementation plan against my rules using Straion
+/straion-check-compliance Validate the implementation plan against my rules using Straion
 ```
 
 Natural language alternatives:

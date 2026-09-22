@@ -62,7 +62,7 @@ Setup offers to import your existing standards: security requirements, architect
 
 ## 4. Start using Straion
 
-Straion extends your coding agent with skills: specialized workflows that validate code against your rules, break down specs into tasks, and check pull requests for compliance. Skills are invoked using slash commands (e.g. `/developing-with-rules`), which guarantees the skill is loaded before your agent starts working. Any text after the slash command provides context for what the skill should do. Your agent may also invoke skills automatically based on your prompt and other skills it has loaded.
+Straion extends your coding agent with skills: specialized workflows that validate code against your rules, break down specs into tasks, and check pull requests for compliance. Skills are invoked using slash commands (e.g. `/straion-implement`), which guarantees the skill is loaded before your agent starts working. Any text after the slash command provides context for what the skill should do. Your agent may also invoke skills automatically based on your prompt and other skills it has loaded.
 
 Find ready-to-use prompts to get the most out of Straion in the [example prompts](example-prompts.md) guide.
 

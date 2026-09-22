@@ -21,7 +21,7 @@ Listed in reading order, grouped as on the site.
 - [Best practices](https://straion.com/docs/best-practices): How to write clear, well-formed rules that AI coding agents can interpret correctly
 
 ### Using Straion
-- [Developing with rules](https://straion.com/docs/develop-with-rules): Use the developing-with-rules workflow to have Straion select relevant rules, validate your plan, generate constrained code, and check the output before you commit.
+- [Implement with rules](https://straion.com/docs/implement-with-rules): Use the straion-implement workflow to have Straion select relevant rules, validate your plan, generate constrained code, and check the output before you commit.
 - [Validate specs](https://straion.com/docs/validate-specs): Check specs, RFCs, and design docs against your rules before implementation begins
 - [Validate implementation plans](https://straion.com/docs/validate-implementation-plan): Catch rule violations in an implementation plan before any code is written
 - [Validate code](https://straion.com/docs/validate-code): Validate a PR, diff, or AI-generated changes against your rules before merge

@@ -4,7 +4,7 @@ source: https://straion.com/docs/validate-specs
 description: "Check specs, RFCs, and design docs against your rules before implementation begins"
 section: "Using Straion"
 order: 9
-prev: develop-with-rules.md
+prev: implement-with-rules.md
 next: validate-implementation-plan.md
 ---
 
@@ -27,7 +27,7 @@ A spec is any artifact that describes what will be built before implementation b
 Trigger the skill directly:
 
 ```text
-/validating-rules Does this spec meet our rules? [paste spec]
+/straion-check-compliance Does this spec meet our rules? [paste spec]
 ```
 
 Natural language alternatives:
