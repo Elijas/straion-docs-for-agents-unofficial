@@ -128,11 +128,11 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Fabian Friedl
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Katrin Freihofner
 

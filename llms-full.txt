@@ -281,15 +281,15 @@ The agent converts each source into one or more **collections**, grouped by doma
 
 The agent validates every collection and uploads it with the `straion import-rules` command. When it finishes, it prints a summary of what was created:
 
-![The Straion CLI printing a &#x27;Created collections&#x27; summary table, listing each rule collection and the number of rules it contains](https://straion.com/.netlify/images?url=_astro%2F03-created-collections.ChjMU2b4.jpg&w=806&h=510&dpl=6ab1822de609eb0008033e19)
+![The Straion CLI printing a &#x27;Created collections&#x27; summary table, listing each rule collection and the number of rules it contains](https://straion.com/.netlify/images?url=_astro%2F03-created-collections.ChjMU2b4.jpg&w=806&h=510&dpl=6ab5b039e80f060008ac4c73)
 
 ## Review your imported rules
 
 Open the Straion **Rules** page to review what was imported.
 
-![The Straion Rules page listing imported collections such as Backend Tests, Playwright Patterns, Zod DTOs, and Node Definitions, each with a description and an &#x27;Extracted from&#x27; repository badge](https://straion.com/.netlify/images?url=_astro%2F04-rules-list.CQ8CKef2.jpg&w=1080&h=596&dpl=6ab1822de609eb0008033e19)
+![The Straion Rules page listing imported collections such as Backend Tests, Playwright Patterns, Zod DTOs, and Node Definitions, each with a description and an &#x27;Extracted from&#x27; repository badge](https://straion.com/.netlify/images?url=_astro%2F04-rules-list.CQ8CKef2.jpg&w=1080&h=596&dpl=6ab5b039e80f060008ac4c73)
 
-![A single collection opened in Straion, showing its rules numbered in order, each beginning with a strength word such as MUST or SHOULD](https://straion.com/.netlify/images?url=_astro%2F05-collection-rules.D0p0r1Ur.jpg&w=1080&h=596&dpl=6ab1822de609eb0008033e19)
+![A single collection opened in Straion, showing its rules numbered in order, each beginning with a strength word such as MUST or SHOULD](https://straion.com/.netlify/images?url=_astro%2F05-collection-rules.D0p0r1Ur.jpg&w=1080&h=596&dpl=6ab5b039e80f060008ac4c73)
 
 Imported rules are immediately available to the Straion workflows — they are matched against your specs, plans, and code whenever you [implement with rules](implement-with-rules.md) or [validate code](validate-code.md).
 
@@ -943,13 +943,13 @@ This page covers inviting people manually. Straion also supports automatic provi
 
 From any page, click the **Invite Users** entry in the bottom-left navigation.
 
-![The Rules page with the Invite Users navigation highlighted in the bottom-left sidebar](https://straion.com/.netlify/images?url=_astro%2F01-getting-started.nzrNzJDY.jpg&w=3248&h=2112&dpl=6ab1822de609eb0008033e19)
+![The Rules page with the Invite Users navigation highlighted in the bottom-left sidebar](https://straion.com/.netlify/images?url=_astro%2F01-getting-started.nzrNzJDY.jpg&w=3248&h=2112&dpl=6ab5b039e80f060008ac4c73)
 
 ## 2. Add email addresses
 
 In the **Invite people** dialog, enter the email addresses of the people you want to invite. You can add several at once by separating them with commas, then click **Invite**.
 
-![The &#x27;Invite people to demo&#x27; dialog with two comma-separated email addresses entered](https://straion.com/.netlify/images?url=_astro%2F02-invite-dialog.WIgNDhwQ.jpg&w=3824&h=2474&dpl=6ab1822de609eb0008033e19)
+![The &#x27;Invite people to demo&#x27; dialog with two comma-separated email addresses entered](https://straion.com/.netlify/images?url=_astro%2F02-invite-dialog.WIgNDhwQ.jpg&w=3824&h=2474&dpl=6ab5b039e80f060008ac4c73)
 
 ## 3. Manage organization invites
 
@@ -959,7 +959,7 @@ Invited users appear under **Organization Invites** with a **Pending** status. E
 - **Copy invite link** — copy a direct link to your clipboard and share it with the invitee yourself.
 - **Delete** — cancel a pending invite.
 
-![The User Management page showing pending organization invites with Copy Invite Link and Resend Invite actions highlighted](https://straion.com/.netlify/images?url=_astro%2F03-pending-invites.Cc7HLmPl.jpg&w=3824&h=2474&dpl=6ab1822de609eb0008033e19)
+![The User Management page showing pending organization invites with Copy Invite Link and Resend Invite actions highlighted](https://straion.com/.netlify/images?url=_astro%2F03-pending-invites.Cc7HLmPl.jpg&w=3824&h=2474&dpl=6ab5b039e80f060008ac4c73)
 
 ## Members and roles
 
@@ -990,7 +990,7 @@ You must be an **organization admin** in Straion. Open **Identity & provisioning
 - **Single sign-on URL** (also called ACS URL, Reply URL, or Consumer URL)
 - **Audience URI** (also called SP Entity ID or Identifier)
 
-![The Identity &#x26; provisioning page showing the Single sign-on URL and Audience URI copy fields and the empty SAML connection form](https://straion.com/.netlify/images?url=_astro%2F02-identity-page.Iyxtyg1V.jpg&w=3740&h=2452&dpl=6ab1822de609eb0008033e19)
+![The Identity &#x26; provisioning page showing the Single sign-on URL and Audience URI copy fields and the empty SAML connection form](https://straion.com/.netlify/images?url=_astro%2F02-identity-page.Iyxtyg1V.jpg&w=3740&h=2452&dpl=6ab5b039e80f060008ac4c73)
 
 Keep this page open — you’ll copy these two values into your IdP, and bring the IdP’s metadata back here.
 
@@ -1000,11 +1000,11 @@ Keep this page open — you’ll copy these two values into your IdP, and bring 
 
 In the Okta Admin Console, go to **Applications → Applications → Create App Integration**, choose **SAML 2.0**, and click **Next**.
 
-![Okta&#x27;s Create a new app integration dialog with the SAML 2.0 sign-in method selected](https://straion.com/.netlify/images?url=_astro%2F05-okta-create-app.BGo6uNkU.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![Okta&#x27;s Create a new app integration dialog with the SAML 2.0 sign-in method selected](https://straion.com/.netlify/images?url=_astro%2F05-okta-create-app.BGo6uNkU.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 Give the app a name (e.g. “Straion”) on the General Settings step and continue.
 
-![Okta&#x27;s Create SAML Integration wizard with the first step General Settings](https://straion.com/.netlify/images?url=_astro%2Fokta-fill-application-name.BRyrD9Zp.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![Okta&#x27;s Create SAML Integration wizard with the first step General Settings](https://straion.com/.netlify/images?url=_astro%2Fokta-fill-application-name.BRyrD9Zp.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 Hit the “Next” button to get to the “Configure SAML” page.
 
@@ -1019,7 +1019,7 @@ On the **Configure SAML** step, enter the values from your Identity & provisioni
 | Name ID format | **EmailAddress** |
 | Application username | **Email** |
 
-![Okta&#x27;s Configure SAML step with the Straion sign-on URL, audience URI, EmailAddress name ID format, and Email application username filled in](https://straion.com/.netlify/images?url=_astro%2F06-okta-configure-saml.BQRAOdjI.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![Okta&#x27;s Configure SAML step with the Straion sign-on URL, audience URI, EmailAddress name ID format, and Email application username filled in](https://straion.com/.netlify/images?url=_astro%2F06-okta-configure-saml.BQRAOdjI.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 Leave the remaining defaults, finish the wizard, and mark it as an internal app on the Feedback step.
 
@@ -1031,7 +1031,7 @@ On the app’s **Sign On** tab, copy the **Metadata URL** from the *Metadata det
 
 Back on the Identity & provisioning page, paste the metadata URL into the **Metadata URL** field. Straion fetches the metadata and fills the **Metadata XML** field automatically.
 
-![The Straion SAML form with the Okta metadata URL entered and the metadata XML fetched automatically](https://straion.com/.netlify/images?url=_astro%2F03-metadata-filled.BGihVkFu.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![The Straion SAML form with the Okta metadata URL entered and the metadata XML fetched automatically](https://straion.com/.netlify/images?url=_astro%2F03-metadata-filled.BGihVkFu.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 Click **Create SAML Connection**. The form switches to its connected state — your SSO setup is live.
 
@@ -1041,13 +1041,13 @@ Click **Create SAML Connection**. The form switches to its connected state — y
 
 In the [Entra admin center](https://entra.microsoft.com), go to **Entra ID → Enterprise applications → New application → Create your own application**. Name it (e.g. “Straion”), keep *“Integrate any other application you don’t find in the gallery (Non-gallery)”* selected, and click **Create**.
 
-![Entra&#x27;s Create your own application panel with the name Straion and the non-gallery option selected](https://straion.com/.netlify/images?url=_astro%2F08-entra-create-app.BKQJv0oq.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![Entra&#x27;s Create your own application panel with the name Straion and the non-gallery option selected](https://straion.com/.netlify/images?url=_astro%2F08-entra-create-app.BKQJv0oq.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 ### 2. Choose SAML as the sign-on method
 
 In the new application, open **Single sign-on** in the left menu and pick the **SAML** tile.
 
-![Entra&#x27;s single sign-on method selection with the SAML option](https://straion.com/.netlify/images?url=_astro%2F09-entra-sso-method.CW4YgS9P.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![Entra&#x27;s single sign-on method selection with the SAML option](https://straion.com/.netlify/images?url=_astro%2F09-entra-sso-method.CW4YgS9P.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 ### 3. Configure the SAML settings
 
@@ -1060,7 +1060,7 @@ In **Basic SAML Configuration**, click **Edit** and enter the values from your I
 
 Save. In **Attributes & Claims**, the defaults work when your team’s User Principal Names are their email addresses; if not, set the **Unique User Identifier (Name ID)** claim to `user.mail`.
 
-![Entra&#x27;s SAML-based sign-on page with the Straion identifier, reply URL, claims, and signing certificate configured](https://straion.com/.netlify/images?url=_astro%2F10-entra-saml-config.BEX55F7t.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![Entra&#x27;s SAML-based sign-on page with the Straion identifier, reply URL, claims, and signing certificate configured](https://straion.com/.netlify/images?url=_astro%2F10-entra-saml-config.BEX55F7t.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 > **Note:** Entra requires the Identifier to be unique per tenant. If you see *“Please enter an identifier which is unique within your organization”*, another enterprise application already uses your Audience URI — reuse that application instead of creating a second one.
 
@@ -1103,7 +1103,7 @@ Once the connection exists, your team has three ways in:
 - **Direct link** — share `https://straion.app/auth/sso?subdomain=<your-subdomain>` with your team; the subdomain arrives prefilled.
 - **From the IdP dashboard** — users click the Straion tile in their IdP portal (e.g. the Okta End-User Dashboard) and land in Straion directly.
 
-![The Single sign-on login page asking for the organization subdomain](https://straion.com/.netlify/images?url=_astro%2F07-sso-login.DfCdfJrm.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![The Single sign-on login page asking for the organization subdomain](https://straion.com/.netlify/images?url=_astro%2F07-sso-login.DfCdfJrm.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 After authenticating with the IdP, users land in your Straion organization — no Straion password involved.
 
@@ -1139,14 +1139,14 @@ SCIM pairs naturally with [SAML SSO](sso.md): SCIM creates and deactivates the a
 
 You must be an **organization admin**. Open **Identity & provisioning** from the organization menu and scroll to **SCIM provisioning**. Give the connection a name, pick your provider — **Okta**, **Entra ID**, **OneLogin**, **JumpCloud**, or **Generic SCIM v2.0** for any other SCIM 2.0-compliant IdP — and click **Create SCIM Connection**.
 
-![The SCIM provisioning form with the connection type dropdown open, listing Entra ID, OneLogin, Okta, JumpCloud, and Generic SCIM v2.0](https://straion.com/.netlify/images?url=_astro%2F01-connection-types.sjWhLOyO.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![The SCIM provisioning form with the connection type dropdown open, listing Entra ID, OneLogin, Okta, JumpCloud, and Generic SCIM v2.0](https://straion.com/.netlify/images?url=_astro%2F01-connection-types.sjWhLOyO.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 The connection reveals the two values your IdP needs:
 
 - **SCIM Endpoint** — the base URL your IdP pushes provisioning requests to
 - **SCIM Secret** — the bearer token that authenticates those requests. Treat it like a password; use the copy button to grab it.
 
-![The created SCIM connection showing the SCIM endpoint URL and the masked SCIM secret with reveal and copy buttons](https://straion.com/.netlify/images?url=_astro%2F02-endpoint-and-secret.Csvi6YC2.jpg&w=3832&h=2544&dpl=6ab1822de609eb0008033e19)
+![The created SCIM connection showing the SCIM endpoint URL and the masked SCIM secret with reveal and copy buttons](https://straion.com/.netlify/images?url=_astro%2F02-endpoint-and-secret.Csvi6YC2.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
 
 > Deleting the connection invalidates the secret immediately. To rotate it, delete the connection, create a new one, and update your IdP with the new values.
 
@@ -1617,7 +1617,7 @@ and when. Your next audit gets an answer instead of a shrug.
 
 [Read how to catch violations before review](blog/rule-violations-code-review.md)
 
-   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6ab1822de609eb0008033e19)
+   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6ab5b039e80f060008ac4c73)
 
 ---
 
@@ -1761,7 +1761,7 @@ Catch mistakes before they cost tokens. Validate your AI's proposed approach aga
 
 Claude Code, GitHub Copilot & Cursor ready. Install the Straion CLI globally and add the skill. Integrates with your existing AI coding workflow in minutes.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ab1822de609eb0008033e19)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ab1822de609eb0008033e19)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ab1822de609eb0008033e19)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ab5b039e80f060008ac4c73)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ab5b039e80f060008ac4c73)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ab5b039e80f060008ac4c73)
 
 ### Rules Live in Your Git
 
@@ -1800,7 +1800,7 @@ Partners
 
 ## Shaping the future with our pilot partners
 
-[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6ab1822de609eb0008033e19)](https://www.dynatrace.com/)
+[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6ab5b039e80f060008ac4c73)](https://www.dynatrace.com/)
 
 Ready to join?
 
@@ -1815,9 +1815,9 @@ Funding
 
 ## Supported & funded by
 
-[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ab1822de609eb0008033e19)](https://marathon.vc/)
+[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ab5b039e80f060008ac4c73)](https://marathon.vc/)
 
-[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6ab1822de609eb0008033e19)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6ab1822de609eb0008033e19) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6ab1822de609eb0008033e19)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6ab1822de609eb0008033e19)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6ab1822de609eb0008033e19)](https://daytona.io/startups?utm_source=straion.com)
+[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6ab5b039e80f060008ac4c73)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6ab5b039e80f060008ac4c73) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6ab5b039e80f060008ac4c73)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6ab5b039e80f060008ac4c73)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6ab5b039e80f060008ac4c73)](https://daytona.io/startups?utm_source=straion.com)
 
 ---
 
@@ -1828,7 +1828,7 @@ Funding
 
 Source: https://straion.com/about-us
 
-![A rural Austrian landscape with a town center and a well](https://straion.com/.netlify/images?url=_astro%2Fbackground-about-us.indCduUw.png&fm=png&w=1920&h=815&q=50&dpl=6ab1822de609eb0008033e19)    ![Stray wearing a dirndl](https://straion.com/.netlify/images?url=_astro%2Fstray-dirndl.DV3bECHy.png&fm=png&w=400&h=400&dpl=6ab1822de609eb0008033e19)    ![Stray wearing a Lederhosen](https://straion.com/.netlify/images?url=_astro%2Fstray-lederhosn.DofZh220.png&fm=png&w=400&h=400&dpl=6ab1822de609eb0008033e19)
+![A rural Austrian landscape with a town center and a well](https://straion.com/.netlify/images?url=_astro%2Fbackground-about-us.indCduUw.png&fm=png&w=1920&h=815&q=50&dpl=6ab5b039e80f060008ac4c73)    ![Stray wearing a dirndl](https://straion.com/.netlify/images?url=_astro%2Fstray-dirndl.DV3bECHy.png&fm=png&w=400&h=400&dpl=6ab5b039e80f060008ac4c73)    ![Stray wearing a Lederhosen](https://straion.com/.netlify/images?url=_astro%2Fstray-lederhosn.DofZh220.png&fm=png&w=400&h=400&dpl=6ab5b039e80f060008ac4c73)
 
 ---
 
@@ -1870,19 +1870,19 @@ platforms.
 Our backgrounds span Elastic, Dynatrace, Netlify, and other companies where we learned what
 it takes to build tools that engineering teams actually love using.
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Lukas Holzer CEO
 
 Previously at Netlify, where he designed and operated the build system handling millions of deploys. Built AI-powered diagnostics to help customers understand and fix failed builds faster. Deep experience in infrastructure, developer tools, and platform engineering.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Katrin Freihofner CPO
 
 Previously at Elastic and Dynatrace. Led the development of AI-driven observability workflows and managed international teams at Elastic. Sharp eye for user experience with a passion for turning complex ideas into clean, intuitive interfaces.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Fabian Friedl CTO
 
@@ -1932,13 +1932,13 @@ August 12, 2026
 
 Straion turns every rule that applies to a change into a decision the agent has to resolve before the work is done, and every exception into one you approve.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
  Fabian Friedl, Katrin Freihofner
 
-![You Shouldn't Be Finding Rule Violations in Code Review](https://straion.com/.netlify/images?url=_astro%2F2026-08-12-header-rule-violations-code-review.YRbfDmTa.jpg&fm=jpg&w=1920&h=815&dpl=6ab1822de609eb0008033e19)](blog/rule-violations-code-review.md)
+![You Shouldn't Be Finding Rule Violations in Code Review](https://straion.com/.netlify/images?url=_astro%2F2026-08-12-header-rule-violations-code-review.YRbfDmTa.jpg&fm=jpg&w=1920&h=815&dpl=6ab5b039e80f060008ac4c73)](blog/rule-violations-code-review.md)
 
 ---
 
@@ -1954,11 +1954,11 @@ July 30, 2026
 
 Straion rules can now be managed in Git: versioning, pull request reviews, and full history. Available on the enterprise plan and in the free trial.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
  Fabian Friedl
 
-![Straion Rules Now Live in Git](https://straion.com/.netlify/images?url=_astro%2F2026-07-16-header-rules-in-git.CyLH8Pwv.jpg&fm=jpg&w=1920&h=815&dpl=6ab1822de609eb0008033e19)](blog/straion-rules-now-live-in-git.md)
+![Straion Rules Now Live in Git](https://straion.com/.netlify/images?url=_astro%2F2026-07-16-header-rules-in-git.CyLH8Pwv.jpg&fm=jpg&w=1920&h=815&dpl=6ab5b039e80f060008ac4c73)](blog/straion-rules-now-live-in-git.md)
 
 [AI Coding Agents
 
@@ -1968,11 +1968,11 @@ June 2, 2026
 
 A developer filed GitHub issue #14467 on claude-code describing exactly the problem Straion solves. We built it. Here is the full story.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
  Katrin Freihofner
 
-![Developers Asked Anthropic to Build This. We Did.](https://straion.com/.netlify/images?url=_astro%2F2026-05-27-header-developers-asked-anthropic.OHX96VgI.jpg&fm=jpg&w=1920&h=815&dpl=6ab1822de609eb0008033e19)](blog/developers-asked-anthropic-to-build-this.md)
+![Developers Asked Anthropic to Build This. We Did.](https://straion.com/.netlify/images?url=_astro%2F2026-05-27-header-developers-asked-anthropic.OHX96VgI.jpg&fm=jpg&w=1920&h=815&dpl=6ab5b039e80f060008ac4c73)](blog/developers-asked-anthropic-to-build-this.md)
 
 [AI Coding Agents
 
@@ -1982,11 +1982,11 @@ May 19, 2026
 
 Building your own AI coding governance layer sounds like a config project. It isn't. Here is what it actually takes, and when buying is the smarter call.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
  Katrin Freihofner
 
-![The Real Cost of Building AI Coding Governance](https://straion.com/.netlify/images?url=_astro%2F2026-05-19-header-build-vs-buy.BqAErlN0.jpg&fm=jpg&w=1920&h=815&dpl=6ab1822de609eb0008033e19)](blog/build-vs-buy-ai-coding-governance.md)
+![The Real Cost of Building AI Coding Governance](https://straion.com/.netlify/images?url=_astro%2F2026-05-19-header-build-vs-buy.BqAErlN0.jpg&fm=jpg&w=1920&h=815&dpl=6ab5b039e80f060008ac4c73)](blog/build-vs-buy-ai-coding-governance.md)
 
 [AI Coding Agents
 
@@ -1996,11 +1996,11 @@ March 26, 2026
 
 When Claude Code runs with Straion, rule adherence climbs into the 90%+ range. See how the automated context layer keeps AI code on your standards.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
  Katrin Freihofner
 
-![90% Rule Adherence](https://straion.com/.netlify/images?url=_astro%2F2026-03-24-header-benchmark.CM2ydGw3.jpg&fm=jpg&w=1920&h=815&dpl=6ab1822de609eb0008033e19)](blog/90-percent-rule-adherence-straion-coding-agents.md)
+![90% Rule Adherence](https://straion.com/.netlify/images?url=_astro%2F2026-03-24-header-benchmark.CM2ydGw3.jpg&fm=jpg&w=1920&h=815&dpl=6ab5b039e80f060008ac4c73)](blog/90-percent-rule-adherence-straion-coding-agents.md)
 
 [AI Coding Agents
 
@@ -2011,11 +2011,11 @@ Updated May 21, 2026
 
 Sourcegraph data from 1,281 agent runs confirms the research: more context degrades AI coding performance. Why less context wins, and what it means for tools.
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
  Lukas Holzer
 
-![1M Tokens Won't Save Your Engineering Standards](https://straion.com/.netlify/images?url=_astro%2F2026-03-17-header-context-window.DCFHTSaQ.jpg&fm=jpg&w=1920&h=815&dpl=6ab1822de609eb0008033e19)](blog/1m-tokens-wont-save-your-engineering-standards.md)
+![1M Tokens Won't Save Your Engineering Standards](https://straion.com/.netlify/images?url=_astro%2F2026-03-17-header-context-window.DCFHTSaQ.jpg&fm=jpg&w=1920&h=815&dpl=6ab5b039e80f060008ac4c73)](blog/1m-tokens-wont-save-your-engineering-standards.md)
 
 [AI Coding Agents
 
@@ -2025,11 +2025,11 @@ March 3, 2026
 
 ETH Zurich research: LLM-generated AGENTS.md and CLAUDE.md files cut resolve rates and raise cost. The fix is delivering only the rules that matter, per task.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
  Fabian Friedl
 
-![Your AGENTS.md is costing more than you think](https://straion.com/.netlify/images?url=_astro%2Fsection-off-track.ClNnPII9.jpg&fm=jpg&w=1920&h=815&dpl=6ab1822de609eb0008033e19)](blog/delete-your-claude-md-science-says-so.md)
+![Your AGENTS.md is costing more than you think](https://straion.com/.netlify/images?url=_astro%2Fsection-off-track.ClNnPII9.jpg&fm=jpg&w=1920&h=815&dpl=6ab5b039e80f060008ac4c73)](blog/delete-your-claude-md-science-says-so.md)
 
 [News & Announcements
 
@@ -2039,15 +2039,15 @@ February 24, 2026
 
 Straion announces its €1.1M seed round led by Marathon VC and outlines why autonomous engineering needs a rules layer to prevent AI coding drift.
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73)
 
  Lukas Holzer, Katrin Freihofner, Fabian Friedl
 
-![We raised €1.1M to fix AI coding drift](https://straion.com/.netlify/images?url=_astro%2F2026-02-24-header-seed-round-announcement.j5RTFg-V.jpg&fm=jpg&w=1920&h=815&dpl=6ab1822de609eb0008033e19)](blog/we-raised-1-1m-to-fix-ai-coding-drift.md)
+![We raised €1.1M to fix AI coding drift](https://straion.com/.netlify/images?url=_astro%2F2026-02-24-header-seed-round-announcement.j5RTFg-V.jpg&fm=jpg&w=1920&h=815&dpl=6ab5b039e80f060008ac4c73)](blog/we-raised-1-1m-to-fix-ai-coding-drift.md)
 
 ## Get started in under 5 minutes, stay on track as you scale
 
@@ -2413,7 +2413,7 @@ Sourcegraph. (2026). *CodeScaleBench: Testing coding agents on large codebases a
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Lukas Holzer
 
@@ -2600,7 +2600,7 @@ If you want to explore Straion in your organization, reach out via [Discord](htt
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Katrin Freihofner
 
@@ -2719,7 +2719,7 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Katrin Freihofner
 
@@ -2836,7 +2836,7 @@ Gloaguen, T., Mündler, N., Müller, M., Raychev, V., & Vechev, M. (2026). *Eval
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Fabian Friedl
 
@@ -2960,7 +2960,7 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Katrin Freihofner
 
@@ -3097,11 +3097,11 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Fabian Friedl
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Katrin Freihofner
 
@@ -3140,7 +3140,7 @@ Today we’re closing that gap. Straion rules can now be fully managed in Git, i
 
 You write, review, and ship rules the same way you write, review, and ship code. It meets your engineers where they already are, in the workflow they use every day.
 
-   ![A Git repository browser showing a dedicated straion/rules/v1 branch with a rules folder containing rule collections and a CI config file.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-rule-repo-overview.q-R5wwF0.png&fm=png&w=3025&h=1659&dpl=6ab1822de609eb0008033e19)  
+   ![A Git repository browser showing a dedicated straion/rules/v1 branch with a rules folder containing rule collections and a CI config file.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-rule-repo-overview.q-R5wwF0.png&fm=png&w=3025&h=1659&dpl=6ab5b039e80f060008ac4c73)  
 
 Rules live on a dedicated branch as plain files. Each folder is a collection, grouping rules, versioned and reviewed like any other part of your repo.
 
@@ -3166,7 +3166,7 @@ You get your git workflows, versioning and permissions without losing the thing 
 
 **Auto-sync.** Your latest commit syncs to Straion automatically through GitHub Actions, GitLab CI, or your existing CI pipeline. There’s no manual publish step, no “did someone push the update?”. Merge your rule updates and it’s enforced on every new run.
 
-   ![A CI pipeline run that passed, showing a single straion-rules-sync job triggered by a commit that adds a new rule.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-ci-sync-pipeline.1FK491qZ.png&fm=png&w=3023&h=1657&dpl=6ab1822de609eb0008033e19)  
+   ![A CI pipeline run that passed, showing a single straion-rules-sync job triggered by a commit that adds a new rule.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-ci-sync-pipeline.1FK491qZ.png&fm=png&w=3023&h=1657&dpl=6ab5b039e80f060008ac4c73)  
 
 Every commit triggers a straion-rules-sync job in your existing CI. Merge a rule change, and it reaches every developer's agent automatically.
 
@@ -3219,7 +3219,7 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Fabian Friedl
 
@@ -3261,7 +3261,7 @@ Because organizational context is missing.
 
 Today, we’re announcing that **Straion raised a €1.1M seed round led by [Marathon Venture Capital](https://marathon.vc/)** to solve this problem.
 
-![Marathon VC](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ab1822de609eb0008033e19)
+![Marathon VC](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ab5b039e80f060008ac4c73)
 
 ## The problem we’re building for
 
@@ -3329,15 +3329,15 @@ If you lead an engineering team and want to stop AI drift before review, we’d 
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Lukas Holzer
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Katrin Freihofner
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Fabian Friedl
 
@@ -3350,7 +3350,7 @@ Written by Fabian Friedl
 
 Source: https://straion.com/career
 
-![A guild hall with a large board and wanted job signs](https://straion.com/.netlify/images?url=_astro%2Fhero-career.BAcofhAk.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ab1822de609eb0008033e19)
+![A guild hall with a large board and wanted job signs](https://straion.com/.netlify/images?url=_astro%2Fhero-career.BAcofhAk.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ab5b039e80f060008ac4c73)
 
 ---
 
@@ -3361,7 +3361,7 @@ transforming how teams design, implement and ship software.
 
 [See Open Roles →](#open-positions)
 
-  ![A squirrel (stray) coding on a computer](https://straion.com/.netlify/images?url=_astro%2Fstray-coding.D42U85qQ.png&fm=png&w=400&h=400&q=50&dpl=6ab1822de609eb0008033e19)
+  ![A squirrel (stray) coding on a computer](https://straion.com/.netlify/images?url=_astro%2Fstray-coding.D42U85qQ.png&fm=png&w=400&h=400&q=50&dpl=6ab5b039e80f060008ac4c73)
 
 The team 
 
@@ -3375,19 +3375,19 @@ You can be part of our journey to reshape the future of software development.
 
 ### Meet The Founder Team
 
-![Lukas](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Lukas](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Lukas
 
 Lukas is a builder at heart, with a hacker's mindset and a deep love for clean, scalable code
 
-![Katrin](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Katrin
 
 Katrin brings a sharp eye for user experience and a passion for product management to the team, honed through her work at tech powerhouses Dynatrace and Elastic
 
-![Fabian](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Fabian
 
@@ -3559,7 +3559,7 @@ Ready to join us? Send your CV and a brief introduction to [team@straion.com](ma
 
 Source: https://straion.com/faqs
 
-![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ab1822de609eb0008033e19)
+![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ab5b039e80f060008ac4c73)
 
 ---
 
@@ -3871,7 +3871,7 @@ with your team.
 
 Source: https://straion.com/press
 
-![A screen printing press that prints the daily news](https://straion.com/.netlify/images?url=_astro%2Fhero-press.CGnCxk5P.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ab1822de609eb0008033e19)
+![A screen printing press that prints the daily news](https://straion.com/.netlify/images?url=_astro%2Fhero-press.CGnCxk5P.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ab5b039e80f060008ac4c73)
 
 ---
 
@@ -3887,7 +3887,7 @@ range of sizes.
 For interview opportunities or to schedule a product demonstration, please contact
 [team@straion.com](mailto:team@straion.com).
 
-[Download](https://drive.google.com/drive/folders/1tQXn2ZQvEo_ZVxZnNx9IKl14UoYTlfgU?usp=sharing)   ![Straion founder team](https://straion.com/.netlify/images?url=_astro%2Ffounder-team02.D117vZMq.jpg&fm=jpg&w=3901&h=5844&q=100&dpl=6ab1822de609eb0008033e19) 
+[Download](https://drive.google.com/drive/folders/1tQXn2ZQvEo_ZVxZnNx9IKl14UoYTlfgU?usp=sharing)   ![Straion founder team](https://straion.com/.netlify/images?url=_astro%2Ffounder-team02.D117vZMq.jpg&fm=jpg&w=3901&h=5844&q=100&dpl=6ab5b039e80f060008ac4c73) 
 
 From left to right: Fabian Friedl, Lukas Holzer, Katrin Freihofner
 
@@ -4050,7 +4050,7 @@ Lukas Holzer
 
 Source: https://straion.com/pricing
 
-![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6ab1822de609eb0008033e19)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6ab1822de609eb0008033e19)
+![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6ab5b039e80f060008ac4c73)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6ab5b039e80f060008ac4c73)
 
 ---
 
@@ -4180,7 +4180,7 @@ Claude Code, Cursor, or GitHub Copilot.
 
 Works with
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ab1822de609eb0008033e19)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ab1822de609eb0008033e19)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ab1822de609eb0008033e19)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ab5b039e80f060008ac4c73)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ab5b039e80f060008ac4c73)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ab5b039e80f060008ac4c73)
 
 straion governance check
 
@@ -4696,7 +4696,7 @@ across every pull request.
 
 Source: https://straion.com/product/feedback-on-requirements
 
-![An image of a female in a business context.](https://straion.com/.netlify/images?url=_astro%2Fwoman-2.CYrnn16P.png&fm=png&w=433&h=600&dpl=6ab1822de609eb0008033e19) 
+![An image of a female in a business context.](https://straion.com/.netlify/images?url=_astro%2Fwoman-2.CYrnn16P.png&fm=png&w=433&h=600&dpl=6ab5b039e80f060008ac4c73) 
 
 # Transform vague ideas into actionable requirements
 
@@ -5529,7 +5529,7 @@ On Enterprise plans rules are plain files on a dedicated branch in your own repo
 
 Install the CLI, add the skill, and Straion works inside Claude Code, GitHub Copilot and Cursor. Your source code never leaves the developer's machine.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ab1822de609eb0008033e19) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ab1822de609eb0008033e19) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ab1822de609eb0008033e19)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ab5b039e80f060008ac4c73) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ab5b039e80f060008ac4c73) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ab5b039e80f060008ac4c73)
 
 Same prompt, two outcomes 
 

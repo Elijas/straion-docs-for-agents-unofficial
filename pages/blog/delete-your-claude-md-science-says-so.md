@@ -108,7 +108,7 @@ Gloaguen, T., Mündler, N., Müller, M., Raychev, V., & Vechev, M. (2026). *Eval
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Fabian Friedl
 

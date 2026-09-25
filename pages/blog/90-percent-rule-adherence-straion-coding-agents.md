@@ -178,7 +178,7 @@ If you want to explore Straion in your organization, reach out via [Discord](htt
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 Written by Katrin Freihofner
 
