@@ -4,7 +4,7 @@ source: https://straion.com/about-us
 description: "We've seen this movie before. Straion keeps AI coding agents aligned with real engineering standards."
 ---
 
-![A rural Austrian landscape with a town center and a well](https://straion.com/.netlify/images?url=_astro%2Fbackground-about-us.indCduUw.png&fm=png&w=1920&h=815&q=50&dpl=6ab1822de609eb0008033e19)    ![Stray wearing a dirndl](https://straion.com/.netlify/images?url=_astro%2Fstray-dirndl.DV3bECHy.png&fm=png&w=400&h=400&dpl=6ab1822de609eb0008033e19)    ![Stray wearing a Lederhosen](https://straion.com/.netlify/images?url=_astro%2Fstray-lederhosn.DofZh220.png&fm=png&w=400&h=400&dpl=6ab1822de609eb0008033e19)
+![A rural Austrian landscape with a town center and a well](https://straion.com/.netlify/images?url=_astro%2Fbackground-about-us.indCduUw.png&fm=png&w=1920&h=815&q=50&dpl=6ab5b039e80f060008ac4c73)    ![Stray wearing a dirndl](https://straion.com/.netlify/images?url=_astro%2Fstray-dirndl.DV3bECHy.png&fm=png&w=400&h=400&dpl=6ab5b039e80f060008ac4c73)    ![Stray wearing a Lederhosen](https://straion.com/.netlify/images?url=_astro%2Fstray-lederhosn.DofZh220.png&fm=png&w=400&h=400&dpl=6ab5b039e80f060008ac4c73)
 
 ---
 
@@ -46,19 +46,19 @@ platforms.
 Our backgrounds span Elastic, Dynatrace, Netlify, and other companies where we learned what
 it takes to build tools that engineering teams actually love using.
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Lukas Holzer CEO
 
 Previously at Netlify, where he designed and operated the build system handling millions of deploys. Built AI-powered diagnostics to help customers understand and fix failed builds faster. Deep experience in infrastructure, developer tools, and platform engineering.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Katrin Freihofner CPO
 
 Previously at Elastic and Dynatrace. Led the development of AI-driven observability workflows and managed international teams at Elastic. Sharp eye for user experience with a passion for turning complex ideas into clean, intuitive interfaces.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab1822de609eb0008033e19) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
 
 ### Fabian Friedl CTO
 
