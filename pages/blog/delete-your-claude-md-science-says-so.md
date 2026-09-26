@@ -104,11 +104,13 @@ Fabian
 
 **References:**
 
-Gloaguen, T., Mündler, N., Müller, M., Raychev, V., & Vechev, M. (2026). *Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?* arXiv:2602.11988. <https://arxiv.org/abs/2602.11988>
+Gloaguen, T., Mündler, N., Müller, M., Raychev, V., & Vechev, M. (2026). *Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?* arXiv
+
+.11988. <https://arxiv.org/abs/2602.11988>
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ab6d14bc092750008f167a8) 
 
 Written by Fabian Friedl
 

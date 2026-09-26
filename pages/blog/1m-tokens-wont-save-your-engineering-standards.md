@@ -336,9 +336,13 @@ Hong, K., Troynikov, A., & Huber, J. (2025). *Context Rot: How Increasing Input 
 
 Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2024). *Lost in the Middle: How Language Models Use Long Contexts.* Transactions of the Association for Computational Linguistics. <https://arxiv.org/abs/2307.03172>
 
-Jaroslawicz, D. et al. (2025). *How Many Instructions Can LLMs Follow at Once?* arXiv:2507.11538. <https://arxiv.org/abs/2507.11538>
+Jaroslawicz, D. et al. (2025). *How Many Instructions Can LLMs Follow at Once?* arXiv
 
-Gloaguen, T., Mündler, N., Müller, M., Raychev, V., & Vechev, M. (2026). *Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?* arXiv:2602.11988. <https://arxiv.org/abs/2602.11988>
+.11538. <https://arxiv.org/abs/2507.11538>
+
+Gloaguen, T., Mündler, N., Müller, M., Raychev, V., & Vechev, M. (2026). *Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?* arXiv
+
+.11988. <https://arxiv.org/abs/2602.11988>
 
 Jarmak, S. (2026). *Why coding agents fail in large codebases (and what to do about it).* Sourcegraph Blog, May 8, 2026. <https://sourcegraph.com/blog/why-coding-agents-fail-large-codebases>
 
@@ -346,7 +350,7 @@ Sourcegraph. (2026). *CodeScaleBench: Testing coding agents on large codebases a
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab5b039e80f060008ac4c73) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ab6d14bc092750008f167a8) 
 
 Written by Lukas Holzer
 

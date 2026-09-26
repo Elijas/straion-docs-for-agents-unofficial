@@ -38,12 +38,6 @@ straion source repo connect
 
 This creates a dedicated `straion/rules/v1` branch in your repository, writes your rules to it as Markdown files, pushes the branch, registers the repository as a synced rule source, and runs the first sync.
 
-> **Note: Previously imported rules are moved into the branch automatically.**
-> If you have already imported rules from this same repository, `connect` **moves those existing rules** onto the new `straion/rules/v1` branch. You don’t re-create them, and no duplicates are created: the same rules simply become code in your repository. From this point on, they are managed through git.
-
-> **Caution: Connected collections become read-only in the Straion app.**
-> Once a repository is connected, the rules and collections that come from it can no longer be edited or deleted inside the Straion web app. Git becomes the single source of truth. Rules imported from files or pasted text are unaffected and stay editable in the app. See [Core Concepts](core-concepts.md) for the difference between rule source types.
-
 ### Starting from an empty repository
 
 If Straion doesn’t hold any rules for the repository yet, `connect` creates an empty rules branch for you to add rules to. To include a small example collection so you can see the expected layout, pass `--sample`:
