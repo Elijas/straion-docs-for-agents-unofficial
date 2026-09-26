@@ -3,7 +3,7 @@ title: "CLI reference"
 source: https://straion.com/docs/cli-api-reference
 description: "Reference for every Straion CLI command: login, logout, setup, and import-rules, with the options and flags each command accepts."
 section: "References"
-order: 15
+order: 16
 prev: scim.md
 next: troubleshooting.md
 ---

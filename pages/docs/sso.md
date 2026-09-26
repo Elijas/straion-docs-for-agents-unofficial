@@ -3,7 +3,7 @@ title: "SAML Single Sign-On (SSO)"
 source: https://straion.com/docs/sso
 description: "Connect Straion to your identity provider with SAML SSO: step-by-step setup guides for Okta, Microsoft Entra ID, OneLogin, and any SAML 2.0 provider."
 section: "Organization & Account"
-order: 13
+order: 14
 prev: invite-users.md
 next: scim.md
 ---
@@ -17,8 +17,6 @@ Setting up SSO takes about ten minutes and has two halves:
 1. **In your IdP** — create a SAML application that points at Straion.
 2. **In Straion** — paste the IdP’s metadata to create the connection.
 
-> **Note:** SSO handles *authentication* only. A user still needs to be a member of your organization before they can log in — either [invited manually](invite-users.md) or provisioned automatically through [SCIM](scim.md). Set up SCIM alongside SSO and your IdP creates and deactivates Straion accounts for you.
-
 ## What you’ll need
 
 You must be an **organization admin** in Straion. Open **Identity & provisioning** from the organization menu (click your organization name in the top-left corner). The page shows the two values every IdP setup asks for:
@@ -26,7 +24,7 @@ You must be an **organization admin** in Straion. Open **Identity & provisioning
 - **Single sign-on URL** (also called ACS URL, Reply URL, or Consumer URL)
 - **Audience URI** (also called SP Entity ID or Identifier)
 
-![The Identity &#x26; provisioning page showing the Single sign-on URL and Audience URI copy fields and the empty SAML connection form](https://straion.com/.netlify/images?url=_astro%2F02-identity-page.Iyxtyg1V.jpg&w=3740&h=2452&dpl=6ab5b039e80f060008ac4c73)
+![The Identity &#x26; provisioning page showing the Single sign-on URL and Audience URI copy fields and the empty SAML connection form](https://straion.com/.netlify/images?url=_astro%2F02-identity-page.Iyxtyg1V.jpg&w=3740&h=2452&dpl=6ab6d14bc092750008f167a8)
 
 Keep this page open — you’ll copy these two values into your IdP, and bring the IdP’s metadata back here.
 
@@ -36,11 +34,11 @@ Keep this page open — you’ll copy these two values into your IdP, and bring 
 
 In the Okta Admin Console, go to **Applications → Applications → Create App Integration**, choose **SAML 2.0**, and click **Next**.
 
-![Okta&#x27;s Create a new app integration dialog with the SAML 2.0 sign-in method selected](https://straion.com/.netlify/images?url=_astro%2F05-okta-create-app.BGo6uNkU.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
+![Okta&#x27;s Create a new app integration dialog with the SAML 2.0 sign-in method selected](https://straion.com/.netlify/images?url=_astro%2F05-okta-create-app.BGo6uNkU.jpg&w=3832&h=2544&dpl=6ab6d14bc092750008f167a8)
 
 Give the app a name (e.g. “Straion”) on the General Settings step and continue.
 
-![Okta&#x27;s Create SAML Integration wizard with the first step General Settings](https://straion.com/.netlify/images?url=_astro%2Fokta-fill-application-name.BRyrD9Zp.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
+![Okta&#x27;s Create SAML Integration wizard with the first step General Settings](https://straion.com/.netlify/images?url=_astro%2Fokta-fill-application-name.BRyrD9Zp.jpg&w=3832&h=2544&dpl=6ab6d14bc092750008f167a8)
 
 Hit the “Next” button to get to the “Configure SAML” page.
 
@@ -55,7 +53,7 @@ On the **Configure SAML** step, enter the values from your Identity & provisioni
 | Name ID format | **EmailAddress** |
 | Application username | **Email** |
 
-![Okta&#x27;s Configure SAML step with the Straion sign-on URL, audience URI, EmailAddress name ID format, and Email application username filled in](https://straion.com/.netlify/images?url=_astro%2F06-okta-configure-saml.BQRAOdjI.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
+![Okta&#x27;s Configure SAML step with the Straion sign-on URL, audience URI, EmailAddress name ID format, and Email application username filled in](https://straion.com/.netlify/images?url=_astro%2F06-okta-configure-saml.BQRAOdjI.jpg&w=3832&h=2544&dpl=6ab6d14bc092750008f167a8)
 
 Leave the remaining defaults, finish the wizard, and mark it as an internal app on the Feedback step.
 
@@ -67,7 +65,7 @@ On the app’s **Sign On** tab, copy the **Metadata URL** from the *Metadata det
 
 Back on the Identity & provisioning page, paste the metadata URL into the **Metadata URL** field. Straion fetches the metadata and fills the **Metadata XML** field automatically.
 
-![The Straion SAML form with the Okta metadata URL entered and the metadata XML fetched automatically](https://straion.com/.netlify/images?url=_astro%2F03-metadata-filled.BGihVkFu.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
+![The Straion SAML form with the Okta metadata URL entered and the metadata XML fetched automatically](https://straion.com/.netlify/images?url=_astro%2F03-metadata-filled.BGihVkFu.jpg&w=3832&h=2544&dpl=6ab6d14bc092750008f167a8)
 
 Click **Create SAML Connection**. The form switches to its connected state — your SSO setup is live.
 
@@ -77,13 +75,13 @@ Click **Create SAML Connection**. The form switches to its connected state — y
 
 In the [Entra admin center](https://entra.microsoft.com), go to **Entra ID → Enterprise applications → New application → Create your own application**. Name it (e.g. “Straion”), keep *“Integrate any other application you don’t find in the gallery (Non-gallery)”* selected, and click **Create**.
 
-![Entra&#x27;s Create your own application panel with the name Straion and the non-gallery option selected](https://straion.com/.netlify/images?url=_astro%2F08-entra-create-app.BKQJv0oq.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
+![Entra&#x27;s Create your own application panel with the name Straion and the non-gallery option selected](https://straion.com/.netlify/images?url=_astro%2F08-entra-create-app.BKQJv0oq.jpg&w=3832&h=2544&dpl=6ab6d14bc092750008f167a8)
 
 ### 2. Choose SAML as the sign-on method
 
 In the new application, open **Single sign-on** in the left menu and pick the **SAML** tile.
 
-![Entra&#x27;s single sign-on method selection with the SAML option](https://straion.com/.netlify/images?url=_astro%2F09-entra-sso-method.CW4YgS9P.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
+![Entra&#x27;s single sign-on method selection with the SAML option](https://straion.com/.netlify/images?url=_astro%2F09-entra-sso-method.CW4YgS9P.jpg&w=3832&h=2544&dpl=6ab6d14bc092750008f167a8)
 
 ### 3. Configure the SAML settings
 
@@ -96,9 +94,7 @@ In **Basic SAML Configuration**, click **Edit** and enter the values from your I
 
 Save. In **Attributes & Claims**, the defaults work when your team’s User Principal Names are their email addresses; if not, set the **Unique User Identifier (Name ID)** claim to `user.mail`.
 
-![Entra&#x27;s SAML-based sign-on page with the Straion identifier, reply URL, claims, and signing certificate configured](https://straion.com/.netlify/images?url=_astro%2F10-entra-saml-config.BEX55F7t.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
-
-> **Note:** Entra requires the Identifier to be unique per tenant. If you see *“Please enter an identifier which is unique within your organization”*, another enterprise application already uses your Audience URI — reuse that application instead of creating a second one.
+![Entra&#x27;s SAML-based sign-on page with the Straion identifier, reply URL, claims, and signing certificate configured](https://straion.com/.netlify/images?url=_astro%2F10-entra-saml-config.BEX55F7t.jpg&w=3832&h=2544&dpl=6ab6d14bc092750008f167a8)
 
 ### 4. Assign users and connect Straion
 
@@ -139,7 +135,7 @@ Once the connection exists, your team has three ways in:
 - **Direct link** — share `https://straion.app/auth/sso?subdomain=<your-subdomain>` with your team; the subdomain arrives prefilled.
 - **From the IdP dashboard** — users click the Straion tile in their IdP portal (e.g. the Okta End-User Dashboard) and land in Straion directly.
 
-![The Single sign-on login page asking for the organization subdomain](https://straion.com/.netlify/images?url=_astro%2F07-sso-login.DfCdfJrm.jpg&w=3832&h=2544&dpl=6ab5b039e80f060008ac4c73)
+![The Single sign-on login page asking for the organization subdomain](https://straion.com/.netlify/images?url=_astro%2F07-sso-login.DfCdfJrm.jpg&w=3832&h=2544&dpl=6ab6d14bc092750008f167a8)
 
 After authenticating with the IdP, users land in your Straion organization — no Straion password involved.
 

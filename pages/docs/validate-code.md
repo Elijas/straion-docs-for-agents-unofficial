@@ -5,7 +5,7 @@ description: "Validate a PR, diff, or AI-generated changes against your rules be
 section: "Using Straion"
 order: 11
 prev: validate-implementation-plan.md
-next: invite-users.md
+next: audit-trail.md
 ---
 
 # Validate code

@@ -25,6 +25,7 @@ Listed in reading order, grouped as on the site.
 - [Validate specs](https://straion.com/docs/validate-specs): Check specs, RFCs, and design docs against your rules before implementation begins
 - [Validate implementation plans](https://straion.com/docs/validate-implementation-plan): Catch rule violations in an implementation plan before any code is written
 - [Validate code](https://straion.com/docs/validate-code): Validate a PR, diff, or AI-generated changes against your rules before merge
+- [Audit trail](https://straion.com/docs/audit-trail): Every rule Straion matches to a task needs a recorded decision before the agent can finish. To ship a violation, the agent needs your approval, and the trail records the decisions and who made them.
 
 ### Organization & Account
 - [Invite Users](https://straion.com/docs/invite-users): How to invite team members to your Straion organization: add email addresses, manage pending invites, and assign member roles.

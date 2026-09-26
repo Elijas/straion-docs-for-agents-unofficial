@@ -3,8 +3,8 @@ title: "Invite Users"
 source: https://straion.com/docs/invite-users
 description: "How to invite team members to your Straion organization: add email addresses, manage pending invites, and assign member roles."
 section: "Organization & Account"
-order: 12
-prev: validate-code.md
+order: 13
+prev: audit-trail.md
 next: sso.md
 ---
 
@@ -18,13 +18,13 @@ This page covers inviting people manually. Straion also supports automatic provi
 
 From any page, click the **Invite Users** entry in the bottom-left navigation.
 
-![The Rules page with the Invite Users navigation highlighted in the bottom-left sidebar](https://straion.com/.netlify/images?url=_astro%2F01-getting-started.nzrNzJDY.jpg&w=3248&h=2112&dpl=6ab5b039e80f060008ac4c73)
+![The Rules page with the Invite Users navigation highlighted in the bottom-left sidebar](https://straion.com/.netlify/images?url=_astro%2F01-getting-started.nzrNzJDY.jpg&w=3248&h=2112&dpl=6ab6d14bc092750008f167a8)
 
 ## 2. Add email addresses
 
 In the **Invite people** dialog, enter the email addresses of the people you want to invite. You can add several at once by separating them with commas, then click **Invite**.
 
-![The &#x27;Invite people to demo&#x27; dialog with two comma-separated email addresses entered](https://straion.com/.netlify/images?url=_astro%2F02-invite-dialog.WIgNDhwQ.jpg&w=3824&h=2474&dpl=6ab5b039e80f060008ac4c73)
+![The &#x27;Invite people to demo&#x27; dialog with two comma-separated email addresses entered](https://straion.com/.netlify/images?url=_astro%2F02-invite-dialog.WIgNDhwQ.jpg&w=3824&h=2474&dpl=6ab6d14bc092750008f167a8)
 
 ## 3. Manage organization invites
 
@@ -34,7 +34,7 @@ Invited users appear under **Organization Invites** with a **Pending** status. E
 - **Copy invite link** — copy a direct link to your clipboard and share it with the invitee yourself.
 - **Delete** — cancel a pending invite.
 
-![The User Management page showing pending organization invites with Copy Invite Link and Resend Invite actions highlighted](https://straion.com/.netlify/images?url=_astro%2F03-pending-invites.Cc7HLmPl.jpg&w=3824&h=2474&dpl=6ab5b039e80f060008ac4c73)
+![The User Management page showing pending organization invites with Copy Invite Link and Resend Invite actions highlighted](https://straion.com/.netlify/images?url=_astro%2F03-pending-invites.Cc7HLmPl.jpg&w=3824&h=2474&dpl=6ab6d14bc092750008f167a8)
 
 ## Members and roles
 
