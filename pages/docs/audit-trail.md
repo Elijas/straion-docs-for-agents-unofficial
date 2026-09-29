@@ -21,7 +21,7 @@ You end up with one record per session. It answers two questions:
 
 ## How a session becomes a report
 
-![A row of five steps: Find, Work, Record, Block, Report. Find gets the rules for the task. Work is where the agent writes code. Record captures one decision per rule. Block holds the turn while any rule is unresolved. Report is the one record you read. At the Record step, you approve anything that ships as an exception](https://straion.com/.netlify/images?url=_astro%2F01-session-to-audit-report.BUQPNOj_.png&w=2400&h=466&dpl=6ab6d14bc092750008f167a8)
+![A row of five steps: Find, Work, Record, Block, Report. Find gets the rules for the task. Work is where the agent writes code. Record captures one decision per rule. Block holds the turn while any rule is unresolved. Report is the one record you read. At the Record step, you approve anything that ships as an exception](https://straion.com/.netlify/images?url=_astro%2F01-session-to-audit-report.BUQPNOj_.png&w=2400&h=466&dpl=6ababb6f35bdf80008792270)
 
 1. **Find.** The agent asks Straion which rules apply to the task. Straion writes every rule it returns into the trail.
 2. **Work.** The agent writes the code. It can’t edit or delete the trail.
@@ -33,7 +33,7 @@ You end up with one record per session. It answers two questions:
 
 For each rule, the agent first judges the code as **compliant**, **partial**, or a **violation**. Partial compliance counts as a violation.
 
-![The states a rule moves through. A rule holds the agent&#x27;s turn while it has no verdict, needs fixing, or is stale. It settles as compliant, accepted, or not applicable. To accept a violation, or to rule it not applicable, Straion asks you first. If you change a covered file after a decision, the settled rule reopens](https://straion.com/.netlify/images?url=_astro%2F02-verdict-lifecycle.pip4Saip.png&w=2432&h=1332&dpl=6ab6d14bc092750008f167a8)
+![The states a rule moves through. A rule holds the agent&#x27;s turn while it has no verdict, needs fixing, or is stale. It settles as compliant, accepted, or not applicable. To accept a violation, or to rule it not applicable, Straion asks you first. If you change a covered file after a decision, the settled rule reopens](https://straion.com/.netlify/images?url=_astro%2F02-verdict-lifecycle.pip4Saip.png&w=2432&h=1332&dpl=6ababb6f35bdf80008792270)
 
 Every rule starts without a verdict. A rule is settled once it’s compliant, an accepted violation, or not applicable. The agent can hand the work back only when every rule is settled. That’s the whole mechanism.
 

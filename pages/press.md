@@ -4,7 +4,7 @@ source: https://straion.com/press
 description: "Press kit, media assets, and Straion press release in German and English."
 ---
 
-![A screen printing press that prints the daily news](https://straion.com/.netlify/images?url=_astro%2Fhero-press.CGnCxk5P.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ab6d14bc092750008f167a8)
+![A screen printing press that prints the daily news](https://straion.com/.netlify/images?url=_astro%2Fhero-press.CGnCxk5P.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ababb6f35bdf80008792270)
 
 ---
 
@@ -20,7 +20,7 @@ range of sizes.
 For interview opportunities or to schedule a product demonstration, please contact
 [team@straion.com](mailto:team@straion.com).
 
-[Download](https://drive.google.com/drive/folders/1tQXn2ZQvEo_ZVxZnNx9IKl14UoYTlfgU?usp=sharing)   ![Straion founder team](https://straion.com/.netlify/images?url=_astro%2Ffounder-team02.D117vZMq.jpg&fm=jpg&w=3901&h=5844&q=100&dpl=6ab6d14bc092750008f167a8) 
+[Download](https://drive.google.com/drive/folders/1tQXn2ZQvEo_ZVxZnNx9IKl14UoYTlfgU?usp=sharing)   ![Straion founder team](https://straion.com/.netlify/images?url=_astro%2Ffounder-team02.D117vZMq.jpg&fm=jpg&w=3901&h=5844&q=100&dpl=6ababb6f35bdf80008792270) 
 
 From left to right: Fabian Friedl, Lukas Holzer, Katrin Freihofner
 
