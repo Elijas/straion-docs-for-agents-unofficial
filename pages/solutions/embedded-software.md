@@ -105,7 +105,7 @@ On Enterprise plans rules are plain files on a dedicated branch in your own repo
 
 Install the CLI, add the skill, and Straion works inside Claude Code, GitHub Copilot and Cursor. Your source code never leaves the developer's machine.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6acce9b806770301cf1fda18) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6acce9b806770301cf1fda18) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6acce9b806770301cf1fda18)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ace00993fb9a7907df57551) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ace00993fb9a7907df57551) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ace00993fb9a7907df57551)
 
 Same prompt, two outcomes 
 

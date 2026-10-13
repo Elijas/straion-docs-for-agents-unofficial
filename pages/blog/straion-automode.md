@@ -16,6 +16,8 @@ AI Coding Agents  Engineering Leadership  Straion  Product
 
 With Automode, your coding agent looks up your Straion rules in every session, without anyone calling a skill. If it skips that step, Straion sends it back.
 
+> **Update, October 12:** You can now watch Straion work live in Claude Code. Our new Claude Code mod, straion-trail, shows what Straion corrected while the agent works. It also tells you when the agent waits for your approval. [Read the announcement](audit-trail-in-claude-code.md).
+
 Until today, Straion helped when you asked it to. The agent pulled your rules when you ran one of Straion’s skills, like `/straion-implement`. Skip the skill, and the agent wrote code from whatever happened to be in its context.
 
 Automode closes that gap. Turn it on, and your agent asks Straion for your rules in every session, before it changes your code. You don’t type anything new. You give the agent a task, and it gets the rules for that task first.
@@ -139,11 +141,11 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6acce9b806770301cf1fda18) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ace00993fb9a7907df57551) 
 
 Written by Lukas Holzer
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6acce9b806770301cf1fda18) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ace00993fb9a7907df57551) 
 
 Written by Fabian Friedl
 
