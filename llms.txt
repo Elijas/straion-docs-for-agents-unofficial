@@ -27,6 +27,7 @@ Listed in reading order, grouped as on the site.
 - [Validate code](https://straion.com/docs/validate-code): Validate a PR, diff, or AI-generated changes against your rules before merge
 - [Automode](https://straion.com/docs/automode): Automode makes your agent look up your rules before it changes code, in every session. You turn it on once and keep working as usual.
 - [Audit trail](https://straion.com/docs/audit-trail): Every rule Straion matches to a task needs a recorded decision before the agent can finish. To ship a violation, the agent needs your approval, and the trail records the decisions and who made them.
+- [Live pane](https://straion.com/docs/audit-trail/live-pane): The straion-trail mod shows the audit trail in Claude Code while the agent works: what Straion corrected, what the agent fixed, and when Straion needs your approval.
 
 ### Organization & Account
 - [Invite Users](https://straion.com/docs/invite-users): How to invite team members to your Straion organization: add email addresses, manage pending invites, and assign member roles.
