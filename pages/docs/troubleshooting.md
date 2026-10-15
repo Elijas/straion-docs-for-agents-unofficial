@@ -3,7 +3,7 @@ title: "Troubleshooting"
 source: https://straion.com/docs/troubleshooting
 description: "Solutions to common Straion issues: agent setup checks, firewall and permission problems, skills that do not show up after setup, and SAML SSO and SCIM provisioning errors."
 section: "References"
-order: 18
+order: 19
 prev: cli-api-reference.md
 ---
 
