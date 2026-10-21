@@ -11,7 +11,7 @@ Security & Trust
 Straion enforces your engineering standards without ever touching your source code. Your
 rules. Your codebase. Your control.
 
-[Start Free](https://straion.app/auth/signup)
+[Start free trial](https://straion.app/auth/signup)
 
 The commitments
 
@@ -249,5 +249,5 @@ gate.
 
 Write to team@straion.com, or start free and see the data flow yourself.
 
-[Get Started Free
+[Start free trial
 →](https://straion.app/auth/signup)  [Contact the team](mailto:team@straion.com)

@@ -14,11 +14,11 @@ with your engineering standards, at every step from first prompt to merge.
 Built for lead engineers, platform teams, engineering managers, and any team already using
 Claude Code, Cursor, or GitHub Copilot.
 
-[Get Started Free](https://straion.app/auth/signup)  [See how it works](how-it-works.md)
+[Start free trial](https://straion.app/auth/signup)  [See how it works](how-it-works.md)
 
 Works with
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6acf806652756643ff1c325e)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6acf806652756643ff1c325e)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6acf806652756643ff1c325e)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ad76dc3242b1829db99d845)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ad76dc3242b1829db99d845)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ad76dc3242b1829db99d845)
 
 straion governance check
 
@@ -186,13 +186,8 @@ every developer's AI agent from day one.
 
 Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
-[Get Started Free
+[Start free trial
 →](https://straion.app/auth/signup)
-
-### Book a demo
-
-We'll show you how Straion works with your AI coding setup and try it
-with your team.
 
 ---
 

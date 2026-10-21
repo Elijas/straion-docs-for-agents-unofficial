@@ -11,8 +11,8 @@ Your team adopted AI coding assistants.
 Straion gives every developer's AI agent your architecture rules, security policies, and
 coding standards automatically - before the first line is written.
 
-[Get Started Free
-→](https://straion.app/auth/signup)  [Book a Demo](#cta)
+[Start free trial
+→](https://straion.app/auth/signup)
 
 Audit trail
 
@@ -39,7 +39,7 @@ and when. Your next audit gets an answer instead of a shrug.
 
 [Read how to catch violations before review](blog/rule-violations-code-review.md)
 
-   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6acf806652756643ff1c325e)
+   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6ad76dc3242b1829db99d845)
 
 ---
 
@@ -85,7 +85,7 @@ Your rules live in your own Git, reviewed like code. Here's the race plan.
 
 1. ### Install the CLI
 
-   Start your free trial, install the Straion CLI, and connect it to your coding agent. Straion works with GitHub CoPilot, Cursor and Claude
+   Start your free trial, install the Straion CLI, and connect it to your coding agent. Straion works with Claude Code, Cursor, and GitHub Copilot.
 2. ### Connect Your Repo
 
    Straion creates a dedicated branch in your repo and migrates your AGENTS.md and CLAUDE.md files into rules. From then on a rule change is a commit and a pull request, reviewed like code.
@@ -163,6 +163,11 @@ comparison
 - AI follows your standards from the first prompt
 - Ship enterprise-ready code at actual 10x speed
 
+[Start free trial
+→](https://straion.app/auth/signup) 
+
+No credit card required.
+
 Features 
 
 ## Built for Teams Serious About AI
@@ -183,7 +188,7 @@ Catch mistakes before they cost tokens. Validate your AI's proposed approach aga
 
 Claude Code, GitHub Copilot & Cursor ready. Install the Straion CLI globally and add the skill. Integrates with your existing AI coding workflow in minutes.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6acf806652756643ff1c325e)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6acf806652756643ff1c325e)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6acf806652756643ff1c325e)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ad76dc3242b1829db99d845)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ad76dc3242b1829db99d845)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ad76dc3242b1829db99d845)
 
 ### Rules Live in Your Git
 
@@ -208,13 +213,8 @@ every developer's AI agent from day one.
 
 Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
-[Get Started Free
+[Start free trial
 →](https://straion.app/auth/signup)
-
-### Book a demo
-
-We'll show you how Straion works with your AI coding setup and try it
-with your team.
 
 ---
 
@@ -222,7 +222,7 @@ Partners
 
 ## Shaping the future with our pilot partners
 
-[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6acf806652756643ff1c325e)](https://www.dynatrace.com/)
+[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6ad76dc3242b1829db99d845)](https://www.dynatrace.com/)
 
 Ready to join?
 
@@ -237,8 +237,8 @@ Funding
 
 ## Supported & funded by
 
-[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6acf806652756643ff1c325e)](https://marathon.vc/)
+[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ad76dc3242b1829db99d845)](https://marathon.vc/)
 
-[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6acf806652756643ff1c325e)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6acf806652756643ff1c325e) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6acf806652756643ff1c325e)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6acf806652756643ff1c325e)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6acf806652756643ff1c325e)](https://daytona.io/startups?utm_source=straion.com)
+[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6ad76dc3242b1829db99d845)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6ad76dc3242b1829db99d845) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6ad76dc3242b1829db99d845)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6ad76dc3242b1829db99d845)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6ad76dc3242b1829db99d845)](https://daytona.io/startups?utm_source=straion.com)
 
 ---
