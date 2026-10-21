@@ -10,7 +10,7 @@ Guide AI coding agents with your company's specific rules. Automatically ensure 
 code follows your architectural patterns, design libraries and security standards from day
 one.
 
- [Request Demo](#join-waitlist)
+ [Start free trial](https://straion.app/auth/signup)
 
 ## The AI Coding Challenge
 
@@ -181,6 +181,10 @@ Teams building applications on top of platforms.
 Join successful engineering teams who are maximizing AI coding productivity while maintaining
 strict compliance standards. See how Straion transforms AI agents into company-aware
 development partners.
+
+[Start free trial](https://straion.app/auth/signup) 
+
+No credit card required.
 
 ## Frequently Asked Questions
 

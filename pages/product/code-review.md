@@ -10,7 +10,7 @@ Automate non-functional requirements compliance in every pull request. Reduce co
 time by 65% while ensuring your team's code meets company standards for security,
 performance, and maintainability.
 
- [Request Demo](#join-waitlist)
+ [Start free trial](https://straion.app/auth/signup)
 
 ## The Code Review Bottleneck
 
@@ -83,9 +83,13 @@ Faster feature delivery
 
 ## Ready to Transform Your Code Review Process?
 
-Join engineering leaders who are reducing review time while improving code quality. Get early
-access to Straion and see how AI can enforce your non-functional requirements consistently
+Join engineering leaders who are reducing review time while improving code quality. Start your
+free trial and see how AI can enforce your non-functional requirements consistently
 across every pull request.
+
+[Start free trial](https://straion.app/auth/signup) 
+
+No credit card required.
 
 ## Frequently Asked Questions
 

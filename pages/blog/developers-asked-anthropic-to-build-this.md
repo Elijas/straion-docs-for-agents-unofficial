@@ -106,7 +106,7 @@ See how Straion keeps your AI coding agent aligned with your standards.
 Set up takes
 less than 5 minutes.
 
-[Get Started Free
+[Start free trial
 →](https://straion.app/auth/signup) 
 
 Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
@@ -115,7 +115,7 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6acf806652756643ff1c325e) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ad76dc3242b1829db99d845) 
 
 Written by Katrin Freihofner
 

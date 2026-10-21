@@ -4,7 +4,7 @@ source: https://straion.com/pricing
 description: "Straion pricing: start free, then scale with team and enterprise options for AI coding rule management and validation."
 ---
 
-![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6acf806652756643ff1c325e)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6acf806652756643ff1c325e)
+![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6ad76dc3242b1829db99d845)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6ad76dc3242b1829db99d845)
 
 ---
 
@@ -90,7 +90,7 @@ every developer's AI agent from day one.
 
 Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
-[Start 14-day free trial
+[Start free trial
 →](https://straion.app/auth/signup)
 
 ## Pricing FAQ

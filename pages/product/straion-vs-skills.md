@@ -9,7 +9,7 @@ description: "Already using custom skills in Claude Code or Cursor? Here's what 
 A fair question. Custom skills work, up to a point. Here's an honest look at what skills do
 well, where they break down at team scale, and what Straion adds on top.
 
-[Start Free](https://straion.app/auth/signup)
+[Start free trial](https://straion.app/auth/signup)
 
 Short answer
 
@@ -132,5 +132,5 @@ Import your existing skills. See what Straion adds. No credit card required.
 
 Works with Claude Code, GitHub Copilot & Cursor.
 
-[Get Started Free
+[Start free trial
 →](https://straion.app/auth/signup)

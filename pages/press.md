@@ -4,7 +4,7 @@ source: https://straion.com/press
 description: "Press kit, media assets, and Straion press release in German and English."
 ---
 
-![A screen printing press that prints the daily news](https://straion.com/.netlify/images?url=_astro%2Fhero-press.CGnCxk5P.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6acf806652756643ff1c325e)
+![A screen printing press that prints the daily news](https://straion.com/.netlify/images?url=_astro%2Fhero-press.CGnCxk5P.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ad76dc3242b1829db99d845)
 
 ---
 
@@ -20,7 +20,7 @@ range of sizes.
 For interview opportunities or to schedule a product demonstration, please contact
 [team@straion.com](mailto:team@straion.com).
 
-[Download](https://drive.google.com/drive/folders/1tQXn2ZQvEo_ZVxZnNx9IKl14UoYTlfgU?usp=sharing)   ![Straion founder team](https://straion.com/.netlify/images?url=_astro%2Ffounder-team02.D117vZMq.jpg&fm=jpg&w=3901&h=5844&q=100&dpl=6acf806652756643ff1c325e) 
+[Download](https://drive.google.com/drive/folders/1tQXn2ZQvEo_ZVxZnNx9IKl14UoYTlfgU?usp=sharing)   ![Straion founder team](https://straion.com/.netlify/images?url=_astro%2Ffounder-team02.D117vZMq.jpg&fm=jpg&w=3901&h=5844&q=100&dpl=6ad76dc3242b1829db99d845) 
 
 From left to right: Fabian Friedl, Lukas Holzer, Katrin Freihofner
 
@@ -63,7 +63,7 @@ up after it in code review. With this funding, we’re building the missing cont
 gives AI the right organizational context from the start, so teams can finally realize true
 productivity gains.”
 
-You can get early access to Straion here:
+You can try Straion free for 14 days here:
 [https://straion.com/](index.md)
 
 ### About Straion

@@ -13,7 +13,7 @@ plans and before it writes. When a deviation is unavoidable, the rule, the reaso
 approver go on the record.
 
 [Book a technical demo
-→](#cta)  [Start free](https://straion.app/auth/signup)
+→](#cta)  [Start free trial](https://straion.app/auth/signup)
 
 Audit trail
 
@@ -105,7 +105,7 @@ On Enterprise plans rules are plain files on a dedicated branch in your own repo
 
 Install the CLI, add the skill, and Straion works inside Claude Code, GitHub Copilot and Cursor. Your source code never leaves the developer's machine.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6acf806652756643ff1c325e) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6acf806652756643ff1c325e) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6acf806652756643ff1c325e)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ad76dc3242b1829db99d845) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ad76dc3242b1829db99d845) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ad76dc3242b1829db99d845)
 
 Same prompt, two outcomes 
 
@@ -294,7 +294,7 @@ writes a line of code.
 Works with Claude Code, GitHub Copilot & Cursor. Sits upstream of the analyzer you already
 qualified. No credit card required.
 
-[Get Started Free
+[Start free trial
 →](https://straion.app/auth/signup)
 
 ### Book a technical demo

@@ -11,7 +11,7 @@ How It Works
 Your architecture decisions are invisible to AI agents by default. Straion makes them
 enforceable at the plan stage, before a single line is written, and beyond.
 
-[Get Started Free](https://straion.app/auth/signup)   [Explore the product](product.md)
+[Start free trial](https://straion.app/auth/signup)   [Explore the product](product.md)
 
 the governance lifecycle
 
@@ -120,7 +120,7 @@ Your rules live in your own Git, reviewed like code. Here's the race plan.
 
 1. ### Install the CLI
 
-   Start your free trial, install the Straion CLI, and connect it to your coding agent. Straion works with GitHub CoPilot, Cursor and Claude
+   Start your free trial, install the Straion CLI, and connect it to your coding agent. Straion works with Claude Code, Cursor, and GitHub Copilot.
 2. ### Connect Your Repo
 
    Straion creates a dedicated branch in your repo and migrates your AGENTS.md and CLAUDE.md files into rules. From then on a rule change is a commit and a pull request, reviewed like code.
@@ -148,10 +148,5 @@ every developer's AI agent from day one.
 
 Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
-[Get Started Free
+[Start free trial
 →](https://straion.app/auth/signup)
-
-### Book a demo
-
-We'll show you how Straion works with your AI coding setup and try it
-with your team.

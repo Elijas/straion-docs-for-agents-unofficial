@@ -9,7 +9,7 @@ description: "Already using AGENTS.md across your repos? See what Straion adds: 
 A fair question. AGENTS.md files work, up to a point. Here's an honest look at what they do
 well, where they break down at team scale, and what Straion adds on top.
 
-[Start Free](https://straion.app/auth/signup)   [See Straion import your AGENTS.md →](#import)
+[Start free trial](https://straion.app/auth/signup)   [See Straion import your AGENTS.md →](#import)
 
 Short answer
 
@@ -205,5 +205,5 @@ Import your existing AGENTS.md files. See what Straion adds. No credit card requ
 
 Works with Claude Code, GitHub Copilot & Cursor.
 
-[Get Started Free
+[Start free trial
 →](https://straion.app/auth/signup)

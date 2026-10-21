@@ -12,7 +12,7 @@ Claude Code only
 
 # Live pane
 
-![The Claude Code desktop app. On the right, the Straion pane says Straion kept everything on track, with 4 rules checked, followed by an expanded list of four compliant rules](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-pane-on-track.tAA5iawO.png&w=2000&h=1249&dpl=6acf806652756643ff1c325e)
+![The Claude Code desktop app. On the right, the Straion pane says Straion kept everything on track, with 4 rules checked, followed by an expanded list of four compliant rules](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-pane-on-track.tAA5iawO.png&w=2000&h=1249&dpl=6ad76dc3242b1829db99d845)
 
 The [audit report](../audit-trail.md#reading-the-report) tells you what happened once a session is over. The live pane shows the same trail while the agent works. It’s a Claude Code mod called `straion-trail`, a side pane next to the conversation that lists what Straion corrected the agent on, whether the agent fixed it, and when Straion is waiting for you.
 
@@ -41,7 +41,7 @@ Mods are a Claude Code feature, so the pane works only there, in the terminal an
 
 Until the agent asks Straion for rules, the pane reads “Straion is watching”.
 
-![A Claude Code terminal session. The /straion-trail command prints that the Straion pane opened. Below it, a bordered pane reads: Straion is watching. Corrections show up here](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-terminal-watching.Cjpa9ATD.png&w=2938&h=287&dpl=6acf806652756643ff1c325e)
+![A Claude Code terminal session. The /straion-trail command prints that the Straion pane opened. Below it, a bordered pane reads: Straion is watching. Corrections show up here](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-terminal-watching.Cjpa9ATD.png&w=2938&h=287&dpl=6ad76dc3242b1829db99d845)
 
 ## What the pane shows
 
