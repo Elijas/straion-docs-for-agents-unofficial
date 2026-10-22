@@ -44,7 +44,7 @@ straion config audit.mode trail
 
 Now run `/straion-trail` in Claude Code. A pane titled “Straion” opens. As long as nothing has happened it shows “Straion is watching”.
 
-   ![A Claude Code terminal session. The /straion-trail command prints 'Straion pane opened.' and below it a bordered pane reads 'Straion is watching' and 'Corrections show up here'.](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-terminal-watching.Cjpa9ATD.png&fm=png&w=2938&h=287&dpl=6ad76dc3242b1829db99d845)  
+   ![A Claude Code terminal session. The /straion-trail command prints 'Straion pane opened.' and below it a bordered pane reads 'Straion is watching' and 'Corrections show up here'.](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-terminal-watching.Cjpa9ATD.png&fm=png&w=2938&h=287&dpl=6ad948053628acb75d455cb3)  
 
 The empty pane in the terminal, before Straion has caught anything.
 
@@ -52,7 +52,7 @@ The empty pane in the terminal, before Straion has caught anything.
 
 One of the sessions we ran it on: Claude Code upgrading cppcheck in opendbc and fixing the MISRA 10.3 findings, which are integers that get assigned to bools. Straion found 4 rules for the task, and the pane shows “Straion kept everything on track” and “4 rules checked”.
 
-   ![The Claude Code desktop app in light mode. The agent summarizes a cppcheck upgrade and MISRA fix in opendbc. On the right, the Straion pane shows the Straion signet, 'Straion kept everything on track' and '4 rules checked', followed by an expanded list of four compliant rules, among them 'MUST NOT use magic values in code'.](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-pane-on-track.tAA5iawO.png&fm=png&w=2000&h=1249&dpl=6ad76dc3242b1829db99d845)  
+   ![The Claude Code desktop app in light mode. The agent summarizes a cppcheck upgrade and MISRA fix in opendbc. On the right, the Straion pane shows the Straion signet, 'Straion kept everything on track' and '4 rules checked', followed by an expanded list of four compliant rules, among them 'MUST NOT use magic values in code'.](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-pane-on-track.tAA5iawO.png&fm=png&w=2000&h=1249&dpl=6ad948053628acb75d455cb3)  
 
 A session in opendbc. We expanded the compliant rules for the screenshot. Normally they are folded away.
 
@@ -104,7 +104,7 @@ Fabian
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ad76dc3242b1829db99d845) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ad948053628acb75d455cb3) 
 
 Written by Fabian Friedl
 

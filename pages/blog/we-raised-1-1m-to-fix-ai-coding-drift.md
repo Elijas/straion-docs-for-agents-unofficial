@@ -33,7 +33,7 @@ Because organizational context is missing.
 
 Today, we’re announcing that **Straion raised a €1.1M seed round led by [Marathon Venture Capital](https://marathon.vc/)** to solve this problem.
 
-![Marathon VC](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ad76dc3242b1829db99d845)
+![Marathon VC](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ad948053628acb75d455cb3)
 
 ## The problem we’re building for
 
@@ -101,15 +101,15 @@ If you lead an engineering team and want to stop AI drift before review, we’d 
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ad76dc3242b1829db99d845) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ad948053628acb75d455cb3) 
 
 Written by Lukas Holzer
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ad76dc3242b1829db99d845) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ad948053628acb75d455cb3) 
 
 Written by Katrin Freihofner
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ad76dc3242b1829db99d845) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ad948053628acb75d455cb3) 
 
 Written by Fabian Friedl
 
