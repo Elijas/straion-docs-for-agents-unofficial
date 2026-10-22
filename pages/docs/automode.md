@@ -18,7 +18,7 @@ You don’t change how you work. You give the agent a task, and it looks up the 
 
 Most of the time, nothing. The agent looks up the rules on its own and gets on with the task.
 
-![A loop between the agent and Straion. The agent works: it finds rules and writes code. When it tries to end the turn, Straion checks the turn. If files changed but no rules were looked up, Straion sends the agent back to work. If the agent looked up the rules, or no files changed, the turn ends](https://straion.com/.netlify/images?url=_astro%2F01-automode-loop.DUUXEiI_.png&w=2400&h=1056&dpl=6ad76dc3242b1829db99d845)
+![A loop between the agent and Straion. The agent works: it finds rules and writes code. When it tries to end the turn, Straion checks the turn. If files changed but no rules were looked up, Straion sends the agent back to work. If the agent looked up the rules, or no files changed, the turn ends](https://straion.com/.netlify/images?url=_astro%2F01-automode-loop.DUUXEiI_.png&w=2400&h=1056&dpl=6ad948053628acb75d455cb3)
 
 Every so often, the agent changes code without looking anything up. Then it doesn’t hand the work back to you yet. Straion sends it back once to find the rules and check its change against them. You see this note:
 
