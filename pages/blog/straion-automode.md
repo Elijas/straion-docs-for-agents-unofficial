@@ -141,11 +141,11 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ad948053628acb75d455cb3) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
 
 Written by Lukas Holzer
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ad948053628acb75d455cb3) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
 
 Written by Fabian Friedl
 
