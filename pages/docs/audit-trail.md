@@ -3,7 +3,7 @@ title: "Audit trail"
 source: https://straion.com/docs/audit-trail
 description: "Every rule Straion matches to a task needs a recorded decision before the agent can finish. To ship a violation, the agent needs your approval, and the trail records the decisions and who made them."
 section: "Using Straion"
-order: 13
+order: 15
 prev: automode.md
 next: audit-trail/live-pane.md
 ---
@@ -21,7 +21,7 @@ You end up with one record per session. It answers two questions:
 
 ## How a session becomes a report
 
-![A row of five steps: Find, Work, Record, Block, Report. Find gets the rules for the task. Work is where the agent writes code. Record captures one decision per rule. Block holds the turn while any rule is unresolved. Report is the one record you read. At the Record step, you approve anything that ships as an exception](https://straion.com/.netlify/images?url=_astro%2F01-session-to-audit-report.BUQPNOj_.png&w=2400&h=466&dpl=6ada5323f2a5f29b8f72a146)
+![A row of five steps: Find, Work, Record, Block, Report. Find gets the rules for the task. Work is where the agent writes code. Record captures one decision per rule. Block holds the turn while any rule is unresolved. Report is the one record you read. At the Record step, you approve anything that ships as an exception](https://straion.com/.netlify/images?url=_astro%2F01-session-to-audit-report.BUQPNOj_.png&w=2400&h=466&dpl=6ae341d5c54551b7219e36f3)
 
 1. **Find.** The agent asks Straion which rules apply to the task. Straion writes every rule it returns into the trail.
 2. **Work.** The agent writes the code. It can’t edit or delete the trail.
@@ -33,7 +33,7 @@ You end up with one record per session. It answers two questions:
 
 For each rule, the agent first judges the code as **compliant**, **partial**, or a **violation**. Partial compliance counts as a violation.
 
-![The states a rule moves through. A rule holds the agent&#x27;s turn while it has no verdict, needs fixing, or is stale. It settles as compliant, accepted, or not applicable. To accept a violation, or to rule it not applicable, Straion asks you first. If you change a covered file after a decision, the settled rule reopens](https://straion.com/.netlify/images?url=_astro%2F02-verdict-lifecycle.pip4Saip.png&w=2432&h=1332&dpl=6ada5323f2a5f29b8f72a146)
+![The states a rule moves through. A rule holds the agent&#x27;s turn while it has no verdict, needs fixing, or is stale. It settles as compliant, accepted, or not applicable. To accept a violation, or to rule it not applicable, Straion asks you first. If you change a covered file after a decision, the settled rule reopens](https://straion.com/.netlify/images?url=_astro%2F02-verdict-lifecycle.pip4Saip.png&w=2432&h=1332&dpl=6ae341d5c54551b7219e36f3)
 
 Every rule starts without a verdict. A rule is settled once it’s compliant, an accepted violation, or not applicable. The agent can hand the work back only when every rule is settled. That’s the whole mechanism.
 
@@ -85,7 +85,6 @@ Some rules should never ship broken, no matter who signs off. Add `gate: deny` t
 ```md
 ---
 $schema: https://straion.com/schemas/rule/v1.json
-id: 0b7c2f4e-1d3a-4e8b-9a6f-5c2d8e1f4a7b
 gate: deny
 meta:
   tags: [security]
@@ -95,6 +94,8 @@ MUST NOT write access tokens to logs.
 ```
 
 A rule without `gate` gets `ask`, which is everything described above. The only other value is `deny`. You set it on each rule. Collections don’t have a gate.
+
+To enforce a `deny` rule in every repository, bind its collection to `all`. See [Rule bindings](rule-bindings.md#apply-collections-to-every-repository).
 
 Nobody can accept a violation of a `deny` rule, not the agent and not you. If the agent tries, Straion refuses and tells it to fix the code. The turn stays open until the fix is in.
 

@@ -3,7 +3,7 @@ title: "Validate specs"
 source: https://straion.com/docs/validate-specs
 description: "Check specs, RFCs, and design docs against your rules before implementation begins"
 section: "Using Straion"
-order: 9
+order: 11
 prev: implement-with-rules.md
 next: validate-implementation-plan.md
 ---

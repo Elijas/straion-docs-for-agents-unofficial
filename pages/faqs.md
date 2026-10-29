@@ -4,7 +4,7 @@ source: https://straion.com/faqs
 description: "Answers to the most common questions about Straion, setup, security, and AI coding guidance."
 ---
 
-![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ada5323f2a5f29b8f72a146)
+![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ae341d5c54551b7219e36f3)
 
 ---
 

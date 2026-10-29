@@ -14,7 +14,9 @@ Documentation appears first, in the reading order published on the site.
 1. Import rules
 2. Connect a repository
 3. Rule file format
-4. Best practices
+4. Rule bindings
+5. Binding file reference
+6. Best practices
 
 **Using Straion**
 1. Implement with rules
@@ -284,15 +286,15 @@ The agent converts each source into one or more **collections**, grouped by doma
 
 The agent validates every collection and uploads it with the `straion import-rules` command. When it finishes, it prints a summary of what was created:
 
-![The Straion CLI printing a &#x27;Created collections&#x27; summary table, listing each rule collection and the number of rules it contains](https://straion.com/.netlify/images?url=_astro%2F03-created-collections.ChjMU2b4.jpg&w=806&h=510&dpl=6ada5323f2a5f29b8f72a146)
+![The Straion CLI printing a &#x27;Created collections&#x27; summary table, listing each rule collection and the number of rules it contains](https://straion.com/.netlify/images?url=_astro%2F03-created-collections.ChjMU2b4.jpg&w=806&h=510&dpl=6ae341d5c54551b7219e36f3)
 
 ## Review your imported rules
 
 Open the Straion **Rules** page to review what was imported.
 
-![The Straion Rules page listing imported collections such as Backend Tests, Playwright Patterns, Zod DTOs, and Node Definitions, each with a description and an &#x27;Extracted from&#x27; repository badge](https://straion.com/.netlify/images?url=_astro%2F04-rules-list.CQ8CKef2.jpg&w=1080&h=596&dpl=6ada5323f2a5f29b8f72a146)
+![The Straion Rules page listing imported collections such as Backend Tests, Playwright Patterns, Zod DTOs, and Node Definitions, each with a description and an &#x27;Extracted from&#x27; repository badge](https://straion.com/.netlify/images?url=_astro%2F04-rules-list.CQ8CKef2.jpg&w=1080&h=596&dpl=6ae341d5c54551b7219e36f3)
 
-![A single collection opened in Straion, showing its rules numbered in order, each beginning with a strength word such as MUST or SHOULD](https://straion.com/.netlify/images?url=_astro%2F05-collection-rules.D0p0r1Ur.jpg&w=1080&h=596&dpl=6ada5323f2a5f29b8f72a146)
+![A single collection opened in Straion, showing its rules numbered in order, each beginning with a strength word such as MUST or SHOULD](https://straion.com/.netlify/images?url=_astro%2F05-collection-rules.D0p0r1Ur.jpg&w=1080&h=596&dpl=6ae341d5c54551b7219e36f3)
 
 Imported rules are immediately available to the Straion workflows — they are matched against your specs, plans, and code whenever you [implement with rules](implement-with-rules.md) or [validate code](validate-code.md).
 
@@ -385,7 +387,7 @@ straion source repo connect --sample
 
 ## Where your rules live
 
-Your rules live on the `straion/rules/v1` branch, under a top-level `rules/` directory. Each collection is a folder containing a `README.md` header and one Markdown file per rule:
+Your rules live on the `straion/rules/v1` branch, under a top-level `rules/` directory. Each collection is a folder with a `README.md` header and one Markdown file per rule:
 
 ```plaintext
 rules/
@@ -398,7 +400,9 @@ rules/
     treat-compiler-warnings-errors.md
 ```
 
-See [Rule file format](rule-file-format.md) for the full anatomy of a collection frontmatter header and a rule file, and the handful of things to get right when editing them by hand.
+You can organize collections in plain folders by team or domain, for example `rules/security/payments/`, nested as deep as you like. A collection keeps its rules directly inside it.
+
+See [Rule file format](rule-file-format.md) for the full anatomy of a collection frontmatter header and a rule file, how to group collections in folders, and the handful of things to get right when editing them by hand.
 
 ## Step 2: Author rules through git
 
@@ -502,7 +506,7 @@ straion-rules-sync:
 Because your rules live in your repository, you govern them with the tools you already use:
 
 - **Require review** on the `straion/rules/v1` branch with branch protection.
-- **Assign ownership** of rule folders with `CODEOWNERS`, so the right people approve changes to each collection.
+- **Assign ownership** of rule folders with `CODEOWNERS`, so the right people approve changes to each collection. Group a team’s collections under one folder, such as `rules/security/`, and one `CODEOWNERS` line covers all of them.
 - **Audit history** through your normal git log. Every rule change is a reviewed commit.
 
 Straion does not run a separate approval process. Whatever your repository accepts is what gets synced.
@@ -539,7 +543,7 @@ You rarely need to write these files from scratch: Straion’s import functional
 
 ## Layout
 
-Rules live on the `straion/rules/v1` branch, under a top-level `rules/` directory. Each collection is a folder containing a `README.md` header and one Markdown file per rule:
+Rules live on the `straion/rules/v1` branch, under a top-level `rules/` directory. Each collection is a folder with a `README.md` header and one Markdown file per rule:
 
 ```plaintext
 rules/
@@ -552,6 +556,37 @@ rules/
     treat-compiler-warnings-errors.md
 ```
 
+The `README.md` is what makes a folder a collection: its frontmatter declares the Straion `$schema` shown in the next section.
+
+A central source can also have a `bindings/` folder next to `rules/`. See [Rule bindings](rule-bindings.md) and the [Binding file reference](binding-file-reference.md).
+
+### Group collections in folders
+
+As your rule set grows, a flat list of collections gets hard to navigate. Put collections in plain folders to organize them by team, domain, or product area, as deep as you like:
+
+```plaintext
+rules/
+  security/
+    payments/
+      README.md                      ← collection: name + description
+      never-log-card-numbers.md
+    auth/
+      README.md
+      require-mfa-for-admins.md
+  cpp-naming-conventions/
+    README.md
+    upper-case-constant-names.md
+```
+
+A grouping folder needs nothing special. It has no `README.md`, or a `README.md` without a Straion `$schema`, so you can keep an ordinary README or an owners file in it for your own readers. Straion looks past grouping folders and finds the collections inside them.
+
+Grouping only changes where a collection sits in your repository. In the Straion app, collections still appear as one flat list. Rules created by the import land directly under `rules/`. You can move them into folders, but a move gives the collection a new identity. See [How Straion identifies rules](#how-straion-identifies-rules). A [binding](binding-file-reference.md) refers to a collection by its path, for example `security/payments`.
+
+Two things to keep in mind:
+
+- **A collection holds its rules directly.** Don’t put rule files or other collections in a subfolder of a collection. The sync rejects them.
+- **Every rule file needs a collection.** A rule file in a grouping folder is rejected. Add a `README.md` with the `$schema` to turn that folder into a collection.
+
 ## Collection header (`README.md`)
 
 Every collection folder has a `README.md` that names and describes the collection. The text below the frontmatter is the collection’s description:
@@ -559,7 +594,6 @@ Every collection folder has a `README.md` that names and describes the collectio
 ```md
 ---
 $schema: https://straion.com/schemas/rule-collection/v1.json
-id: f11076d9-bcfc-4e0c-9b22-d0b628b4a86c
 name: C++ Naming Conventions
 meta:
   tags: [style, naming]
@@ -577,7 +611,6 @@ Each rule is a single Markdown file. The text below the frontmatter is the rule 
 ````md
 ---
 $schema: https://straion.com/schemas/rule/v1.json
-id: 61e9a038-948a-431d-b5e9-91d6eec9f82c
 meta:
   tags: [naming, style]
   languages: [cpp]
@@ -596,15 +629,45 @@ constexpr int maxRetries = 3;
 ```
 ````
 
+### Gate
+
+The optional `gate` field sets what happens when the agent wants to leave a violation of this rule unfixed:
+
+| Value | Meaning |
+| --- | --- |
+| `ask` | Default. You approve or reject the violation in your coding agent’s approval prompt. |
+| `deny` | Nobody can accept a violation. The agent has to fix the code. |
+
+```md
+---
+$schema: https://straion.com/schemas/rule/v1.json
+gate: deny
+meta:
+  tags: [security]
+---
+
+MUST NOT write access tokens to logs.
+```
+
+Leave `gate` out to get `ask`. Other values are errors. `gate` is set per rule: a collection `README.md` with a `gate` is rejected. See [Rules that can’t be accepted](audit-trail.md#rules-that-cant-be-accepted) for how each value works in the audit trail.
+
 ## Things to get right
 
 - **The rule statement is the text before the `## Examples` heading.** Start it with `MUST`, `MUST NOT`, or `SHOULD`. See [Best practices](best-practices.md) for how to phrase strong rules.
-- **A rule’s identity is the `id` in its frontmatter, not its filename.** Renaming a file, or moving a rule between collections, keeps the same rule as long as the `id` stays the same. Renaming is safe.
 - **Examples use fenced code blocks** tagged `kind=compliant` or `kind=violating`.
 - **Tags and languages** in `meta` help Straion match the rule to the right work. Keep them accurate.
 
-> **Caution: Don’t reuse an `id`.**
-> Each rule and collection `id` must be unique. Copy-pasting a rule file without changing its `id` will cause that rule to be flagged as a conflict rather than synced. When you add a brand-new rule, give it a fresh UUID or let your agent generate one for you.
+## How Straion identifies rules
+
+A collection is identified by its folder path under `rules/`, for example `security/payments`. A rule is identified by its file name inside its collection, for example `never-log-card-numbers`. The path is the identity, so files don’t need an `id`.
+
+- **Name folders and files with lowercase letters, digits, and `-`.** Start with a letter or a digit. Each name can be up to 80 characters. The sync rejects other names and tells you which path is wrong.
+- **Each path is unique.** Two collections can’t have the same path, and two rules in one collection can’t have the same file name.
+
+> **Caution: Renaming or moving creates a new rule.**
+> When you rename a rule file or move it to another collection, Straion deletes the old rule and creates a new one with a new shortcode. The same happens to every rule in a collection when you rename or move the collection folder. Update any [binding](binding-file-reference.md) that lists the old collection path.
+
+Older files can still have an `id` in their frontmatter. Straion ignores it, and `straion source repo sync` prints a notice for each of those files. You can delete the line.
 
 ## Validate before you commit
 
@@ -615,6 +678,321 @@ straion source repo sync --dry-run
 ```
 
 It exits with a non-zero exit code and lists the violating files if anything is invalid, and uploads nothing. See [Connect a repository](connect-repository.md#step-3-sync-on-every-change) for how to run the same check automatically on every pull request.
+
+
+---
+
+# Rule bindings
+
+Source: https://straion.com/docs/rule-bindings
+
+# Rule bindings
+
+By default, the rules of a [connected repository](connect-repository.md) apply only to that repository. Rule bindings let you apply them to other repositories too.
+
+A binding is a small YAML file in your rules repository. It says: these collections apply to these repositories.
+
+```yaml
+$schema: https://straion.com/schemas/rule-binding/v1.json
+description: Payments safety rules for the services that move money.
+collections:
+  - payments-safety
+repos:
+  - github.com/acme/billing
+  - github.com/acme/ledger
+submodules: exclude
+```
+
+You change bindings through pull requests, like the rules themselves. A binding applies after its pull request is merged and the source is synced.
+
+## Examples
+
+Each example is one file in the `bindings/` folder of your rules repository. To set up that repository the first time, see [Set up bindings](#set-up-bindings). For every field and check, see [Binding file reference](binding-file-reference.md).
+
+### Apply collections to every repository
+
+Set `repos` to `all`.
+
+```yaml
+$schema: https://straion.com/schemas/rule-binding/v1.json
+description: Baseline rules that every repository in the organization must obey.
+collections:
+  - secure-coding
+  - logging
+repos: all
+submodules: exclude
+```
+
+**Result:** your agents follow `secure-coding` and `logging` in every repository.
+
+### Apply collections to a team’s repositories
+
+List each repository by its key, for example `github.com/acme/billing`. See [Repository keys](binding-file-reference.md#repository-keys).
+
+```yaml
+$schema: https://straion.com/schemas/rule-binding/v1.json
+description: Payments safety rules for the services that move money.
+collections:
+  - idempotency
+  - payments-safety
+repos:
+  - github.com/acme/billing
+  - github.com/acme/ledger
+submodules: exclude
+```
+
+**Result:** your agents follow both collections in `billing` and `ledger`, and nowhere else. To add a repository later, add its key to the list.
+
+### Apply collections to a repository and its submodules
+
+Set `submodules` to `include`.
+
+```yaml
+$schema: https://straion.com/schemas/rule-binding/v1.json
+description: Embedded C rules for the firmware and all the libraries it vendors.
+collections:
+  - embedded-c
+repos:
+  - github.com/acme/firmware
+submodules: include
+```
+
+**Result:** your agents follow `embedded-c` in `firmware` and in every submodule of `firmware`, however deep.
+
+### Roll out a new collection step by step
+
+Start with one pilot repository:
+
+```yaml
+$schema: https://straion.com/schemas/rule-binding/v1.json
+description: New API design rules, tried first on the billing service.
+collections:
+  - api-design
+repos:
+  - github.com/acme/billing
+submodules: exclude
+```
+
+When the pilot goes well, add more repositories to `repos`. When the rules are ready for everyone, change `repos` to `all`. Each step is one pull request, so the team reviews each widening.
+
+**Result:** the rules reach more repositories only when a reviewer approves it.
+
+### Combine an organization baseline with team rules
+
+The platform team binds a baseline to `all`, as in [the first example](#apply-collections-to-every-repository). Each team has its own rules repository, for example `acme/payments-rules`, and binds its collections to its own repositories:
+
+```yaml
+$schema: https://straion.com/schemas/rule-binding/v1.json
+description: Payments team rules for the payments services.
+collections:
+  - payments-logging
+repos:
+  - github.com/acme/billing
+  - github.com/acme/ledger
+submodules: exclude
+```
+
+**Result:** in `billing`, your agents follow the payments rules and the baseline. Each team changes its own rules without waiting for the platform team.
+
+## Set up bindings
+
+You do this once for each rules repository. It is a normal connected repository that you mark as central.
+
+1. **Connect the rules repository.** Follow [Connect a repository](connect-repository.md). You can use a new repository or one that is already connected.
+2. **Mark it as central.** Run this command in a checkout of the repository. You must be an organization admin.
+
+   ```bash
+   straion source repo connect --central
+   ```
+
+   It adds no files. You add them in the next steps.
+3. **Check that CI syncs the rules branch.** Use the two workflows from [Connect a repository](connect-repository.md#step-3-sync-on-every-change): `straion source repo sync` after each merge, and `straion source repo sync --dry-run` on each pull request. They check and upload the bindings together with the rules, so bindings need no extra job. Mark the pull request check as required in your branch protection, so an invalid binding can’t be merged.
+4. **Protect the branch.** Require a review for `straion/rules/v1`, and do not push to it directly. To choose who must approve, add a `CODEOWNERS` file on the branch:
+
+   ```plaintext
+   /bindings/ @acme/platform
+   /rules/ @acme/platform
+   /rules/payments-safety/ @acme/payments
+   ```
+
+   The last matching line wins. Here the payments team approves changes to the `payments-safety` collection, and the platform team approves all other changes. `CODEOWNERS` blocks a merge only when the branch protection has **Require review from Code Owners** turned on. On GitLab and Bitbucket, use their code owners feature and the matching approval rule.
+5. **Add your first binding.** Pick an [example](#examples), save it as `bindings/<name>.yaml` on a work branch, and open a pull request into `straion/rules/v1`.
+
+## Change a binding
+
+A change to a binding changes which rules your agents follow. Review it like code:
+
+1. Edit `bindings/*.yaml` on a work branch. Run `straion source repo validate` to check the files.
+2. Open a pull request against `straion/rules/v1`. Give the reason for the change in the description.
+3. CI validates the bindings. A reviewer approves.
+4. After the merge, CI runs `straion source repo sync`. The new bindings apply from that point.
+
+Common changes:
+
+- **Onboard a new repository.** Add its key to `repos` in each binding that it needs.
+- **Remove a collection from a repository.** Remove the collection from `collections`, or the repository from `repos`.
+
+## Which rules your agent follows
+
+When your agent works on a file, it follows the collections that apply to the repository of that file. Things that surprise people:
+
+- **Own rules stay in their repository.** A submodule doesn’t get the rules of the repository around it. Use `submodules: include` to send rules down.
+- **A parent repository doesn’t get the rules of its submodules.**
+- **Bindings work on whole repositories.** You can’t bind a collection to one folder.
+- **Your agent gets no rules in the rules repository itself.** Editing rules and bindings isn’t checked against them.
+- **Without a remote, your agent gets only the rules for every repository.** This happens outside a git repository, or in a repository without a usable remote. Straion prints a warning.
+- **A fork is its own repository.** Straion uses the `origin` remote, which in a fork is usually your fork. Bindings for the upstream repository don’t reach it.
+- **Your agent still sees every collection name at the start of a session.** The rules it checks a file against are only the ones that apply.
+
+For the exact resolution, see [How a file gets its collections](binding-file-reference.md#how-a-file-gets-its-collections).
+
+
+---
+
+# Binding file reference
+
+Source: https://straion.com/docs/binding-file-reference
+
+# Binding file reference
+
+A central source keeps its bindings as YAML files next to its rules. This page is the reference for that layout and file format: what a binding file looks like, what each field accepts, and the things you need to get right when you edit one by hand. To learn what bindings do and how to set them up, see [Rule bindings](rule-bindings.md).
+
+## Layout
+
+Binding files live on the `straion/rules/v1` branch, in a `bindings/` folder next to `rules/`. Each file is `<name>.yaml` or `<name>.yml`, directly in `bindings/`:
+
+```plaintext
+rules/
+  idempotency/
+    README.md
+    ...
+  payments-safety/
+    README.md
+    ...
+  security/                   ← grouping folder
+    payments/
+      README.md
+      ...
+bindings/
+  payments-safety.yaml        ← one binding
+  secure-coding.yaml
+```
+
+Only a central source can have a `bindings/` folder. For the `rules/` folder, see [Rule file format](rule-file-format.md).
+
+## Binding file
+
+```yaml
+$schema: https://straion.com/schemas/rule-binding/v1.json
+description: Payments safety rules for the services that move money.
+collections:
+  - idempotency
+  - payments-safety
+  - security/payments
+repos:
+  - github.com/acme/billing
+  - github.com/acme/ledger
+submodules: exclude
+```
+
+| Field | Required | Value |
+| --- | --- | --- |
+| `$schema` | Yes | `https://straion.com/schemas/rule-binding/v1.json` |
+| `description` | Yes | Why these repositories get these rules. 10 to 300 characters. |
+| `collections` | Yes | Folder paths of collections under `rules/` in the same source, for example `payments-safety` or `security/payments`. At least one. |
+| `repos` | Yes | `all`, or a list of [repository keys](#repository-keys). At least one. |
+| `submodules` | No | `exclude` (default) or `include`. With `include`, the collections also apply to repositories nested in a listed repository, at any depth. |
+
+Other fields are errors.
+
+## Repository keys
+
+A repository key is the repository URL without the scheme, the user, and `.git`. For example, `https://github.com/acme/billing.git` and `git@github.com:acme/billing.git` both give `github.com/acme/billing`.
+
+To find the key of a repository, run this command in it:
+
+```bash
+git remote get-url origin
+```
+
+Write the key in this form: the host in lowercase, no trailing `/`, and no wildcards. Keep a port only when it isn’t the default one, for example `git.acme.internal:8443/platform/billing`.
+
+On `github.com`, `gitlab.com`, `bitbucket.org`, and `dev.azure.com`, the path is not case-sensitive. On other hosts it is.
+
+## Things to get right
+
+- **A collection is its folder path, not its `name`.** Use the path of the collection folder under `rules/`, grouping folders included: `security/payments`, not `payments`. See the [rules layout](rule-file-format.md#layout). Each folder in the path has lowercase letters, digits, and `-`, and starts with a letter or a digit. A binding can only list collections of its own source.
+- **The folder is flat.** Put binding files directly in `bindings/`. A subfolder is an error. Files that start with `.` are ignored.
+- **No YAML anchors or aliases.** Write each list out in full.
+- **No central sources in `repos`.** A central source is never a target of a binding.
+
+## How a file gets its collections
+
+For each file that the agent edits, Straion finds the repository that owns the file. That is the repository of the nearest `.git` above the file. A git submodule is its own repository. A git worktree belongs to its main repository. A folder copied into a repository without its own `.git` (for example a subtree) belongs to the repository around it.
+
+Straion takes the repository key from the `origin` remote. When there is no `origin`, it uses the only remote of the repository. With several remotes and none named `origin`, the repository has no usable remote.
+
+The file gets a collection when one of these is true:
+
+| Level | The collection comes from |
+| --- | --- |
+| `own` | The repository itself, when it is not a central source. |
+| `direct` | A binding that lists the repository. |
+| `inherited` | A binding with `submodules: include` that lists a repository that contains this one as a submodule, at any depth. |
+| `all` | A binding with `repos: all`, a central collection that no binding lists, or a collection not from a repository. |
+
+The levels only say why a collection applies. They don’t rank rules.
+
+- Collections at level `own` don’t apply to the submodules of the repository.
+- A parent repository doesn’t get the collections of its submodules.
+- When the agent edits a file in the rules repository itself (a central source), no collections apply. Rule files and binding files aren’t checked against your rules.
+- A file outside a git repository, or in a repository without a usable remote, gets only the `all` level. Straion prints a warning.
+- When a parent repository has no usable remote, `submodules: include` bindings don’t reach its submodules. Straion prints a warning.
+- When git can’t be read at all, the agent matches against every collection. Straion prints a warning.
+- Each file is resolved alone. When the agent edits files in two repositories in one session, each file gets the collections of its own repository.
+- The rules index at session start lists every collection. Only the rule search for a file applies bindings.
+- Bindings take effect after the pull request is merged and `straion source repo sync` runs.
+
+## Validate before you commit
+
+To check your rules and bindings before you open a pull request, run this in a checkout of the rules branch:
+
+```bash
+straion source repo validate
+```
+
+It checks the files in `rules/` and `bindings/`, uncommitted edits included. It exits with a non-zero code and lists every error when something is invalid. It never changes files.
+
+All problems are errors. A file with an error blocks the sync, and the sync rejects the whole commit. Each error names the file, and the field when there is one, for example `bindings/payments.yaml:repos.1`.
+
+`validate` reports an error when:
+
+- An entry in `bindings/` is a subfolder, or a file that isn’t `.yaml` or `.yml`.
+- The file is not valid YAML, or uses an alias.
+- `$schema` is missing or wrong.
+- A field is unknown, has the wrong type, or has a value that is not permitted.
+- `description` is shorter than 10 or longer than 300 characters.
+- A `collections` entry is not a valid folder path, or is not a collection folder under `rules/` in this source.
+- A `repos` entry is not a repository key in the form above.
+- A `repos` entry is a central source.
+- The source has a `bindings/` folder but is not central. An organization admin can run `straion source repo connect --central`.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| `straion source repo connect --central` | Makes the current repository a central source. Organization admins only. It writes no files. |
+| `straion source repo connect --no-central` | Makes the current repository a normal source again. Organization admins only. It writes no files. |
+| `straion source repo validate [--remote <name>]` | Validates `rules/` and `bindings/`. `--remote` defaults to `origin`. |
+| `straion source repo sync [--dry-run] [--remote <name>]` | Validates and uploads rules and bindings. Run it in CI after each merge. `--dry-run` validates without uploading. |
+
+Inside a checkout that has `rules/` or `bindings/` at its root, `validate` reads that working tree. Elsewhere it reads the `straion/rules/v1` branch of the repository. It always checks that the source is central and that no binding lists a central source.
+
+## Stop using a central source
+
+Run `straion source repo connect --no-central` in a checkout of the repository. Its collections then apply only to the repository itself again.
+
+Straion keeps the binding files but ignores them. The next sync of a source that still has a `bindings/` folder fails, because only a central source can have bindings. Remove the `bindings/` folder with a pull request.
 
 
 ---
@@ -940,7 +1318,7 @@ You don’t change how you work. You give the agent a task, and it looks up the 
 
 Most of the time, nothing. The agent looks up the rules on its own and gets on with the task.
 
-![A loop between the agent and Straion. The agent works: it finds rules and writes code. When it tries to end the turn, Straion checks the turn. If files changed but no rules were looked up, Straion sends the agent back to work. If the agent looked up the rules, or no files changed, the turn ends](https://straion.com/.netlify/images?url=_astro%2F01-automode-loop.DUUXEiI_.png&w=2400&h=1056&dpl=6ada5323f2a5f29b8f72a146)
+![A loop between the agent and Straion. The agent works: it finds rules and writes code. When it tries to end the turn, Straion checks the turn. If files changed but no rules were looked up, Straion sends the agent back to work. If the agent looked up the rules, or no files changed, the turn ends](https://straion.com/.netlify/images?url=_astro%2F01-automode-loop.DUUXEiI_.png&w=2400&h=1056&dpl=6ae341d5c54551b7219e36f3)
 
 Every so often, the agent changes code without looking anything up. Then it doesn’t hand the work back to you yet. Straion sends it back once to find the rules and check its change against them. You see this note:
 
@@ -980,6 +1358,8 @@ straion config automode true
 ```
 
 The setting covers that folder and every folder inside it. It’s saved in `~/.straion/config.json` on your machine, not in the repo. Your teammates aren’t affected.
+
+It also covers every git worktree of the repo, wherever the worktree is on disk. If you run the command inside a worktree, Straion saves the setting for the main checkout. So all worktrees share it.
 
 **For every repo on your machine:**
 
@@ -1073,7 +1453,7 @@ You end up with one record per session. It answers two questions:
 
 ## How a session becomes a report
 
-![A row of five steps: Find, Work, Record, Block, Report. Find gets the rules for the task. Work is where the agent writes code. Record captures one decision per rule. Block holds the turn while any rule is unresolved. Report is the one record you read. At the Record step, you approve anything that ships as an exception](https://straion.com/.netlify/images?url=_astro%2F01-session-to-audit-report.BUQPNOj_.png&w=2400&h=466&dpl=6ada5323f2a5f29b8f72a146)
+![A row of five steps: Find, Work, Record, Block, Report. Find gets the rules for the task. Work is where the agent writes code. Record captures one decision per rule. Block holds the turn while any rule is unresolved. Report is the one record you read. At the Record step, you approve anything that ships as an exception](https://straion.com/.netlify/images?url=_astro%2F01-session-to-audit-report.BUQPNOj_.png&w=2400&h=466&dpl=6ae341d5c54551b7219e36f3)
 
 1. **Find.** The agent asks Straion which rules apply to the task. Straion writes every rule it returns into the trail.
 2. **Work.** The agent writes the code. It can’t edit or delete the trail.
@@ -1085,7 +1465,7 @@ You end up with one record per session. It answers two questions:
 
 For each rule, the agent first judges the code as **compliant**, **partial**, or a **violation**. Partial compliance counts as a violation.
 
-![The states a rule moves through. A rule holds the agent&#x27;s turn while it has no verdict, needs fixing, or is stale. It settles as compliant, accepted, or not applicable. To accept a violation, or to rule it not applicable, Straion asks you first. If you change a covered file after a decision, the settled rule reopens](https://straion.com/.netlify/images?url=_astro%2F02-verdict-lifecycle.pip4Saip.png&w=2432&h=1332&dpl=6ada5323f2a5f29b8f72a146)
+![The states a rule moves through. A rule holds the agent&#x27;s turn while it has no verdict, needs fixing, or is stale. It settles as compliant, accepted, or not applicable. To accept a violation, or to rule it not applicable, Straion asks you first. If you change a covered file after a decision, the settled rule reopens](https://straion.com/.netlify/images?url=_astro%2F02-verdict-lifecycle.pip4Saip.png&w=2432&h=1332&dpl=6ae341d5c54551b7219e36f3)
 
 Every rule starts without a verdict. A rule is settled once it’s compliant, an accepted violation, or not applicable. The agent can hand the work back only when every rule is settled. That’s the whole mechanism.
 
@@ -1137,7 +1517,6 @@ Some rules should never ship broken, no matter who signs off. Add `gate: deny` t
 ```md
 ---
 $schema: https://straion.com/schemas/rule/v1.json
-id: 0b7c2f4e-1d3a-4e8b-9a6f-5c2d8e1f4a7b
 gate: deny
 meta:
   tags: [security]
@@ -1147,6 +1526,8 @@ MUST NOT write access tokens to logs.
 ```
 
 A rule without `gate` gets `ask`, which is everything described above. The only other value is `deny`. You set it on each rule. Collections don’t have a gate.
+
+To enforce a `deny` rule in every repository, bind its collection to `all`. See [Rule bindings](rule-bindings.md#apply-collections-to-every-repository).
 
 Nobody can accept a violation of a `deny` rule, not the agent and not you. If the agent tries, Straion refuses and tells it to fix the code. The turn stays open until the fix is in.
 
@@ -1245,7 +1626,7 @@ Claude Code only
 
 # Live pane
 
-![The Claude Code desktop app. On the right, the Straion pane says Straion kept everything on track, with 4 rules checked, followed by an expanded list of four compliant rules](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-pane-on-track.tAA5iawO.png&w=2000&h=1249&dpl=6ada5323f2a5f29b8f72a146)
+![The Claude Code desktop app. On the right, the Straion pane says Straion kept everything on track, with 4 rules checked, followed by an expanded list of four compliant rules](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-pane-on-track.tAA5iawO.png&w=2000&h=1249&dpl=6ae341d5c54551b7219e36f3)
 
 The [audit report](../audit-trail.md#reading-the-report) tells you what happened once a session is over. The live pane shows the same trail while the agent works. It’s a Claude Code mod called `straion-trail`, a side pane next to the conversation that lists what Straion corrected the agent on, whether the agent fixed it, and when Straion is waiting for you.
 
@@ -1274,7 +1655,7 @@ Mods are a Claude Code feature, so the pane works only there, in the terminal an
 
 Until the agent asks Straion for rules, the pane reads “Straion is watching”.
 
-![A Claude Code terminal session. The /straion-trail command prints that the Straion pane opened. Below it, a bordered pane reads: Straion is watching. Corrections show up here](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-terminal-watching.Cjpa9ATD.png&w=2938&h=287&dpl=6ada5323f2a5f29b8f72a146)
+![A Claude Code terminal session. The /straion-trail command prints that the Straion pane opened. Below it, a bordered pane reads: Straion is watching. Corrections show up here](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-terminal-watching.Cjpa9ATD.png&w=2938&h=287&dpl=6ae341d5c54551b7219e36f3)
 
 ## What the pane shows
 
@@ -1334,13 +1715,13 @@ This page covers inviting people manually. Straion also supports automatic provi
 
 From any page, click the **Invite Users** entry in the bottom-left navigation.
 
-![The Rules page with the Invite Users navigation highlighted in the bottom-left sidebar](https://straion.com/.netlify/images?url=_astro%2F01-getting-started.nzrNzJDY.jpg&w=3248&h=2112&dpl=6ada5323f2a5f29b8f72a146)
+![The Rules page with the Invite Users navigation highlighted in the bottom-left sidebar](https://straion.com/.netlify/images?url=_astro%2F01-getting-started.nzrNzJDY.jpg&w=3248&h=2112&dpl=6ae341d5c54551b7219e36f3)
 
 ## 2. Add email addresses
 
 In the **Invite people** dialog, enter the email addresses of the people you want to invite. You can add several at once by separating them with commas, then click **Invite**.
 
-![The &#x27;Invite people to demo&#x27; dialog with two comma-separated email addresses entered](https://straion.com/.netlify/images?url=_astro%2F02-invite-dialog.WIgNDhwQ.jpg&w=3824&h=2474&dpl=6ada5323f2a5f29b8f72a146)
+![The &#x27;Invite people to demo&#x27; dialog with two comma-separated email addresses entered](https://straion.com/.netlify/images?url=_astro%2F02-invite-dialog.WIgNDhwQ.jpg&w=3824&h=2474&dpl=6ae341d5c54551b7219e36f3)
 
 ## 3. Manage organization invites
 
@@ -1350,7 +1731,7 @@ Invited users appear under **Organization Invites** with a **Pending** status. E
 - **Copy invite link** — copy a direct link to your clipboard and share it with the invitee yourself.
 - **Delete** — cancel a pending invite.
 
-![The User Management page showing pending organization invites with Copy Invite Link and Resend Invite actions highlighted](https://straion.com/.netlify/images?url=_astro%2F03-pending-invites.Cc7HLmPl.jpg&w=3824&h=2474&dpl=6ada5323f2a5f29b8f72a146)
+![The User Management page showing pending organization invites with Copy Invite Link and Resend Invite actions highlighted](https://straion.com/.netlify/images?url=_astro%2F03-pending-invites.Cc7HLmPl.jpg&w=3824&h=2474&dpl=6ae341d5c54551b7219e36f3)
 
 ## Members and roles
 
@@ -1379,7 +1760,7 @@ You must be an **organization admin** in Straion. Open **Identity & provisioning
 - **Single sign-on URL** (also called ACS URL, Reply URL, or Consumer URL)
 - **Audience URI** (also called SP Entity ID or Identifier)
 
-![The Identity &#x26; provisioning page showing the Single sign-on URL and Audience URI copy fields and the empty SAML connection form](https://straion.com/.netlify/images?url=_astro%2F02-identity-page.Iyxtyg1V.jpg&w=3740&h=2452&dpl=6ada5323f2a5f29b8f72a146)
+![The Identity &#x26; provisioning page showing the Single sign-on URL and Audience URI copy fields and the empty SAML connection form](https://straion.com/.netlify/images?url=_astro%2F02-identity-page.Iyxtyg1V.jpg&w=3740&h=2452&dpl=6ae341d5c54551b7219e36f3)
 
 Keep this page open — you’ll copy these two values into your IdP, and bring the IdP’s metadata back here.
 
@@ -1389,11 +1770,11 @@ Keep this page open — you’ll copy these two values into your IdP, and bring 
 
 In the Okta Admin Console, go to **Applications → Applications → Create App Integration**, choose **SAML 2.0**, and click **Next**.
 
-![Okta&#x27;s Create a new app integration dialog with the SAML 2.0 sign-in method selected](https://straion.com/.netlify/images?url=_astro%2F05-okta-create-app.BGo6uNkU.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![Okta&#x27;s Create a new app integration dialog with the SAML 2.0 sign-in method selected](https://straion.com/.netlify/images?url=_astro%2F05-okta-create-app.BGo6uNkU.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 Give the app a name (e.g. “Straion”) on the General Settings step and continue.
 
-![Okta&#x27;s Create SAML Integration wizard with the first step General Settings](https://straion.com/.netlify/images?url=_astro%2Fokta-fill-application-name.BRyrD9Zp.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![Okta&#x27;s Create SAML Integration wizard with the first step General Settings](https://straion.com/.netlify/images?url=_astro%2Fokta-fill-application-name.BRyrD9Zp.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 Hit the “Next” button to get to the “Configure SAML” page.
 
@@ -1408,7 +1789,7 @@ On the **Configure SAML** step, enter the values from your Identity & provisioni
 | Name ID format | **EmailAddress** |
 | Application username | **Email** |
 
-![Okta&#x27;s Configure SAML step with the Straion sign-on URL, audience URI, EmailAddress name ID format, and Email application username filled in](https://straion.com/.netlify/images?url=_astro%2F06-okta-configure-saml.BQRAOdjI.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![Okta&#x27;s Configure SAML step with the Straion sign-on URL, audience URI, EmailAddress name ID format, and Email application username filled in](https://straion.com/.netlify/images?url=_astro%2F06-okta-configure-saml.BQRAOdjI.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 Leave the remaining defaults, finish the wizard, and mark it as an internal app on the Feedback step.
 
@@ -1420,7 +1801,7 @@ On the app’s **Sign On** tab, copy the **Metadata URL** from the *Metadata det
 
 Back on the Identity & provisioning page, paste the metadata URL into the **Metadata URL** field. Straion fetches the metadata and fills the **Metadata XML** field automatically.
 
-![The Straion SAML form with the Okta metadata URL entered and the metadata XML fetched automatically](https://straion.com/.netlify/images?url=_astro%2F03-metadata-filled.BGihVkFu.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![The Straion SAML form with the Okta metadata URL entered and the metadata XML fetched automatically](https://straion.com/.netlify/images?url=_astro%2F03-metadata-filled.BGihVkFu.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 Click **Create SAML Connection**. The form switches to its connected state — your SSO setup is live.
 
@@ -1430,13 +1811,13 @@ Click **Create SAML Connection**. The form switches to its connected state — y
 
 In the [Entra admin center](https://entra.microsoft.com), go to **Entra ID → Enterprise applications → New application → Create your own application**. Name it (e.g. “Straion”), keep *“Integrate any other application you don’t find in the gallery (Non-gallery)”* selected, and click **Create**.
 
-![Entra&#x27;s Create your own application panel with the name Straion and the non-gallery option selected](https://straion.com/.netlify/images?url=_astro%2F08-entra-create-app.BKQJv0oq.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![Entra&#x27;s Create your own application panel with the name Straion and the non-gallery option selected](https://straion.com/.netlify/images?url=_astro%2F08-entra-create-app.BKQJv0oq.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 ### 2. Choose SAML as the sign-on method
 
 In the new application, open **Single sign-on** in the left menu and pick the **SAML** tile.
 
-![Entra&#x27;s single sign-on method selection with the SAML option](https://straion.com/.netlify/images?url=_astro%2F09-entra-sso-method.CW4YgS9P.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![Entra&#x27;s single sign-on method selection with the SAML option](https://straion.com/.netlify/images?url=_astro%2F09-entra-sso-method.CW4YgS9P.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 ### 3. Configure the SAML settings
 
@@ -1449,7 +1830,7 @@ In **Basic SAML Configuration**, click **Edit** and enter the values from your I
 
 Save. In **Attributes & Claims**, the defaults work when your team’s User Principal Names are their email addresses; if not, set the **Unique User Identifier (Name ID)** claim to `user.mail`.
 
-![Entra&#x27;s SAML-based sign-on page with the Straion identifier, reply URL, claims, and signing certificate configured](https://straion.com/.netlify/images?url=_astro%2F10-entra-saml-config.BEX55F7t.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![Entra&#x27;s SAML-based sign-on page with the Straion identifier, reply URL, claims, and signing certificate configured](https://straion.com/.netlify/images?url=_astro%2F10-entra-saml-config.BEX55F7t.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 ### 4. Assign users and connect Straion
 
@@ -1490,7 +1871,7 @@ Once the connection exists, your team has three ways in:
 - **Direct link** — share `https://straion.app/auth/sso?subdomain=<your-subdomain>` with your team; the subdomain arrives prefilled.
 - **From the IdP dashboard** — users click the Straion tile in their IdP portal (e.g. the Okta End-User Dashboard) and land in Straion directly.
 
-![The Single sign-on login page asking for the organization subdomain](https://straion.com/.netlify/images?url=_astro%2F07-sso-login.DfCdfJrm.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![The Single sign-on login page asking for the organization subdomain](https://straion.com/.netlify/images?url=_astro%2F07-sso-login.DfCdfJrm.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 After authenticating with the IdP, users land in your Straion organization — no Straion password involved.
 
@@ -1526,14 +1907,14 @@ SCIM pairs naturally with [SAML SSO](sso.md): SCIM creates and deactivates the a
 
 You must be an **organization admin**. Open **Identity & provisioning** from the organization menu and scroll to **SCIM provisioning**. Give the connection a name, pick your provider — **Okta**, **Entra ID**, **OneLogin**, **JumpCloud**, or **Generic SCIM v2.0** for any other SCIM 2.0-compliant IdP — and click **Create SCIM Connection**.
 
-![The SCIM provisioning form with the connection type dropdown open, listing Entra ID, OneLogin, Okta, JumpCloud, and Generic SCIM v2.0](https://straion.com/.netlify/images?url=_astro%2F01-connection-types.sjWhLOyO.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![The SCIM provisioning form with the connection type dropdown open, listing Entra ID, OneLogin, Okta, JumpCloud, and Generic SCIM v2.0](https://straion.com/.netlify/images?url=_astro%2F01-connection-types.sjWhLOyO.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 The connection reveals the two values your IdP needs:
 
 - **SCIM Endpoint** — the base URL your IdP pushes provisioning requests to
 - **SCIM Secret** — the bearer token that authenticates those requests. Treat it like a password; use the copy button to grab it.
 
-![The created SCIM connection showing the SCIM endpoint URL and the masked SCIM secret with reveal and copy buttons](https://straion.com/.netlify/images?url=_astro%2F02-endpoint-and-secret.Csvi6YC2.jpg&w=3832&h=2544&dpl=6ada5323f2a5f29b8f72a146)
+![The created SCIM connection showing the SCIM endpoint URL and the masked SCIM secret with reveal and copy buttons](https://straion.com/.netlify/images?url=_astro%2F02-endpoint-and-secret.Csvi6YC2.jpg&w=3832&h=2544&dpl=6ae341d5c54551b7219e36f3)
 
 > Deleting the connection invalidates the secret immediately. To rotate it, delete the connection, create a new one, and update your IdP with the new values.
 
@@ -1680,7 +2061,7 @@ straion import-rules [options]
 
 | Option | Description |
 | --- | --- |
-| `--force` | Re-run extraction and overwrite the existing collections for the repository |
+| `--force` | Re-run extraction and replace the existing collections for the repository, including any you have grouped in folders |
 | `--skip-precheck` | Skip the check for existing rules and go straight to discovering sources |
 
 ---
@@ -1714,7 +2095,7 @@ straion source repo connect --sample
 
 ## `straion source repo sync`
 
-Read the `straion/rules/v1` branch and upload the current rules to Straion. Run it in CI on every change to the rules branch. It reads the access token from the `STRAION_API_KEY` environment variable, so no interactive login is needed.
+Read the `straion/rules/v1` branch and upload the current rules to Straion. Collections can sit directly under `rules/` or inside grouping folders at any depth; see [Rule file format](rule-file-format.md) for the layout. Run it in CI on every change to the rules branch. It reads the access token from the `STRAION_API_KEY` environment variable, so no interactive login is needed.
 
 ```plaintext
 straion source repo sync [options]
@@ -2004,7 +2385,7 @@ and when. Your next audit gets an answer instead of a shrug.
 
 [Read how to catch violations before review](blog/rule-violations-code-review.md)
 
-   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6ada5323f2a5f29b8f72a146)
+   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6ae341d5c54551b7219e36f3)
 
 ---
 
@@ -2153,7 +2534,7 @@ Catch mistakes before they cost tokens. Validate your AI's proposed approach aga
 
 Claude Code, GitHub Copilot & Cursor ready. Install the Straion CLI globally and add the skill. Integrates with your existing AI coding workflow in minutes.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ada5323f2a5f29b8f72a146)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ada5323f2a5f29b8f72a146)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ada5323f2a5f29b8f72a146)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ae341d5c54551b7219e36f3)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ae341d5c54551b7219e36f3)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ae341d5c54551b7219e36f3)
 
 ### Rules Live in Your Git
 
@@ -2187,7 +2568,7 @@ Partners
 
 ## Shaping the future with our pilot partners
 
-[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6ada5323f2a5f29b8f72a146)](https://www.dynatrace.com/)
+[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6ae341d5c54551b7219e36f3)](https://www.dynatrace.com/)
 
 Ready to join?
 
@@ -2202,9 +2583,9 @@ Funding
 
 ## Supported & funded by
 
-[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ada5323f2a5f29b8f72a146)](https://marathon.vc/)
+[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ae341d5c54551b7219e36f3)](https://marathon.vc/)
 
-[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6ada5323f2a5f29b8f72a146)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6ada5323f2a5f29b8f72a146) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6ada5323f2a5f29b8f72a146)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6ada5323f2a5f29b8f72a146)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6ada5323f2a5f29b8f72a146)](https://daytona.io/startups?utm_source=straion.com)
+[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6ae341d5c54551b7219e36f3)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6ae341d5c54551b7219e36f3) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6ae341d5c54551b7219e36f3)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6ae341d5c54551b7219e36f3)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6ae341d5c54551b7219e36f3)](https://daytona.io/startups?utm_source=straion.com)
 
 ---
 
@@ -2215,7 +2596,7 @@ Funding
 
 Source: https://straion.com/about-us
 
-![A rural Austrian landscape with a town center and a well](https://straion.com/.netlify/images?url=_astro%2Fbackground-about-us.indCduUw.png&fm=png&w=1920&h=815&q=50&dpl=6ada5323f2a5f29b8f72a146)    ![Stray wearing a dirndl](https://straion.com/.netlify/images?url=_astro%2Fstray-dirndl.DV3bECHy.png&fm=png&w=400&h=400&dpl=6ada5323f2a5f29b8f72a146)    ![Stray wearing a Lederhosen](https://straion.com/.netlify/images?url=_astro%2Fstray-lederhosn.DofZh220.png&fm=png&w=400&h=400&dpl=6ada5323f2a5f29b8f72a146)
+![A rural Austrian landscape with a town center and a well](https://straion.com/.netlify/images?url=_astro%2Fbackground-about-us.indCduUw.png&fm=png&w=1920&h=815&q=50&dpl=6ae341d5c54551b7219e36f3)    ![Stray wearing a dirndl](https://straion.com/.netlify/images?url=_astro%2Fstray-dirndl.DV3bECHy.png&fm=png&w=400&h=400&dpl=6ae341d5c54551b7219e36f3)    ![Stray wearing a Lederhosen](https://straion.com/.netlify/images?url=_astro%2Fstray-lederhosn.DofZh220.png&fm=png&w=400&h=400&dpl=6ae341d5c54551b7219e36f3)
 
 ---
 
@@ -2257,19 +2638,19 @@ platforms.
 Our backgrounds span Elastic, Dynatrace, Netlify, and other companies where we learned what
 it takes to build tools that engineering teams actually love using.
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 ### Lukas Holzer CEO
 
 Previously at Netlify, where he designed and operated the build system handling millions of deploys. Built AI-powered diagnostics to help customers understand and fix failed builds faster. Deep experience in infrastructure, developer tools, and platform engineering.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 ### Katrin Freihofner CPO
 
 Previously at Elastic and Dynatrace. Led the development of AI-driven observability workflows and managed international teams at Elastic. Sharp eye for user experience with a passion for turning complex ideas into clean, intuitive interfaces.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 ### Fabian Friedl CTO
 
@@ -2319,13 +2700,13 @@ October 12, 2026
 
 With Automode, your coding agent looks up your Straion rules in every session, without anyone calling a skill. If it skips that step, Straion sends it back.
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Lukas Holzer, Fabian Friedl
 
-![Automode: Straion Now Runs in Every Session](https://straion.com/.netlify/images?url=_astro%2F2026-10-05-header-automode.CMf2FbaV.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/straion-automode.md)
+![Automode: Straion Now Runs in Every Session](https://straion.com/.netlify/images?url=_astro%2F2026-10-05-header-automode.CMf2FbaV.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/straion-automode.md)
 
 ---
 
@@ -2341,11 +2722,11 @@ October 12, 2026
 
 straion-trail is a Claude Code mod that shows what Straion corrected while the agent works, and tells you when it waits for your approval.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Fabian Friedl
 
-![See the Straion Audit Trail Live in Claude Code](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-header-audit-trail-claude-code.DjPppWja.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/audit-trail-in-claude-code.md)
+![See the Straion Audit Trail Live in Claude Code](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-header-audit-trail-claude-code.DjPppWja.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/audit-trail-in-claude-code.md)
 
 [AI Coding Agents
 
@@ -2355,13 +2736,13 @@ August 12, 2026
 
 Straion turns every rule that applies to a change into a decision the agent has to resolve before the work is done, and every exception into one you approve.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Fabian Friedl, Katrin Freihofner
 
-![You Shouldn't Be Finding Rule Violations in Code Review](https://straion.com/.netlify/images?url=_astro%2F2026-08-12-header-rule-violations-code-review.YRbfDmTa.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/rule-violations-code-review.md)
+![You Shouldn't Be Finding Rule Violations in Code Review](https://straion.com/.netlify/images?url=_astro%2F2026-08-12-header-rule-violations-code-review.YRbfDmTa.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/rule-violations-code-review.md)
 
 [AI Coding Agents
 
@@ -2371,11 +2752,11 @@ July 30, 2026
 
 Straion rules can now be managed in Git: versioning, pull request reviews, and full history. Available on the enterprise plan and in the free trial.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Fabian Friedl
 
-![Straion Rules Now Live in Git](https://straion.com/.netlify/images?url=_astro%2F2026-07-16-header-rules-in-git.CyLH8Pwv.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/straion-rules-now-live-in-git.md)
+![Straion Rules Now Live in Git](https://straion.com/.netlify/images?url=_astro%2F2026-07-16-header-rules-in-git.CyLH8Pwv.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/straion-rules-now-live-in-git.md)
 
 [AI Coding Agents
 
@@ -2385,11 +2766,11 @@ June 2, 2026
 
 A developer filed GitHub issue #14467 on claude-code describing exactly the problem Straion solves. We built it. Here is the full story.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Katrin Freihofner
 
-![Developers Asked Anthropic to Build This. We Did.](https://straion.com/.netlify/images?url=_astro%2F2026-05-27-header-developers-asked-anthropic.OHX96VgI.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/developers-asked-anthropic-to-build-this.md)
+![Developers Asked Anthropic to Build This. We Did.](https://straion.com/.netlify/images?url=_astro%2F2026-05-27-header-developers-asked-anthropic.OHX96VgI.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/developers-asked-anthropic-to-build-this.md)
 
 [AI Coding Agents
 
@@ -2399,11 +2780,11 @@ May 19, 2026
 
 Building your own AI coding governance layer sounds like a config project. It isn't. Here is what it actually takes, and when buying is the smarter call.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Katrin Freihofner
 
-![The Real Cost of Building AI Coding Governance](https://straion.com/.netlify/images?url=_astro%2F2026-05-19-header-build-vs-buy.BqAErlN0.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/build-vs-buy-ai-coding-governance.md)
+![The Real Cost of Building AI Coding Governance](https://straion.com/.netlify/images?url=_astro%2F2026-05-19-header-build-vs-buy.BqAErlN0.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/build-vs-buy-ai-coding-governance.md)
 
 [AI Coding Agents
 
@@ -2413,11 +2794,11 @@ March 26, 2026
 
 When Claude Code runs with Straion, rule adherence climbs into the 90%+ range. See how the automated context layer keeps AI code on your standards.
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Katrin Freihofner
 
-![90% Rule Adherence](https://straion.com/.netlify/images?url=_astro%2F2026-03-24-header-benchmark.CM2ydGw3.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/90-percent-rule-adherence-straion-coding-agents.md)
+![90% Rule Adherence](https://straion.com/.netlify/images?url=_astro%2F2026-03-24-header-benchmark.CM2ydGw3.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/90-percent-rule-adherence-straion-coding-agents.md)
 
 [AI Coding Agents
 
@@ -2428,11 +2809,11 @@ Updated May 21, 2026
 
 Sourcegraph data from 1,281 agent runs confirms the research: more context degrades AI coding performance. Why less context wins, and what it means for tools.
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Lukas Holzer
 
-![1M Tokens Won't Save Your Engineering Standards](https://straion.com/.netlify/images?url=_astro%2F2026-03-17-header-context-window.DCFHTSaQ.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/1m-tokens-wont-save-your-engineering-standards.md)
+![1M Tokens Won't Save Your Engineering Standards](https://straion.com/.netlify/images?url=_astro%2F2026-03-17-header-context-window.DCFHTSaQ.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/1m-tokens-wont-save-your-engineering-standards.md)
 
 [AI Coding Agents
 
@@ -2442,11 +2823,11 @@ March 3, 2026
 
 ETH Zurich research: LLM-generated AGENTS.md and CLAUDE.md files cut resolve rates and raise cost. The fix is delivering only the rules that matter, per task.
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Fabian Friedl
 
-![Your AGENTS.md is costing more than you think](https://straion.com/.netlify/images?url=_astro%2Fsection-off-track.ClNnPII9.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/delete-your-claude-md-science-says-so.md)
+![Your AGENTS.md is costing more than you think](https://straion.com/.netlify/images?url=_astro%2Fsection-off-track.ClNnPII9.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/delete-your-claude-md-science-says-so.md)
 
 [News & Announcements
 
@@ -2456,15 +2837,15 @@ February 24, 2026
 
 Straion announces its €1.1M seed round led by Marathon VC and outlines why autonomous engineering needs a rules layer to prevent AI coding drift.
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146)
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3)
 
  Lukas Holzer, Katrin Freihofner, Fabian Friedl
 
-![We raised €1.1M to fix AI coding drift](https://straion.com/.netlify/images?url=_astro%2F2026-02-24-header-seed-round-announcement.j5RTFg-V.jpg&fm=jpg&w=1920&h=815&dpl=6ada5323f2a5f29b8f72a146)](blog/we-raised-1-1m-to-fix-ai-coding-drift.md)
+![We raised €1.1M to fix AI coding drift](https://straion.com/.netlify/images?url=_astro%2F2026-02-24-header-seed-round-announcement.j5RTFg-V.jpg&fm=jpg&w=1920&h=815&dpl=6ae341d5c54551b7219e36f3)](blog/we-raised-1-1m-to-fix-ai-coding-drift.md)
 
 ## Get started in under 5 minutes, stay on track as you scale
 
@@ -2829,7 +3210,7 @@ Sourcegraph. (2026). *CodeScaleBench: Testing coding agents on large codebases a
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Lukas Holzer
 
@@ -3016,7 +3397,7 @@ If you want to explore Straion in your organization, reach out via [Discord](htt
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Katrin Freihofner
 
@@ -3069,7 +3450,7 @@ straion config audit.mode trail
 
 Now run `/straion-trail` in Claude Code. A pane titled “Straion” opens. As long as nothing has happened it shows “Straion is watching”.
 
-   ![A Claude Code terminal session. The /straion-trail command prints 'Straion pane opened.' and below it a bordered pane reads 'Straion is watching' and 'Corrections show up here'.](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-terminal-watching.Cjpa9ATD.png&fm=png&w=2938&h=287&dpl=6ada5323f2a5f29b8f72a146)  
+   ![A Claude Code terminal session. The /straion-trail command prints 'Straion pane opened.' and below it a bordered pane reads 'Straion is watching' and 'Corrections show up here'.](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-terminal-watching.Cjpa9ATD.png&fm=png&w=2938&h=287&dpl=6ae341d5c54551b7219e36f3)  
 
 The empty pane in the terminal, before Straion has caught anything.
 
@@ -3077,7 +3458,7 @@ The empty pane in the terminal, before Straion has caught anything.
 
 One of the sessions we ran it on: Claude Code upgrading cppcheck in opendbc and fixing the MISRA 10.3 findings, which are integers that get assigned to bools. Straion found 4 rules for the task, and the pane shows “Straion kept everything on track” and “4 rules checked”.
 
-   ![The Claude Code desktop app in light mode. The agent summarizes a cppcheck upgrade and MISRA fix in opendbc. On the right, the Straion pane shows the Straion signet, 'Straion kept everything on track' and '4 rules checked', followed by an expanded list of four compliant rules, among them 'MUST NOT use magic values in code'.](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-pane-on-track.tAA5iawO.png&fm=png&w=2000&h=1249&dpl=6ada5323f2a5f29b8f72a146)  
+   ![The Claude Code desktop app in light mode. The agent summarizes a cppcheck upgrade and MISRA fix in opendbc. On the right, the Straion pane shows the Straion signet, 'Straion kept everything on track' and '4 rules checked', followed by an expanded list of four compliant rules, among them 'MUST NOT use magic values in code'.](https://straion.com/.netlify/images?url=_astro%2F2026-10-06-trail-pane-on-track.tAA5iawO.png&fm=png&w=2000&h=1249&dpl=6ae341d5c54551b7219e36f3)  
 
 A session in opendbc. We expanded the compliant rules for the screenshot. Normally they are folded away.
 
@@ -3129,7 +3510,7 @@ Fabian
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Fabian Friedl
 
@@ -3248,7 +3629,7 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Katrin Freihofner
 
@@ -3367,7 +3748,7 @@ Gloaguen, T., Mündler, N., Müller, M., Raychev, V., & Vechev, M. (2026). *Eval
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Fabian Friedl
 
@@ -3491,7 +3872,7 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Katrin Freihofner
 
@@ -3628,11 +4009,11 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Fabian Friedl
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Katrin Freihofner
 
@@ -3782,11 +4163,11 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Lukas Holzer
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Fabian Friedl
 
@@ -3825,7 +4206,7 @@ Today we’re closing that gap. Straion rules can now be fully managed in Git, i
 
 You write, review, and ship rules the same way you write, review, and ship code. It meets your engineers where they already are, in the workflow they use every day.
 
-   ![A Git repository browser showing a dedicated straion/rules/v1 branch with a rules folder containing rule collections and a CI config file.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-rule-repo-overview.q-R5wwF0.png&fm=png&w=3025&h=1659&dpl=6ada5323f2a5f29b8f72a146)  
+   ![A Git repository browser showing a dedicated straion/rules/v1 branch with a rules folder containing rule collections and a CI config file.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-rule-repo-overview.q-R5wwF0.png&fm=png&w=3025&h=1659&dpl=6ae341d5c54551b7219e36f3)  
 
 Rules live on a dedicated branch as plain files. Each folder is a collection, grouping rules, versioned and reviewed like any other part of your repo.
 
@@ -3851,7 +4232,7 @@ You get your git workflows, versioning and permissions without losing the thing 
 
 **Auto-sync.** Your latest commit syncs to Straion automatically through GitHub Actions, GitLab CI, or your existing CI pipeline. There’s no manual publish step, no “did someone push the update?”. Merge your rule updates and it’s enforced on every new run.
 
-   ![A CI pipeline run that passed, showing a single straion-rules-sync job triggered by a commit that adds a new rule.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-ci-sync-pipeline.1FK491qZ.png&fm=png&w=3023&h=1657&dpl=6ada5323f2a5f29b8f72a146)  
+   ![A CI pipeline run that passed, showing a single straion-rules-sync job triggered by a commit that adds a new rule.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-ci-sync-pipeline.1FK491qZ.png&fm=png&w=3023&h=1657&dpl=6ae341d5c54551b7219e36f3)  
 
 Every commit triggers a straion-rules-sync job in your existing CI. Merge a rule change, and it reaches every developer's agent automatically.
 
@@ -3904,7 +4285,7 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Fabian Friedl
 
@@ -3946,7 +4327,7 @@ Because organizational context is missing.
 
 Today, we’re announcing that **Straion raised a €1.1M seed round led by [Marathon Venture Capital](https://marathon.vc/)** to solve this problem.
 
-![Marathon VC](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ada5323f2a5f29b8f72a146)
+![Marathon VC](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ae341d5c54551b7219e36f3)
 
 ## The problem we’re building for
 
@@ -4014,15 +4395,15 @@ If you lead an engineering team and want to stop AI drift before review, we’d 
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Lukas Holzer
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Katrin Freihofner
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 Written by Fabian Friedl
 
@@ -4035,7 +4416,7 @@ Written by Fabian Friedl
 
 Source: https://straion.com/career
 
-![A guild hall with a large board and wanted job signs](https://straion.com/.netlify/images?url=_astro%2Fhero-career.BAcofhAk.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ada5323f2a5f29b8f72a146)
+![A guild hall with a large board and wanted job signs](https://straion.com/.netlify/images?url=_astro%2Fhero-career.BAcofhAk.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ae341d5c54551b7219e36f3)
 
 ---
 
@@ -4046,7 +4427,7 @@ transforming how teams design, implement and ship software.
 
 [See Open Roles →](#open-positions)
 
-  ![A squirrel (stray) coding on a computer](https://straion.com/.netlify/images?url=_astro%2Fstray-coding.D42U85qQ.png&fm=png&w=400&h=400&q=50&dpl=6ada5323f2a5f29b8f72a146)
+  ![A squirrel (stray) coding on a computer](https://straion.com/.netlify/images?url=_astro%2Fstray-coding.D42U85qQ.png&fm=png&w=400&h=400&q=50&dpl=6ae341d5c54551b7219e36f3)
 
 The team 
 
@@ -4060,19 +4441,19 @@ You can be part of our journey to reshape the future of software development.
 
 ### Meet The Founder Team
 
-![Lukas](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Lukas](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 ### Lukas
 
 Lukas is a builder at heart, with a hacker's mindset and a deep love for clean, scalable code
 
-![Katrin](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Katrin](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 ### Katrin
 
 Katrin brings a sharp eye for user experience and a passion for product management to the team, honed through her work at tech powerhouses Dynatrace and Elastic
 
-![Fabian](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ada5323f2a5f29b8f72a146) 
+![Fabian](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
 
 ### Fabian
 
@@ -4244,7 +4625,7 @@ Ready to join us? Send your CV and a brief introduction to [team@straion.com](ma
 
 Source: https://straion.com/faqs
 
-![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ada5323f2a5f29b8f72a146)
+![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ae341d5c54551b7219e36f3)
 
 ---
 
@@ -4551,7 +4932,7 @@ Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
 
 Source: https://straion.com/press
 
-![A screen printing press that prints the daily news](https://straion.com/.netlify/images?url=_astro%2Fhero-press.CGnCxk5P.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ada5323f2a5f29b8f72a146)
+![A screen printing press that prints the daily news](https://straion.com/.netlify/images?url=_astro%2Fhero-press.CGnCxk5P.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ae341d5c54551b7219e36f3)
 
 ---
 
@@ -4567,7 +4948,7 @@ range of sizes.
 For interview opportunities or to schedule a product demonstration, please contact
 [team@straion.com](mailto:team@straion.com).
 
-[Download](https://drive.google.com/drive/folders/1tQXn2ZQvEo_ZVxZnNx9IKl14UoYTlfgU?usp=sharing)   ![Straion founder team](https://straion.com/.netlify/images?url=_astro%2Ffounder-team02.D117vZMq.jpg&fm=jpg&w=3901&h=5844&q=100&dpl=6ada5323f2a5f29b8f72a146) 
+[Download](https://drive.google.com/drive/folders/1tQXn2ZQvEo_ZVxZnNx9IKl14UoYTlfgU?usp=sharing)   ![Straion founder team](https://straion.com/.netlify/images?url=_astro%2Ffounder-team02.D117vZMq.jpg&fm=jpg&w=3901&h=5844&q=100&dpl=6ae341d5c54551b7219e36f3) 
 
 From left to right: Fabian Friedl, Lukas Holzer, Katrin Freihofner
 
@@ -4730,7 +5111,7 @@ Lukas Holzer
 
 Source: https://straion.com/pricing
 
-![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6ada5323f2a5f29b8f72a146)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6ada5323f2a5f29b8f72a146)
+![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6ae341d5c54551b7219e36f3)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6ae341d5c54551b7219e36f3)
 
 ---
 
@@ -4860,7 +5241,7 @@ Claude Code, Cursor, or GitHub Copilot.
 
 Works with
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ada5323f2a5f29b8f72a146)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ada5323f2a5f29b8f72a146)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ada5323f2a5f29b8f72a146)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ae341d5c54551b7219e36f3)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ae341d5c54551b7219e36f3)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ae341d5c54551b7219e36f3)
 
 straion governance check
 
@@ -5379,7 +5760,7 @@ No credit card required.
 
 Source: https://straion.com/product/feedback-on-requirements
 
-![An image of a female in a business context.](https://straion.com/.netlify/images?url=_astro%2Fwoman-2.CYrnn16P.png&fm=png&w=433&h=600&dpl=6ada5323f2a5f29b8f72a146) 
+![An image of a female in a business context.](https://straion.com/.netlify/images?url=_astro%2Fwoman-2.CYrnn16P.png&fm=png&w=433&h=600&dpl=6ae341d5c54551b7219e36f3) 
 
 # Transform vague ideas into actionable requirements
 
@@ -6216,7 +6597,7 @@ On Enterprise plans rules are plain files on a dedicated branch in your own repo
 
 Install the CLI, add the skill, and Straion works inside Claude Code, GitHub Copilot and Cursor. Your source code never leaves the developer's machine.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ada5323f2a5f29b8f72a146) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ada5323f2a5f29b8f72a146) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ada5323f2a5f29b8f72a146)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ae341d5c54551b7219e36f3) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ae341d5c54551b7219e36f3) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ae341d5c54551b7219e36f3)
 
 Same prompt, two outcomes 
 

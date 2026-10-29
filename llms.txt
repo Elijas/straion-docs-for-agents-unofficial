@@ -18,6 +18,8 @@ Listed in reading order, grouped as on the site.
 - [Import rules](https://straion.com/docs/import-rules): How Straion turns your existing standards and repository instruction files into structured, validated rule collections
 - [Connect a repository](https://straion.com/docs/connect-repository): Store your rules as code in your own git repository and keep them in sync with Straion.
 - [Rule file format](https://straion.com/docs/rule-file-format): The on-disk layout and file format for rules stored in a connected git repository.
+- [Rule bindings](https://straion.com/docs/rule-bindings): Apply rule collections from one repository to other repositories, and review each change through a pull request.
+- [Binding file reference](https://straion.com/docs/binding-file-reference): The on-disk layout and file format for rule binding files in a central source.
 - [Best practices](https://straion.com/docs/best-practices): How to write clear, well-formed rules that AI coding agents can interpret correctly
 
 ### Using Straion

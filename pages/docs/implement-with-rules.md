@@ -3,7 +3,7 @@ title: "Implement with rules"
 source: https://straion.com/docs/implement-with-rules
 description: "Use the straion-implement workflow to have Straion select relevant rules, validate your plan, generate constrained code, and check the output before you commit."
 section: "Using Straion"
-order: 8
+order: 10
 prev: best-practices.md
 next: validate-specs.md
 ---

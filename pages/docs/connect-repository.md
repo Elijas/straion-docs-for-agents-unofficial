@@ -48,7 +48,7 @@ straion source repo connect --sample
 
 ## Where your rules live
 
-Your rules live on the `straion/rules/v1` branch, under a top-level `rules/` directory. Each collection is a folder containing a `README.md` header and one Markdown file per rule:
+Your rules live on the `straion/rules/v1` branch, under a top-level `rules/` directory. Each collection is a folder with a `README.md` header and one Markdown file per rule:
 
 ```plaintext
 rules/
@@ -61,7 +61,9 @@ rules/
     treat-compiler-warnings-errors.md
 ```
 
-See [Rule file format](rule-file-format.md) for the full anatomy of a collection frontmatter header and a rule file, and the handful of things to get right when editing them by hand.
+You can organize collections in plain folders by team or domain, for example `rules/security/payments/`, nested as deep as you like. A collection keeps its rules directly inside it.
+
+See [Rule file format](rule-file-format.md) for the full anatomy of a collection frontmatter header and a rule file, how to group collections in folders, and the handful of things to get right when editing them by hand.
 
 ## Step 2: Author rules through git
 
@@ -165,7 +167,7 @@ straion-rules-sync:
 Because your rules live in your repository, you govern them with the tools you already use:
 
 - **Require review** on the `straion/rules/v1` branch with branch protection.
-- **Assign ownership** of rule folders with `CODEOWNERS`, so the right people approve changes to each collection.
+- **Assign ownership** of rule folders with `CODEOWNERS`, so the right people approve changes to each collection. Group a team’s collections under one folder, such as `rules/security/`, and one `CODEOWNERS` line covers all of them.
 - **Audit history** through your normal git log. Every rule change is a reviewed commit.
 
 Straion does not run a separate approval process. Whatever your repository accepts is what gets synced.
