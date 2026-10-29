@@ -5,7 +5,7 @@ description: "The on-disk layout and file format for rules stored in a connected
 section: "Rules"
 order: 6
 prev: connect-repository.md
-next: best-practices.md
+next: rule-bindings.md
 ---
 
 # Rule file format
@@ -16,7 +16,7 @@ You rarely need to write these files from scratch: Straion’s import functional
 
 ## Layout
 
-Rules live on the `straion/rules/v1` branch, under a top-level `rules/` directory. Each collection is a folder containing a `README.md` header and one Markdown file per rule:
+Rules live on the `straion/rules/v1` branch, under a top-level `rules/` directory. Each collection is a folder with a `README.md` header and one Markdown file per rule:
 
 ```plaintext
 rules/
@@ -29,6 +29,37 @@ rules/
     treat-compiler-warnings-errors.md
 ```
 
+The `README.md` is what makes a folder a collection: its frontmatter declares the Straion `$schema` shown in the next section.
+
+A central source can also have a `bindings/` folder next to `rules/`. See [Rule bindings](rule-bindings.md) and the [Binding file reference](binding-file-reference.md).
+
+### Group collections in folders
+
+As your rule set grows, a flat list of collections gets hard to navigate. Put collections in plain folders to organize them by team, domain, or product area, as deep as you like:
+
+```plaintext
+rules/
+  security/
+    payments/
+      README.md                      ← collection: name + description
+      never-log-card-numbers.md
+    auth/
+      README.md
+      require-mfa-for-admins.md
+  cpp-naming-conventions/
+    README.md
+    upper-case-constant-names.md
+```
+
+A grouping folder needs nothing special. It has no `README.md`, or a `README.md` without a Straion `$schema`, so you can keep an ordinary README or an owners file in it for your own readers. Straion looks past grouping folders and finds the collections inside them.
+
+Grouping only changes where a collection sits in your repository. In the Straion app, collections still appear as one flat list. Rules created by the import land directly under `rules/`. You can move them into folders, but a move gives the collection a new identity. See [How Straion identifies rules](#how-straion-identifies-rules). A [binding](binding-file-reference.md) refers to a collection by its path, for example `security/payments`.
+
+Two things to keep in mind:
+
+- **A collection holds its rules directly.** Don’t put rule files or other collections in a subfolder of a collection. The sync rejects them.
+- **Every rule file needs a collection.** A rule file in a grouping folder is rejected. Add a `README.md` with the `$schema` to turn that folder into a collection.
+
 ## Collection header (`README.md`)
 
 Every collection folder has a `README.md` that names and describes the collection. The text below the frontmatter is the collection’s description:
@@ -36,7 +67,6 @@ Every collection folder has a `README.md` that names and describes the collectio
 ```md
 ---
 $schema: https://straion.com/schemas/rule-collection/v1.json
-id: f11076d9-bcfc-4e0c-9b22-d0b628b4a86c
 name: C++ Naming Conventions
 meta:
   tags: [style, naming]
@@ -54,7 +84,6 @@ Each rule is a single Markdown file. The text below the frontmatter is the rule 
 ````md
 ---
 $schema: https://straion.com/schemas/rule/v1.json
-id: 61e9a038-948a-431d-b5e9-91d6eec9f82c
 meta:
   tags: [naming, style]
   languages: [cpp]
@@ -73,15 +102,45 @@ constexpr int maxRetries = 3;
 ```
 ````
 
+### Gate
+
+The optional `gate` field sets what happens when the agent wants to leave a violation of this rule unfixed:
+
+| Value | Meaning |
+| --- | --- |
+| `ask` | Default. You approve or reject the violation in your coding agent’s approval prompt. |
+| `deny` | Nobody can accept a violation. The agent has to fix the code. |
+
+```md
+---
+$schema: https://straion.com/schemas/rule/v1.json
+gate: deny
+meta:
+  tags: [security]
+---
+
+MUST NOT write access tokens to logs.
+```
+
+Leave `gate` out to get `ask`. Other values are errors. `gate` is set per rule: a collection `README.md` with a `gate` is rejected. See [Rules that can’t be accepted](audit-trail.md#rules-that-cant-be-accepted) for how each value works in the audit trail.
+
 ## Things to get right
 
 - **The rule statement is the text before the `## Examples` heading.** Start it with `MUST`, `MUST NOT`, or `SHOULD`. See [Best practices](best-practices.md) for how to phrase strong rules.
-- **A rule’s identity is the `id` in its frontmatter, not its filename.** Renaming a file, or moving a rule between collections, keeps the same rule as long as the `id` stays the same. Renaming is safe.
 - **Examples use fenced code blocks** tagged `kind=compliant` or `kind=violating`.
 - **Tags and languages** in `meta` help Straion match the rule to the right work. Keep them accurate.
 
-> **Caution: Don’t reuse an `id`.**
-> Each rule and collection `id` must be unique. Copy-pasting a rule file without changing its `id` will cause that rule to be flagged as a conflict rather than synced. When you add a brand-new rule, give it a fresh UUID or let your agent generate one for you.
+## How Straion identifies rules
+
+A collection is identified by its folder path under `rules/`, for example `security/payments`. A rule is identified by its file name inside its collection, for example `never-log-card-numbers`. The path is the identity, so files don’t need an `id`.
+
+- **Name folders and files with lowercase letters, digits, and `-`.** Start with a letter or a digit. Each name can be up to 80 characters. The sync rejects other names and tells you which path is wrong.
+- **Each path is unique.** Two collections can’t have the same path, and two rules in one collection can’t have the same file name.
+
+> **Caution: Renaming or moving creates a new rule.**
+> When you rename a rule file or move it to another collection, Straion deletes the old rule and creates a new one with a new shortcode. The same happens to every rule in a collection when you rename or move the collection folder. Update any [binding](binding-file-reference.md) that lists the old collection path.
+
+Older files can still have an `id` in their frontmatter. Straion ignores it, and `straion source repo sync` prints a notice for each of those files. You can delete the line.
 
 ## Validate before you commit
 

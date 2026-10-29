@@ -3,7 +3,7 @@ title: "CLI reference"
 source: https://straion.com/docs/cli-api-reference
 description: "Reference for every Straion CLI command: login, logout, setup, and import-rules, with the options and flags each command accepts."
 section: "References"
-order: 18
+order: 20
 prev: scim.md
 next: troubleshooting.md
 ---
@@ -82,7 +82,7 @@ straion import-rules [options]
 
 | Option | Description |
 | --- | --- |
-| `--force` | Re-run extraction and overwrite the existing collections for the repository |
+| `--force` | Re-run extraction and replace the existing collections for the repository, including any you have grouped in folders |
 | `--skip-precheck` | Skip the check for existing rules and go straight to discovering sources |
 
 ---
@@ -116,7 +116,7 @@ straion source repo connect --sample
 
 ## `straion source repo sync`
 
-Read the `straion/rules/v1` branch and upload the current rules to Straion. Run it in CI on every change to the rules branch. It reads the access token from the `STRAION_API_KEY` environment variable, so no interactive login is needed.
+Read the `straion/rules/v1` branch and upload the current rules to Straion. Collections can sit directly under `rules/` or inside grouping folders at any depth; see [Rule file format](rule-file-format.md) for the layout. Run it in CI on every change to the rules branch. It reads the access token from the `STRAION_API_KEY` environment variable, so no interactive login is needed.
 
 ```plaintext
 straion source repo sync [options]

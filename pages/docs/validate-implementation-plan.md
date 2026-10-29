@@ -3,7 +3,7 @@ title: "Validate implementation plans"
 source: https://straion.com/docs/validate-implementation-plan
 description: "Catch rule violations in an implementation plan before any code is written"
 section: "Using Straion"
-order: 10
+order: 12
 prev: validate-specs.md
 next: validate-code.md
 ---

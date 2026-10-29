@@ -3,7 +3,7 @@ title: "Validate code"
 source: https://straion.com/docs/validate-code
 description: "Validate a PR, diff, or AI-generated changes against your rules before merge"
 section: "Using Straion"
-order: 11
+order: 13
 prev: validate-implementation-plan.md
 next: automode.md
 ---

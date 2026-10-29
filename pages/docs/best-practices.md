@@ -3,8 +3,8 @@ title: "Best practices"
 source: https://straion.com/docs/best-practices
 description: "How to write clear, well-formed rules that AI coding agents can interpret correctly"
 section: "Rules"
-order: 7
-prev: rule-file-format.md
+order: 9
+prev: binding-file-reference.md
 next: implement-with-rules.md
 ---
 
