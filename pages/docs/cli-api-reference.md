@@ -62,7 +62,7 @@ straion logout
 
 ## `straion setup`
 
-Configure your coding agents (Claude Code, Cursor, GitHub Copilot, etc.) to use Straion. Runs an interactive wizard that installs the required skills and hooks for each agent you select.
+Configure your coding agents (Claude Code, Codex, Cursor, GitHub Copilot, etc.) to use Straion. Runs an interactive wizard that installs the required skills and hooks for each agent you select.
 
 ```plaintext
 straion setup

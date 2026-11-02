@@ -4,7 +4,7 @@ source: https://straion.com/faqs
 description: "Answers to the most common questions about Straion, setup, security, and AI coding guidance."
 ---
 
-![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ae341d5c54551b7219e36f3)
+![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6ae89745c81b2756330c1f21)
 
 ---
 
@@ -18,7 +18,7 @@ Have questions about Straion? We’ve got you.
 
 What is Straion?  
 
-Straion is the governance layer for AI coding agents like Claude Code, Cursor, and GitHub Copilot. It stores your engineering standards as structured, version-controlled rules, selects only the rules relevant to each task, validates the agent's plan before code is written, and re-checks the resulting changes.
+Straion is the governance layer for AI coding agents like Claude Code, Codex, Cursor, and GitHub Copilot. It stores your engineering standards as structured, version-controlled rules, selects only the rules relevant to each task, validates the agent's plan before code is written, and re-checks the resulting changes.
 
   What is AI coding governance?  
 
@@ -28,13 +28,13 @@ AI coding governance is the practice of making sure code written by AI coding ag
 
 No. Straion governs the agents that write code. It provides the right rules as context, validates the plan before implementation, and re-checks the changes, so the code your agents produce follows your standards from the start.
 
-  Does Straion replace Cursor, Claude Code, or GitHub Copilot?  
+  Does Straion replace Cursor, Claude Code, Codex, or GitHub Copilot?  
 
 No. Straion is not a code generator and does not replace your AI coding tools. It is a governance layer that works alongside them to make their output match your company standards without manual correction after every task.
 
   Which AI coding tools does Straion work with?  
 
-Straion works with Claude Code, Cursor, and GitHub Copilot, including Copilot in VS Code and the GitHub Copilot CLI. It integrates through the official integration points of each agent, so your team keeps its existing workflow.
+Straion works with Claude Code, Codex, Cursor, and GitHub Copilot, including Copilot in VS Code and the GitHub Copilot CLI. It integrates through the official integration points of each agent, so your team keeps its existing workflow.
 
   How does Straion keep AI coding agents aligned with our standards?  
 

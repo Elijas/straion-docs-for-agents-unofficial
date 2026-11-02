@@ -82,7 +82,7 @@ less than 5 minutes.
 [Start free trial
 →](https://straion.app/auth/signup) 
 
-Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
+Works with Claude Code, Codex, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
@@ -110,7 +110,7 @@ Gloaguen, T., Mündler, N., Müller, M., Raychev, V., & Vechev, M. (2026). *Eval
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6ae89745c81b2756330c1f21) 
 
 Written by Fabian Friedl
 

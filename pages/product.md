@@ -1,7 +1,7 @@
 ---
 title: "The governancelayer for AI coding."
 source: https://straion.com/product
-description: "Straion is the governance layer for AI coding. It keeps Claude Code, Cursor, and Copilot aligned with your rules and standards, from first prompt to merge."
+description: "Straion is the governance layer for AI coding. It keeps Claude Code, Codex, Cursor, and Copilot aligned with your rules and standards, from first prompt to merge."
 ---
 
 Product Overview
@@ -12,13 +12,13 @@ Product Overview
 with your engineering standards, at every step from first prompt to merge.
 
 Built for lead engineers, platform teams, engineering managers, and any team already using
-Claude Code, Cursor, or GitHub Copilot.
+Claude Code, Codex, Cursor, or GitHub Copilot.
 
 [Start free trial](https://straion.app/auth/signup)  [See how it works](how-it-works.md)
 
 Works with
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ae341d5c54551b7219e36f3)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ae341d5c54551b7219e36f3)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ae341d5c54551b7219e36f3)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ae89745c81b2756330c1f21)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ae89745c81b2756330c1f21)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ae89745c81b2756330c1f21)![Codex](https://straion.com/_astro/codex.BxcUX5cK.svg?dpl=6ae89745c81b2756330c1f21)
 
 straion governance check
 
@@ -163,7 +163,7 @@ Teams using AI tools
 
 ### Output that matches your standards, the first time
 
-Claude Code, Cursor, and Copilot users get code that follows company standards from the first prompt, without the manual correction cycle after every task.
+Claude Code, Codex, Cursor, and Copilot users get code that follows company standards from the first prompt, without the manual correction cycle after every task.
 
 Dynamic Rule Selection · ↓ Rework
 
@@ -174,7 +174,7 @@ Boundaries
 ## What Straion is not
 
 - A shared prompt file or an engineering checklist has no memory of your decisions, no team-level scoping, and no enforcement. Straion turns your actual standards into structured, queryable rules that agents check at every step, not a one-time hint that gets ignored or overwritten.
-- Straion works alongside Claude Code, Cursor, and GitHub Copilot. It doesn't generate code, it governs how your AI tools use your standards.
+- Straion works alongside Claude Code, Codex, Cursor, and GitHub Copilot. It doesn't generate code, it governs how your AI tools use your standards.
 - Straion doesn't replace your wiki or your ADRs. It turns selected standards into machine-readable rules that AI agents can act on.
 - Linters check syntax and patterns after the fact. Straion validates intent and approach before code is written.
 - Rules are scoped to teams, repositories, stacks, and task types. A frontend team and a backend team get different rules for the same codebase.
@@ -184,7 +184,7 @@ Boundaries
 Your architecture rules, security policies, and coding standards, automatically in
 every developer's AI agent from day one.
 
-Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
+Works with Claude Code, Codex, GitHub Copilot & Cursor. No credit card required.
 
 [Start free trial
 →](https://straion.app/auth/signup)
@@ -197,7 +197,7 @@ FAQ
 
 What is Straion?  
 
-Straion is the governance layer for AI coding agents like Claude Code, Cursor, and GitHub Copilot. It stores your engineering standards as structured, version-controlled rules, selects only the rules relevant to each task, validates the agent's plan before code is written, and re-checks the resulting changes.
+Straion is the governance layer for AI coding agents like Claude Code, Codex, Cursor, and GitHub Copilot. It stores your engineering standards as structured, version-controlled rules, selects only the rules relevant to each task, validates the agent's plan before code is written, and re-checks the resulting changes.
 
   What is AI coding governance?  
 
@@ -209,13 +209,13 @@ Straion selects only the rules relevant to each task based on team, repository, 
 
   Which AI coding tools does Straion work with?  
 
-Straion works with Claude Code, Cursor, and GitHub Copilot, including Copilot in VS Code and the GitHub Copilot CLI. It integrates through the official integration points of each agent, so your team keeps its existing workflow.
+Straion works with Claude Code, Codex, Cursor, and GitHub Copilot, including Copilot in VS Code and the GitHub Copilot CLI. It integrates through the official integration points of each agent, so your team keeps its existing workflow.
 
   How is Straion different from just using .md files in my repos?  
 
 The problem is not that those files sit in Git. It is that the same rules get copied into every repo, drift apart, and load into context whole on every task, so you pay tokens for rules that do not apply. Straion keeps one source of truth, which can live on a dedicated branch in your own Git, and selects only the rules relevant to each task.
 
-  Does Straion replace Cursor, Claude Code, or GitHub Copilot?  
+  Does Straion replace Cursor, Claude Code, Codex, or GitHub Copilot?  
 
 No. Straion is not a code generator and does not replace your AI coding tools. It is a governance layer that works alongside them to make their output match your company standards without manual correction after every task.
 

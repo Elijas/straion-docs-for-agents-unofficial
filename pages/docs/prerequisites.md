@@ -1,7 +1,7 @@
 ---
 title: "Prerequisites"
 source: https://straion.com/docs/prerequisites
-description: "What you need before you start using Straion: a workspace, a supported AI coding agent (Claude Code, Cursor, or Copilot), and access to your team's rules."
+description: "What you need before you start using Straion: a workspace, a supported AI coding agent (Claude Code, Codex, Cursor, or Copilot), and access to your team's rules."
 section: "Start here"
 order: 2
 prev: getting-started.md
@@ -14,7 +14,7 @@ Before you start with Straion, make sure you have the following in place. Once y
 
 ## What you need
 
-- Access to one or more of these coding agents: [Claude Code](https://www.anthropic.com/claude-code) (minimum version 2.1.84), [Cursor](https://cursor.com), or [GitHub Copilot](https://github.com/features/copilot)
+- Access to one or more of these coding agents: [Claude Code](https://www.anthropic.com/claude-code) (minimum version 2.1.84), [Codex](https://developers.openai.com/codex/cli) (minimum version 0.162.1), [Cursor](https://cursor.com), or [GitHub Copilot](https://github.com/features/copilot)
 - A [Straion account](https://straion.app/auth/signup)
 - MacOS/Windows and Node.js v22+
 - Sufficient permissions on your computer to install the Straion CLI

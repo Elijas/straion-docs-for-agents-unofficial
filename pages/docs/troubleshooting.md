@@ -13,7 +13,7 @@ Running into a problem? This page covers the most common issues users encounter 
 
 ## Prerequisites
 
-- Access to one or more of these coding agents: Claude Code (minimum version 2.1.84), Cursor, or GitHub Copilot
+- Access to one or more of these coding agents: Claude Code (minimum version 2.1.84), Codex (minimum version 0.162.1), Cursor, or GitHub Copilot
 - A Straion account
 - MacOS/Windows and Node.js v22+
 - Sufficient permissions on your computer to install the Straion CLI
@@ -26,6 +26,7 @@ Before connecting Straion, verify your coding agent CLI is installed. Run the co
 | --- | --- | --- |
 | [Claude Code](https://code.claude.com/docs/en/setup) | `claude --version` | > 2.1.84 |
 | [GitHub Copilot](https://docs.github.com/copilot/how-tos/set-up/install-copilot-cli) | `copilot --version` | > 1.0.0 |
+| [Codex](https://developers.openai.com/codex/cli) | `codex --version` | > 0.162.0 |
 | [Cursor](https://cursor.com/docs/cli/installation) | `agent --version` | > 3.0.0 |
 
 If a command is not found, follow the install guide linked in the table above.

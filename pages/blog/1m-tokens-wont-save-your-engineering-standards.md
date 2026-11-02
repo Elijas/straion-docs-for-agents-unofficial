@@ -312,7 +312,7 @@ less than 5 minutes.
 [Start free trial
 →](https://straion.app/auth/signup) 
 
-Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
+Works with Claude Code, Codex, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
@@ -350,7 +350,7 @@ Sourcegraph. (2026). *CodeScaleBench: Testing coding agents on large codebases a
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae341d5c54551b7219e36f3) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6ae89745c81b2756330c1f21) 
 
 Written by Lukas Holzer
 

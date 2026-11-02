@@ -1,7 +1,7 @@
 ---
 title: "Agents move fast. Safety-critical code cannot.Straion is how you get both."
 source: https://straion.com/solutions/embedded-software
-description: "Straion gives every developer's AI agent the MISRA rules that apply to the task before it writes, and records the reason and approver behind every deviation. Works with Claude Code, Copilot and Cursor."
+description: "Straion gives every developer's AI agent the MISRA rules that apply to the task before it writes, and records the reason and approver behind every deviation. Works with Claude Code, Codex, Copilot and Cursor."
 ---
 
 For embedded teams working to MISRA
@@ -103,9 +103,9 @@ On Enterprise plans rules are plain files on a dedicated branch in your own repo
 
 ### The agents your developers already use
 
-Install the CLI, add the skill, and Straion works inside Claude Code, GitHub Copilot and Cursor. Your source code never leaves the developer's machine.
+Install the CLI, add the skill, and Straion works inside Claude Code, Codex, GitHub Copilot and Cursor. Your source code never leaves the developer's machine.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ae341d5c54551b7219e36f3) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ae341d5c54551b7219e36f3) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ae341d5c54551b7219e36f3)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ae89745c81b2756330c1f21) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ae89745c81b2756330c1f21) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ae89745c81b2756330c1f21) ![Codex](https://straion.com/_astro/codex.BxcUX5cK.svg?dpl=6ae89745c81b2756330c1f21)
 
 Same prompt, two outcomes 
 
@@ -197,7 +197,7 @@ them are ever written. The tool you qualified into your toolchain stays exactly 
 
    ### Developer + agent
 
-   Claude Code, Copilot or Cursor, driven by your engineer.
+   Claude Code, Codex, Copilot or Cursor, driven by your engineer.
 2. 02
 
    ### Straion
@@ -226,7 +226,7 @@ developer and the agent, and nowhere else.
 
 1. ### Install the CLI
 
-   One global install, then connect it to the agent your team already uses: Claude Code, GitHub Copilot or Cursor. Your source code stays on the developer machine.
+   One global install, then connect it to the agent your team already uses: Claude Code, Codex, GitHub Copilot or Cursor. Your source code stays on the developer machine.
 2. ### Start from the rule pack
 
    Load the MISRA-aligned pack for C:2012 and C++:2023, then add your project standard, your deviation permits and your architecture rules on top. Every statement is editable.
@@ -291,7 +291,7 @@ Your rules, your task context and your usage are never used to train models. Not
 Your MISRA rule pack and your internal coding standards in every developer's agent before it
 writes a line of code.
 
-Works with Claude Code, GitHub Copilot & Cursor. Sits upstream of the analyzer you already
+Works with Claude Code, Codex, GitHub Copilot & Cursor. Sits upstream of the analyzer you already
 qualified. No credit card required.
 
 [Start free trial

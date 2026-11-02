@@ -1,7 +1,7 @@
 ---
 title: "AI Coding Agent Guidance with Company Standards | Straion"
 source: https://straion.com/product/ai-coding-guidance
-description: "Guide Claude Code, Cursor, and Copilot with company-specific rules so AI-generated code follows your architecture, security, and quality standards."
+description: "Guide Claude Code, Codex, Cursor, and Copilot with company-specific rules so AI-generated code follows your architecture, security, and quality standards."
 ---
 
 ## AI Coding Agents that follow your Standards

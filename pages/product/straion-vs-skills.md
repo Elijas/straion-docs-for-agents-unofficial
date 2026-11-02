@@ -122,7 +122,7 @@ Skills are all-or-nothing: when one fires its entire content lands in context, a
 
   Which AI coding tools does Straion work with?  
 
-Straion works with Claude Code, Cursor, and GitHub Copilot, including Copilot in VS Code and the GitHub Copilot CLI. It integrates through the official integration points of each agent, so your team keeps its existing workflow.
+Straion works with Claude Code, Codex, Cursor, and GitHub Copilot, including Copilot in VS Code and the GitHub Copilot CLI. It integrates through the official integration points of each agent, so your team keeps its existing workflow.
 
  
 
@@ -130,7 +130,7 @@ Straion works with Claude Code, Cursor, and GitHub Copilot, including Copilot in
 
 Import your existing skills. See what Straion adds. No credit card required.
 
-Works with Claude Code, GitHub Copilot & Cursor.
+Works with Claude Code, Codex, GitHub Copilot & Cursor.
 
 [Start free trial
 →](https://straion.app/auth/signup)
