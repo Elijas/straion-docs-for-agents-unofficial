@@ -42,7 +42,7 @@ On your machine
 
 ### AI agent + local CLI
 
-Claude Code, Cursor, or Copilot runs in your existing environment. The Straion CLI runs
+Claude Code, Codex, Cursor, or Copilot runs in your existing environment. The Straion CLI runs
 there too and asks for the rules that fit the task at hand.
 
 ✓ Your codebase never leaves this box

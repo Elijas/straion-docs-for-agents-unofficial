@@ -12,7 +12,7 @@ next: prerequisites.md
 Straion keeps your coding agents aligned with your engineering standards.
 To get set up, follow the steps below to create an account, install the CLI, and import your rules.
 
-Before you begin, make sure you meet the [prerequisites](prerequisites.md): MacOS or Windows, Node.js v22+, and one of the supported coding agents: Claude Code, GitHub Copilot, and Cursor.
+Before you begin, make sure you meet the [prerequisites](prerequisites.md): MacOS or Windows, Node.js v22+, and one of the supported coding agents: Claude Code, Codex, GitHub Copilot, and Cursor.
 
 ## 1. Sign up
 

@@ -33,7 +33,7 @@ Run Straion inside a repository and it lets your coding agent extract rules from
 ### Prerequisites
 
 - The [Straion CLI](getting-started.md#2-install-the-cli-and-log-in) installed and authenticated (`straion login`).
-- At least one coding agent configured with `straion setup`. This installs the Straion skills and hooks into Claude Code, GitHub Copilot, or Cursor. See the [agent setup guide](troubleshooting.md#check-agent-setup) to verify your installation.
+- At least one coding agent configured with `straion setup`. This installs the Straion skills and hooks into Claude Code, Codex, GitHub Copilot, or Cursor. See the [agent setup guide](troubleshooting.md#check-agent-setup) to verify your installation.
 - A **git repository with an `origin` remote**. Straion detects the repository from `git remote get-url origin` and links the imported rules to it, so the import must run from inside a cloned repo.
 - A **frontier model** selected in your agent (for example Claude Opus). We recommend running the import with the strongest model you have access to.
 
@@ -63,6 +63,7 @@ Select an agent to run the import:
 
 ❯ ● Claude Code     (Already configured)
   ○ GitHub Copilot  (Not configured)
+  ○ Codex           (Not configured)
   ○ Cursor          (Already configured)
 ```
 
@@ -76,7 +77,7 @@ Straion then launches the selected agent and runs the import skill for you:
 /straion-import-rules --skip-precheck
 ```
 
-The `--skip-precheck` flag is added automatically — the CLI already confirmed the repository has no rules in step 1, so the agent goes straight to discovering sources. Cursor has no CLI, so selecting it prints instructions to run `/straion-import-rules` from the Cursor chat yourself instead of launching automatically.
+The `--skip-precheck` flag is added automatically — the CLI already confirmed the repository has no rules in step 1, so the agent goes straight to discovering sources. Codex starts skills with `$` instead of `/`, so there the command is `$straion-import-rules --skip-precheck`. Cursor has no CLI, so selecting it prints instructions to run `/straion-import-rules` from the Cursor chat yourself instead of launching automatically.
 
 #### 3. The agent discovers your rule sources
 
@@ -102,15 +103,15 @@ The agent converts each source into one or more **collections**, grouped by doma
 
 The agent validates every collection and uploads it with the `straion import-rules` command. When it finishes, it prints a summary of what was created:
 
-![The Straion CLI printing a &#x27;Created collections&#x27; summary table, listing each rule collection and the number of rules it contains](https://straion.com/.netlify/images?url=_astro%2F03-created-collections.ChjMU2b4.jpg&w=806&h=510&dpl=6ae341d5c54551b7219e36f3)
+![The Straion CLI printing a &#x27;Created collections&#x27; summary table, listing each rule collection and the number of rules it contains](https://straion.com/.netlify/images?url=_astro%2F03-created-collections.ChjMU2b4.jpg&w=806&h=510&dpl=6ae89745c81b2756330c1f21)
 
 ## Review your imported rules
 
 Open the Straion **Rules** page to review what was imported.
 
-![The Straion Rules page listing imported collections such as Backend Tests, Playwright Patterns, Zod DTOs, and Node Definitions, each with a description and an &#x27;Extracted from&#x27; repository badge](https://straion.com/.netlify/images?url=_astro%2F04-rules-list.CQ8CKef2.jpg&w=1080&h=596&dpl=6ae341d5c54551b7219e36f3)
+![The Straion Rules page listing imported collections such as Backend Tests, Playwright Patterns, Zod DTOs, and Node Definitions, each with a description and an &#x27;Extracted from&#x27; repository badge](https://straion.com/.netlify/images?url=_astro%2F04-rules-list.CQ8CKef2.jpg&w=1080&h=596&dpl=6ae89745c81b2756330c1f21)
 
-![A single collection opened in Straion, showing its rules numbered in order, each beginning with a strength word such as MUST or SHOULD](https://straion.com/.netlify/images?url=_astro%2F05-collection-rules.D0p0r1Ur.jpg&w=1080&h=596&dpl=6ae341d5c54551b7219e36f3)
+![A single collection opened in Straion, showing its rules numbered in order, each beginning with a strength word such as MUST or SHOULD](https://straion.com/.netlify/images?url=_astro%2F05-collection-rules.D0p0r1Ur.jpg&w=1080&h=596&dpl=6ae89745c81b2756330c1f21)
 
 Imported rules are immediately available to the Straion workflows — they are matched against your specs, plans, and code whenever you [implement with rules](implement-with-rules.md) or [validate code](validate-code.md).
 
@@ -124,7 +125,7 @@ If your team already keeps its standards in `AGENTS.md` / `CLAUDE.md` files and 
 - The whole file is dumped into the prompt, relevant or not, instead of being matched to the task at hand.
 - They drift per repository and per developer, with no shared source of truth.
 
-Once imported, the same directives become validated rule collections that work across Claude Code, GitHub Copilot, and Cursor, are [matched semantically](core-concepts.md) to each task, and are shared by your whole organization.
+Once imported, the same directives become validated rule collections that work across Claude Code, Codex, GitHub Copilot, and Cursor, are [matched semantically](core-concepts.md) to each task, and are shared by your whole organization.
 
 **What gets migrated:**
 

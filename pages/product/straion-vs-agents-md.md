@@ -75,7 +75,7 @@ Comparison
 - Only the relevant rules injected, no noise
 - The AI's plan validated against your rules *before* code is written
 - One central hub: all repos, all teams, always current
-- One tool-agnostic layer for Claude Code, Cursor, and Copilot
+- One tool-agnostic layer for Claude Code, Codex, Cursor, and Copilot
 - Full visibility into which rules fired and where standards drift
 
 Bring your own rules 
@@ -119,7 +119,7 @@ rev: 1
 ### Use AGENTS.md as input, not infrastructure
 
 Straion ingests your existing markdown guidance and turns it into managed, scalable
-governance for Claude Code, Cursor, GitHub Copilot, and beyond. Import what you already
+governance for Claude Code, Codex, Cursor, GitHub Copilot, and beyond. Import what you already
 wrote, then retire the files. Straion becomes the single source of truth your team manages
 from one place.
 
@@ -195,7 +195,7 @@ No. More context does not fix relevance. Studies across thousands of agent runs 
 
   Which AI coding tools does Straion work with?  
 
-Straion works with Claude Code, Cursor, and GitHub Copilot, including Copilot in VS Code and the GitHub Copilot CLI. It integrates through the official integration points of each agent, so your team keeps its existing workflow.
+Straion works with Claude Code, Codex, Cursor, and GitHub Copilot, including Copilot in VS Code and the GitHub Copilot CLI. It integrates through the official integration points of each agent, so your team keeps its existing workflow.
 
  
 
@@ -203,7 +203,7 @@ Straion works with Claude Code, Cursor, and GitHub Copilot, including Copilot in
 
 Import your existing AGENTS.md files. See what Straion adds. No credit card required.
 
-Works with Claude Code, GitHub Copilot & Cursor.
+Works with Claude Code, Codex, GitHub Copilot & Cursor.
 
 [Start free trial
 →](https://straion.app/auth/signup)

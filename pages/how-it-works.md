@@ -120,7 +120,7 @@ Your rules live in your own Git, reviewed like code. Here's the race plan.
 
 1. ### Install the CLI
 
-   Start your free trial, install the Straion CLI, and connect it to your coding agent. Straion works with Claude Code, Cursor, and GitHub Copilot.
+   Start your free trial, install the Straion CLI, and connect it to your coding agent. Straion works with Claude Code, Codex, Cursor, and GitHub Copilot.
 2. ### Connect Your Repo
 
    Straion creates a dedicated branch in your repo and migrates your AGENTS.md and CLAUDE.md files into rules. From then on a rule change is a commit and a pull request, reviewed like code.
@@ -146,7 +146,7 @@ product.
 Your architecture rules, security policies, and coding standards, automatically in
 every developer's AI agent from day one.
 
-Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
+Works with Claude Code, Codex, GitHub Copilot & Cursor. No credit card required.
 
 [Start free trial
 →](https://straion.app/auth/signup)

@@ -4,7 +4,7 @@ source: https://straion.com/pricing
 description: "Straion pricing: start free, then scale with team and enterprise options for AI coding rule management and validation."
 ---
 
-![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6ae341d5c54551b7219e36f3)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6ae341d5c54551b7219e36f3)
+![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6ae89745c81b2756330c1f21)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6ae89745c81b2756330c1f21)
 
 ---
 
@@ -22,7 +22,7 @@ For development teams that need consistent, enforced coding standards.
 Includes:
 
 - ✓ Unlimited rules
-- ✓ AI Agent integrations (Claude Code, Cursor, GitHub Copilot)
+- ✓ AI Agent integrations (Claude Code, Codex, Cursor, GitHub Copilot)
 - ✓ Task plan & code generation and validation
 - ✓ Community support
 
@@ -88,7 +88,7 @@ Includes:
 Your architecture rules, security policies, and coding standards, automatically in
 every developer's AI agent from day one.
 
-Works with Claude Code, GitHub Copilot & Cursor. No credit card required.
+Works with Claude Code, Codex, GitHub Copilot & Cursor. No credit card required.
 
 [Start free trial
 →](https://straion.app/auth/signup)
