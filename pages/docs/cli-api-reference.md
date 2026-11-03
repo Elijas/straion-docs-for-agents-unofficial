@@ -5,7 +5,7 @@ description: "Reference for every Straion CLI command: login, logout, setup, and
 section: "References"
 order: 20
 prev: scim.md
-next: troubleshooting.md
+next: changelog.md
 ---
 
 # CLI reference
