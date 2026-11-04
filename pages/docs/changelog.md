@@ -1,7 +1,7 @@
 ---
 title: "CLI changelog"
 source: https://straion.com/docs/changelog
-description: "Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.22, published November 2, 2026."
+description: "Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.25, published November 4, 2026."
 section: "References"
 order: 21
 prev: cli-api-reference.md
@@ -19,6 +19,25 @@ npm install -g @straion/cli@latest
 
 To hear about new releases, subscribe to the [RSS feed](https://straion.com/docs/changelog/rss.xml). The
 [CLI reference](cli-api-reference.md) describes every command.
+
+## 0.1.25
+
+November 4, 2026
+
+- **Feature:** Adds `straion audit notes rewrite`, which keeps line attribution when commits are squashed or rebased. Run it in CI on every push. It finds the commits to carry notes from on its own: a merged GitHub pull request or GitLab merge request (from the GitHub Actions event or the commit message), or the branch head before the push (GitHub Actions, GitLab, or `--before <sha>` on other CI). Each rebased commit gets its original’s note with the line numbers re-mapped, and a squash commit gets a note built from all the commits it combined.
+
+## 0.1.24
+
+November 3, 2026
+
+- **Fix:** `straion setup` now finds Codex when only the ChatGPT desktop app for macOS is installed. It uses the Codex CLI the app ships when no working `codex` is on your PATH. Before, Codex showed as unavailable.
+
+## 0.1.23
+
+November 3, 2026
+
+- **Fix:** When your git is too old for authorship notes and the commit check, `straion setup` now tells you how to fix it: upgrade git to 2.54 or newer, then run `straion setup` again. Setup also exits with a non-zero code when these hooks are not installed, so you and your scripts notice right away instead of finding out later that commits were never checked.
+- **Fix:** `straion find-rules` now detects C correctly from the files you pass. `.c` files count as C, and a `.h` header counts as C++ only when you also pass C++ sources. Before, C files were not recognised and every header was treated as C++, so C tasks could be matched against C++ rules.
 
 ## 0.1.22
 

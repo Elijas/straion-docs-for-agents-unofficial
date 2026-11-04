@@ -39,7 +39,7 @@ and when. Your next audit gets an answer instead of a shrug.
 
 [Read how to catch violations before review](blog/rule-violations-code-review.md)
 
-   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6ae8ba768b581a6bf464f005)
+   ![Stray the squirrel waving a race flag](https://straion.com/.netlify/images?url=_astro%2Fstray-race-flag-waving.DE8iyHi0.png&fm=png&w=500&h=462&dpl=6aeb2d3af4c9232185c97f34)
 
 ---
 
@@ -188,7 +188,7 @@ Catch mistakes before they cost tokens. Validate your AI's proposed approach aga
 
 Claude Code, Codex, GitHub Copilot & Cursor ready. Install the Straion CLI globally and add the skill. Integrates with your existing AI coding workflow in minutes.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6ae8ba768b581a6bf464f005)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6ae8ba768b581a6bf464f005)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6ae8ba768b581a6bf464f005)![Codex](https://straion.com/_astro/codex.BxcUX5cK.svg?dpl=6ae8ba768b581a6bf464f005)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6aeb2d3af4c9232185c97f34)![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6aeb2d3af4c9232185c97f34)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6aeb2d3af4c9232185c97f34)![Codex](https://straion.com/_astro/codex.BxcUX5cK.svg?dpl=6aeb2d3af4c9232185c97f34)
 
 ### Rules Live in Your Git
 
@@ -222,7 +222,7 @@ Partners
 
 ## Shaping the future with our pilot partners
 
-[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6ae8ba768b581a6bf464f005)](https://www.dynatrace.com/)
+[![Logo of our Partner Dynatrace](https://straion.com/.netlify/images?url=_astro%2FDynatrace_Logo_color_negative_horizontal.BVqT2dTr.png&fm=png&w=2048&h=364&dpl=6aeb2d3af4c9232185c97f34)](https://www.dynatrace.com/)
 
 Ready to join?
 
@@ -237,8 +237,8 @@ Funding
 
 ## Supported & funded by
 
-[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6ae8ba768b581a6bf464f005)](https://marathon.vc/)
+[![Marathon Logo](https://straion.com/.netlify/images?url=_astro%2Fmarathon.Chr47bMq.png&w=500&h=103&dpl=6aeb2d3af4c9232185c97f34)](https://marathon.vc/)
 
-[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6ae8ba768b581a6bf464f005)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6ae8ba768b581a6bf464f005) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6ae8ba768b581a6bf464f005)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6ae8ba768b581a6bf464f005)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6ae8ba768b581a6bf464f005)](https://daytona.io/startups?utm_source=straion.com)
+[![Austrian Wirtschaftsservice - logo](https://straion.com/_astro/aws-logo.-fg8QdzF.svg?dpl=6aeb2d3af4c9232185c97f34)](https://www.aws.at/)  ![Federal Ministry Republic of Austria Climate Action, Environment, Energy, Mobility, Innovation and Technology - logo](https://straion.com/.netlify/images?url=_astro%2Fbmk-logo.madhDZXc.png&w=1717&h=712&dpl=6aeb2d3af4c9232185c97f34) ![Federal Ministry Republic of Austria Labour and Economy logo](https://straion.com/.netlify/images?url=_astro%2Fbmaw-logo.mrB4g2HR.png&w=1317&h=463&dpl=6aeb2d3af4c9232185c97f34)  [![tech2b Logo](https://straion.com/.netlify/images?url=_astro%2Ftech2b-logo.BwIH0KKX.png&w=843&h=597&dpl=6aeb2d3af4c9232185c97f34)](https://www.tech2b.at/startup/straion/)   [![Daytona Logo](https://straion.com/_astro/daytona-logo.Cga6w_5Z.svg?dpl=6aeb2d3af4c9232185c97f34)](https://daytona.io/startups?utm_source=straion.com)
 
 ---
