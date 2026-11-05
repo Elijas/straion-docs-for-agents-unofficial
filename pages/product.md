@@ -18,7 +18,7 @@ Claude Code, Codex, Cursor, or GitHub Copilot.
 
 Works with
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6aeb2d3af4c9232185c97f34)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6aeb2d3af4c9232185c97f34)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6aeb2d3af4c9232185c97f34)![Codex](https://straion.com/_astro/codex.BxcUX5cK.svg?dpl=6aeb2d3af4c9232185c97f34)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6aebb557f2ac5009d40d3c5a)![Claude Code](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6aebb557f2ac5009d40d3c5a)![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6aebb557f2ac5009d40d3c5a)![Codex](https://straion.com/_astro/codex.BxcUX5cK.svg?dpl=6aebb557f2ac5009d40d3c5a)
 
 straion governance check
 
