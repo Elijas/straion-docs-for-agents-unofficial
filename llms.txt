@@ -38,7 +38,7 @@ Listed in reading order, grouped as on the site.
 
 ### References
 - [CLI reference](https://straion.com/docs/cli-api-reference): Reference for every Straion CLI command: login, logout, setup, and import-rules, with the options and flags each command accepts.
-- [CLI changelog](https://straion.com/docs/changelog): Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.25, published November 4, 2026.
+- [CLI changelog](https://straion.com/docs/changelog): Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.26, published November 11, 2026.
 - [Troubleshooting](https://straion.com/docs/troubleshooting): Solutions to common Straion issues: agent setup checks, firewall and permission problems, skills that do not show up after setup, and SAML SSO and SCIM provisioning errors.
 
 ### Not in the sidebar
@@ -65,8 +65,6 @@ Listed in reading order, grouped as on the site.
 
 ## Career
 - [Careers - Join Our Team | Straion](https://straion.com/career): Explore career opportunities at Straion. We offer remote positions in the EU within our team.
-- [Founding AI / ML Engineer](https://straion.com/career/founding-ai-ml-engineer): Join our founding team as technical lead for ML. You'll own the architecture behind Straion's AI: the systems that read software specs, requirements, an...
-- [Senior AI / ML Engineer](https://straion.com/career/senior-ai-ml-engineer): Join our team to build and shape the revolution to supercharge AI assisted coding that transform how enterprise teams validate, implement and ship softw...
 
 ## Faqs
 - [Frequently Asked Questions](https://straion.com/faqs): Answers to the most common questions about Straion, setup, security, and AI coding guidance.

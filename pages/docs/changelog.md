@@ -1,7 +1,7 @@
 ---
 title: "CLI changelog"
 source: https://straion.com/docs/changelog
-description: "Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.25, published November 4, 2026."
+description: "Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.26, published November 11, 2026."
 section: "References"
 order: 21
 prev: cli-api-reference.md
@@ -19,6 +19,12 @@ npm install -g @straion/cli@latest
 
 To hear about new releases, subscribe to the [RSS feed](https://straion.com/docs/changelog/rss.xml). The
 [CLI reference](cli-api-reference.md) describes every command.
+
+## 0.1.26
+
+November 11, 2026
+
+- **Feature:** Adds `straion source repo disconnect`, the inverse of `straion source repo connect`. It deletes the repository’s rule source and all of its collections from Straion and stops later syncs of the repository until it is connected again. It uses the URL of the git remote or an explicit URL, shows what is removed, and asks for confirmation; pass `--yes` in CI. The rules branch is not changed.
 
 ## 0.1.25
 
