@@ -115,7 +115,7 @@ Works with Claude Code, Codex, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6aebb557f2ac5009d40d3c5a) 
+![Katrin Freihofner](https://straion.com/.netlify/images?url=_astro%2Fkatrin.qSA9g74x.jpg&fm=jpg&w=500&h=500&dpl=6af45eb764a6dd3d8b05e681) 
 
 Written by Katrin Freihofner
 
