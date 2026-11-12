@@ -4,7 +4,7 @@ source: https://straion.com/faqs
 description: "Answers to the most common questions about Straion, setup, security, and AI coding guidance."
 ---
 
-![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6af45eb764a6dd3d8b05e681)
+![A cave with hovering boxes containing a question mark](https://straion.com/.netlify/images?url=_astro%2Fhero-faq.CTu-733B.jpg&fm=jpg&w=1920&h=815&q=50&dpl=6af48097320cdbe94eba7c56)
 
 ---
 
@@ -147,5 +147,17 @@ Yes. We can move you between plans as your team scales.
   Do you offer discounts for startups?  
 
 Yes, reach out and we can discuss startup-friendly options.
+
+  What is the difference between Cppcheck and Straion?  
+
+Cppcheck is a static analyzer. It parses your C and C++ and reports violations after the code exists. Straion is not an analyzer. It is a rules layer for AI coding agents. It gives the agent the MISRA rules that apply to the task before it plans and writes, stops it from closing a task with an open violation, and records the reason and approver behind every deviation.
+
+  Does Straion replace Cppcheck or another MISRA analyzer?  
+
+No. If you need MISRA compliance evidence, a qualified analyzer such as Cppcheck Premium, Axivion, Polyspace, LDRA, Coverity or Parasoft is what an assessor will accept. Straion carries no tool qualification and does not try to fill that role. It works upstream of your analyzer, so fewer violations reach it.
+
+  Do I need Straion if my team does not use AI coding agents?  
+
+Probably not. Straion works through AI coding agents like Claude Code, Codex, GitHub Copilot and Cursor. If nobody on the team uses one, Straion adds little, and Cppcheck alone is the relevant choice.
 
 [Still have questions? Contact us](mailto:team@straion.com)

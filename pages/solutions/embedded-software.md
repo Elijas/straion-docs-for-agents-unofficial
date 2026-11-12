@@ -105,7 +105,7 @@ On Enterprise plans rules are plain files on a dedicated branch in your own repo
 
 Install the CLI, add the skill, and Straion works inside Claude Code, Codex, GitHub Copilot and Cursor. Your source code never leaves the developer's machine.
 
-![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6af45eb764a6dd3d8b05e681) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6af45eb764a6dd3d8b05e681) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6af45eb764a6dd3d8b05e681) ![Codex](https://straion.com/_astro/codex.BxcUX5cK.svg?dpl=6af45eb764a6dd3d8b05e681)
+![Cursor](https://straion.com/_astro/cursor.BgqlSlVP.svg?dpl=6af48097320cdbe94eba7c56) ![Claude](https://straion.com/_astro/claude.8mBNgHyt.svg?dpl=6af48097320cdbe94eba7c56) ![GitHub Copilot](https://straion.com/_astro/github-copilot.D9kKwRWf.svg?dpl=6af48097320cdbe94eba7c56) ![Codex](https://straion.com/_astro/codex.BxcUX5cK.svg?dpl=6af48097320cdbe94eba7c56)
 
 Same prompt, two outcomes 
 
@@ -259,7 +259,7 @@ No, and we will not imply otherwise. Straion is a guardrail and a record, not a 
 
 No. The guidelines are published and licensed by MISRA and the documents stay the authority. Straion ships a rule pack written in our own words, structured so an agent can act on it, and mapped to the guidelines you work to. You can edit every statement, and you can add your own standard beside it.
 
-[How we handle your code and data →](../security.md) [What the CLI actually sends →](../how-it-works.md)
+[How we handle your code and data →](../security.md) [What the CLI actually sends →](../how-it-works.md) [Straion vs Cppcheck →](../product/straion-vs-cppcheck.md)
 
 Trust 
 

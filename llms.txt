@@ -84,6 +84,7 @@ Listed in reading order, grouped as on the site.
 - [AI-Powered Code Review](https://straion.com/product/code-review): Automate pull request validation against non-functional requirements. Straion reduces manual review time and keeps code aligned with company standards.
 - [Transform vague ideas into actionable requirements](https://straion.com/product/feedback-on-requirements): Capture and manage your organization's requirements, and ensure your software specifications and code stay aligned every step of the way.
 - ["We already use AGENTS.md.Why do we need Straion?"](https://straion.com/product/straion-vs-agents-md): Already using AGENTS.md across your repos? See what Straion adds: a real before/after import, plus why the file breaks down at team scale.
+- ["We already run Cppcheck.Why would we need Straion?"](https://straion.com/product/straion-vs-cppcheck): Cppcheck finds MISRA violations after the code exists. Straion stops AI coding agents from writing them. An honest comparison, and why most AI-assisted MISRA teams should run both.
 - ["I already have custom skills.What does Straion add?"](https://straion.com/product/straion-vs-skills): Already using custom skills in Claude Code or Cursor? Here's what Straion adds, and why the maintenance problem only grows at team scale.
 
 ## Security
