@@ -98,7 +98,7 @@ The order is simple: organization beats repo, and repo beats global. Automode st
 
 ## Getting started
 
-1. Install the Straion CLI and the Straion plugin for Claude Code, GitHub Copilot (with the Copilot CLI installed), or Cursor. See [Getting Started](../docs/getting-started.md).
+1. Install the Straion CLI and the Straion plugin for Claude Code, Codex, GitHub Copilot (with the Copilot CLI installed), or Cursor. See [Getting Started](../docs/getting-started.md).
 2. Run `straion config automode true` in a repo.
 3. Start a new session.
 
@@ -114,7 +114,7 @@ Yes, when you want them. Skills like `/straion-implement` still guide you step b
 
 ### Which coding agents does Automode work with?
 
-Claude Code, GitHub Copilot (with the Copilot CLI installed), and Cursor.
+Claude Code, Codex, GitHub Copilot (with the Copilot CLI installed), and Cursor.
 
 ### Can a developer turn it off?
 
@@ -141,11 +141,11 @@ Works with Claude Code, Codex, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6af48097320cdbe94eba7c56) 
+![Lukas Holzer](https://straion.com/.netlify/images?url=_astro%2Flukas.DfqEGcEf.jpg&fm=jpg&w=500&h=500&dpl=6aff07f218fb37850b04ff92) 
 
 Written by Lukas Holzer
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6af48097320cdbe94eba7c56) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6aff07f218fb37850b04ff92) 
 
 Written by Fabian Friedl
 

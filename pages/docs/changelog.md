@@ -1,7 +1,7 @@
 ---
 title: "CLI changelog"
 source: https://straion.com/docs/changelog
-description: "Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.26, published November 11, 2026."
+description: "Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.27, published November 19, 2026."
 section: "References"
 order: 21
 prev: cli-api-reference.md
@@ -19,6 +19,13 @@ npm install -g @straion/cli@latest
 
 To hear about new releases, subscribe to the [RSS feed](https://straion.com/docs/changelog/rss.xml). The
 [CLI reference](cli-api-reference.md) describes every command.
+
+## 0.1.27
+
+November 19, 2026
+
+- **Fix:** The CLI now works on networks that inspect HTTPS traffic with your organization’s own root certificate, a common setup on corporate Windows machines. It trusts the certificate authorities installed in your operating system’s certificate store, so you no longer need to set `NODE_EXTRA_CA_CERTS` or `NODE_USE_SYSTEM_CA`. This needs Node.js 22.19 or newer. Before, commands such as `straion find-rules` failed with `Error: fetch failed`.
+- **Fix:** When the CLI cannot verify the certificate of the Straion API, it now says so and tells you how to fix it, instead of printing `Error: fetch failed`.
 
 ## 0.1.26
 

@@ -30,7 +30,7 @@ Today we’re closing that gap. Straion rules can now be fully managed in Git, i
 
 You write, review, and ship rules the same way you write, review, and ship code. It meets your engineers where they already are, in the workflow they use every day.
 
-   ![A Git repository browser showing a dedicated straion/rules/v1 branch with a rules folder containing rule collections and a CI config file.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-rule-repo-overview.q-R5wwF0.png&fm=png&w=3025&h=1659&dpl=6af48097320cdbe94eba7c56)  
+   ![A Git repository browser showing a dedicated straion/rules/v1 branch with a rules folder containing rule collections and a CI config file.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-rule-repo-overview.q-R5wwF0.png&fm=png&w=3025&h=1659&dpl=6aff07f218fb37850b04ff92)  
 
 Rules live on a dedicated branch as plain files. Each folder is a collection, grouping rules, versioned and reviewed like any other part of your repo.
 
@@ -56,7 +56,7 @@ You get your git workflows, versioning and permissions without losing the thing 
 
 **Auto-sync.** Your latest commit syncs to Straion automatically through GitHub Actions, GitLab CI, or your existing CI pipeline. There’s no manual publish step, no “did someone push the update?”. Merge your rule updates and it’s enforced on every new run.
 
-   ![A CI pipeline run that passed, showing a single straion-rules-sync job triggered by a commit that adds a new rule.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-ci-sync-pipeline.1FK491qZ.png&fm=png&w=3023&h=1657&dpl=6af48097320cdbe94eba7c56)  
+   ![A CI pipeline run that passed, showing a single straion-rules-sync job triggered by a commit that adds a new rule.](https://straion.com/.netlify/images?url=_astro%2F2026-07-20-ci-sync-pipeline.1FK491qZ.png&fm=png&w=3023&h=1657&dpl=6aff07f218fb37850b04ff92)  
 
 Every commit triggers a straion-rules-sync job in your existing CI. Merge a rule change, and it reaches every developer's agent automatically.
 
@@ -84,7 +84,7 @@ Three steps, and you’re live in about five minutes:
 2. Connect your repository as a source. Run `straion source repo connect`. Straion will create a dedicated branch for your rules and set up the auto-sync pipeline.
 3. Migrate your existing AGENTS.md / CLAUDE.md files into rules.
 
-Once your rules are in Straion, everything the platform already does kicks in. Centralized rules as your single source of truth. Dynamic context selection, so each agent gets only the rules relevant to the task in front of it, not your entire ruleset dumped into every session. Task-plan validation that catches violations before tokens are wasted. It works with Claude Code, GitHub Copilot, and Cursor out of the box.
+Once your rules are in Straion, everything the platform already does kicks in. Centralized rules as your single source of truth. Dynamic context selection, so each agent gets only the rules relevant to the task in front of it, not your entire ruleset dumped into every session. Task-plan validation that catches violations before tokens are wasted. It works with Claude Code, Codex, GitHub Copilot, and Cursor out of the box.
 
 ## Why it matters
 
@@ -109,7 +109,7 @@ Works with Claude Code, Codex, GitHub Copilot & Cursor. No credit card required.
 
 ---
 
-![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6af48097320cdbe94eba7c56) 
+![Fabian Friedl](https://straion.com/.netlify/images?url=_astro%2Ffabian.Bq-43Efc.jpg&fm=jpg&w=500&h=500&dpl=6aff07f218fb37850b04ff92) 
 
 Written by Fabian Friedl
 
