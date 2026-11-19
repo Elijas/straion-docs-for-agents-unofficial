@@ -38,7 +38,7 @@ Listed in reading order, grouped as on the site.
 
 ### References
 - [CLI reference](https://straion.com/docs/cli-api-reference): Reference for every Straion CLI command: login, logout, setup, and import-rules, with the options and flags each command accepts.
-- [CLI changelog](https://straion.com/docs/changelog): Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.26, published November 11, 2026.
+- [CLI changelog](https://straion.com/docs/changelog): Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.27, published November 19, 2026.
 - [Troubleshooting](https://straion.com/docs/troubleshooting): Solutions to common Straion issues: agent setup checks, firewall and permission problems, skills that do not show up after setup, and SAML SSO and SCIM provisioning errors.
 
 ### Not in the sidebar
@@ -60,6 +60,7 @@ Listed in reading order, grouped as on the site.
 - [Developers Asked Anthropic to Build This. We Did.](https://straion.com/blog/developers-asked-anthropic-to-build-this): A developer filed GitHub issue #14467 on claude-code describing exactly the problem Straion solves. We built it. Here is the full story.
 - [You Shouldn't Be Finding Rule Violations in Code Review](https://straion.com/blog/rule-violations-code-review): Straion turns every rule that applies to a change into a decision the agent has to resolve before the work is done, and every exception into one you approve.
 - [Automode: Straion Now Runs in Every Session](https://straion.com/blog/straion-automode): With Automode, your coding agent looks up your Straion rules in every session, without anyone calling a skill. If it skips that step, Straion sends it back.
+- [Straion Now Supports Codex](https://straion.com/blog/straion-now-supports-codex): Straion now works with Codex. Your rules, Automode, and the audit trail work the same as in Claude Code, Cursor, and GitHub Copilot. Run straion setup and pick Codex.
 - [Straion Rules Now Live in Git](https://straion.com/blog/straion-rules-now-live-in-git): Straion rules can now be managed in Git: versioning, pull request reviews, and full history. Available on the enterprise plan and in the free trial.
 - [We raised €1.1M to fix AI coding drift](https://straion.com/blog/we-raised-1-1m-to-fix-ai-coding-drift): Straion announces its €1.1M seed round led by Marathon VC and outlines why autonomous engineering needs a rules layer to prevent AI coding drift.
 
