@@ -1,7 +1,7 @@
 ---
 title: "CLI changelog"
 source: https://straion.com/docs/changelog
-description: "Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.27, published November 19, 2026."
+description: "Release notes for every version of the Straion CLI (@straion/cli). The latest release is 0.1.28, published November 20, 2026."
 section: "References"
 order: 21
 prev: cli-api-reference.md
@@ -19,6 +19,14 @@ npm install -g @straion/cli@latest
 
 To hear about new releases, subscribe to the [RSS feed](https://straion.com/docs/changelog/rss.xml). The
 [CLI reference](cli-api-reference.md) describes every command.
+
+## 0.1.28
+
+November 20, 2026
+
+- **Fix:** Commands no longer wait for usage analytics to be delivered before they start their work. On networks behind a slow or inspecting proxy, this wait could add more than 20 seconds to commands such as `straion find-rules`. Analytics are now sent in the background, each attempt gives up after 3 seconds, and the CLI waits at most 3 seconds for them before it exits.
+- **Fix:** Hooks that record which changes an agent’s shell commands made now run fewer git commands and only re-read files that changed since the previous command. Before, on machines where security software slows every git call, they could run out of time and log `checkpoint not written`.
+- **Fix:** Hooks now get 15 seconds instead of 5 to record a checkpoint, and when they still run out of time, the log file names the step that was running and how many files it had already handled.
 
 ## 0.1.27
 
