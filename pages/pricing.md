@@ -4,7 +4,7 @@ source: https://straion.com/pricing
 description: "Straion pricing: start free, then scale with team and enterprise options for AI coding rule management and validation."
 ---
 
-![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6b00052cecc6d4fa33a9ea07)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6b00052cecc6d4fa33a9ea07)
+![Pixel-art racetrack landscape](https://straion.com/.netlify/images?url=_astro%2Flandscape-background.i5mei75N.png&fm=png&w=1920&h=815&q=50&dpl=6b04606167b333c09f6b189a)    ![Stray the squirrel jumping through a trail of coins](https://straion.com/.netlify/images?url=_astro%2Fstray-jumping-coins.C6g75xZp.png&fm=png&w=900&h=382&dpl=6b04606167b333c09f6b189a)
 
 ---
 
